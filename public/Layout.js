@@ -19,7 +19,7 @@ function Layout({ children }) {
   return (
     <div style={styles}>
       {!errorPage && <Header />}
-      <main>{children}</main>
+      {children}
       {!errorPage && <Footer />}
     </div>
   )

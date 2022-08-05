@@ -7,7 +7,7 @@ function Header() {
 
   const [navActive, setNavActive] = useState(false)
   const scrollActive = () => {
-    if (window.scrollY >= 14) {
+    if (window.scrollY >= 50) {
       setNavActive(true)
     } else {
       setNavActive(false)

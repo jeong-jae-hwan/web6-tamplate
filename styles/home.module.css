@@ -1,14 +1,14 @@
-.wrapper {
+.section {
   width: 100%;
-  max-width: 1260px;
-  padding: 60px 20px;
-  height: 100%;
+  max-width: 1200px;
+  padding: 60px 20px 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-width: 800px) {
-  .wrapper {
-    padding: 40px 20px;
+  .section {
+    padding: 30px 20px 60px;
   }
 }
