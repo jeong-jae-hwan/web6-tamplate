@@ -1,3 +1,6 @@
+import Footer from '@/components/common/Footer'
+import Header from '@/components/common/Header'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 function Layout({ children }) {
@@ -10,13 +13,14 @@ function Layout({ children }) {
     alignItems: 'center',
   }
 
+  const router = useRouter()
+  const errorPage = router.pathname === '/404'
+
   return (
     <div style={styles}>
-      <header>헤더</header>
-
+      {!errorPage && <Header />}
       <main>{children}</main>
-
-      <footer>푸터</footer>
+      {!errorPage && <Footer />}
     </div>
   )
 }
