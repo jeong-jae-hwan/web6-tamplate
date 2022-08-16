@@ -18,7 +18,6 @@ function Index() {
   return (
     <>
       <SEO />
-
       <Wrapper pLR="60px">
         <button onClick={count}>++</button>
         <h1>결과: {countReducer}</h1>

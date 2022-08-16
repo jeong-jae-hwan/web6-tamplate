@@ -1,24 +1,25 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: ${({ flexType }) => (flexType ? flexType : 'column')};
+  column-gap: ${({ rowGap }) => rowGap};
   padding-right: ${({ pLR }) => pLR};
   padding-left: ${({ pLR }) => pLR};
   padding-top: ${({ pT }) => pT};
   padding-bottom: ${({ pB }) => pB};
 
-  @media screen and (max-width: ${({ mediaWidth }) =>
-      mediaWidth ? mediaWidth : '600px'}) {
+  @media (max-width: ${({ theme }) => theme.mobile}) {
     height: ${({ mHeight }) => mHeight};
     padding-right: 20px;
     padding-left: 20px;
     padding-top: ${({ mobilePT }) => mobilePT};
     padding-bottom: ${({ mobilePB }) => mobilePB};
+    column-gap: ${({ rowGap }) => rowGap};
   }
 `
 
@@ -30,6 +31,7 @@ export const ImgBox = styled.div`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
+  cursor: ${({ cursor }) => cursor && pointer};
 
   img {
     width: 100%;
