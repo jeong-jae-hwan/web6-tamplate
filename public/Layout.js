@@ -10,9 +10,7 @@ function Layout({ children }) {
   return (
     <div className="layout">
       {!errorPage && <Header />}
-      <main>
-        <section>{children}</section>
-      </main>
+      <main>{children}</main>
       {!errorPage && <Footer />}
     </div>
   )

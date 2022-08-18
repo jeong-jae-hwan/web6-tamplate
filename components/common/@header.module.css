@@ -1,25 +1,5 @@
-.layout {
-  width: 100%;
-  height: 70px;
-  position: relative;
-}
-
-.wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-}
-
-.wrapper_active {
-  border-bottom: 1px solid #e2e2e2;
+.header_active {
+  border-bottom: 1px solid #ccc;
 }
 
 .container {
@@ -35,17 +15,85 @@
   font-weight: 600;
 }
 
-.container button {
-  font-size: 1rem;
-  width: 6.25em;
-  height: 2.75em;
-  border-radius: 100em;
-  background-color: #333;
-  color: #fff;
+.toggleTab {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+
+/* 토글 메뉴 */
+.toggle_layer {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.menu_wrap {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 80px 30px 40px;
+  margin-left: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.menu_wrap_active {
+  right: 0;
+}
+
+.menu_wrap .toggleTab {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+
+.menu_wrap ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.menu a {
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu a p {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 800px) {
+  .header {
+    height: 58px;
+  }
+
   .container {
     padding: 0 20px;
+  }
+
+  .toggleTab {
+    width: 24px;
+    display: flex;
+    align-items: center;
   }
 }
