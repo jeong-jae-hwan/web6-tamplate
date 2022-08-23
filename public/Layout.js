@@ -2,6 +2,7 @@ import Footer from '@/components/common/Footer'
 import Header from '@/components/common/Header'
 import { useRouter } from 'next/router'
 import React from 'react'
+import ScrollTopTab from 'widgets/ScrollTopTab'
 
 function Layout({ children }) {
   const router = useRouter()
@@ -12,6 +13,7 @@ function Layout({ children }) {
       {!errorPage && <Header />}
       <main>{children}</main>
       {!errorPage && <Footer />}
+      <ScrollTopTab />
     </div>
   )
 }
