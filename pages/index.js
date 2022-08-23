@@ -30,6 +30,7 @@ export default function Index() {
             maxWidth="1080px"
             paddingLR="60px"
             paddingT="60px"
+            paddingB="100px"
             gap="20px"
           >
             <button onClick={count}>++</button>

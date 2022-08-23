@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
+// 공통 레이아웃
 export const Wrapper = styled.div`
-  position: relative;
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
@@ -44,22 +44,38 @@ export const WrapperRow = styled(Wrapper)`
   }
 `
 
-export const HeaderWrap = styled.header`
+// 공통 팝업 레이어
+export const LayerPopup = styled.div`
+  z-index: 1000;
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 999;
-  width: 100%;
-  height: ${({ height }) => height};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  transition: 0.3s ease-in-out;
-  border-bottom: ${({ isFixed }) => isFixed && '1px solid #ccc'};
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.2);
+`
 
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: ${({ mHeight }) => mHeight};
+// 햄버거 메뉴 박스
+export const DrawerBox = styled.div`
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  right: ${({ isOpen }) => (isOpen ? 0 : '-100%')};
+  width: 100%;
+  max-width: 360px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 80px 30px 40px;
+  margin-left: 30px;
+  transition: 0.3s ease-in-out;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 `

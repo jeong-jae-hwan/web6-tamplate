@@ -19,7 +19,6 @@ export const ImgBox = styled.div`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
-  cursor: ${({ cursor }) => cursor && pointer};
   transition: 0.3s ease-in-out;
 
   img {
@@ -36,7 +35,7 @@ export const Button = styled.button`
   border-radius: ${({ borderRadius }) =>
     borderRadius ? borderRadius : '100px'};
   border: none;
-  box-shadow: ${({ boxShadow }) => boxShadow && '0 3px 20px rgba(0,0,0,0.011)'};
+  box-shadow: ${({ boxShadow }) => boxShadow && '0 3px 20px rgba(0,0,0,0.11)'};
   font-size: 18px;
   transition: 0.3s ease-in-out;
 
