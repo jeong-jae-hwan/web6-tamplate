@@ -1,16 +1,14 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './@header.module.css'
-import toggleIcon from 'public/icons/toggle-menu.png'
-import hrefIcon from 'public/icons/href-icon.svg'
-import xIcon from 'public/icons/xBtn-icon.svg'
-import logo from 'public/images/logo.svg'
-import Image from 'next/image'
 import Link from 'next/link'
-
 import { DrawerBox, Wrapper } from 'styled-component/layout'
 import { ThemeProvider } from 'styled-components'
 import { Logo } from 'styled-component/widgets'
+import DrawerIcon from 'public/icons/drawer-icon.svg'
+import HrefIcon from 'public/icons/href-icon.svg'
+import XbtnIcon from 'public/icons/xBtn-icon.svg'
+import LogoImg from 'public/images/logo.svg'
 
 export default function Header() {
   const router = useRouter()
@@ -45,12 +43,12 @@ export default function Header() {
             <div className={styles.container}>
               <Link href="/">
                 <Logo width="31px" mWidth="28px">
-                  <Image src={logo} alt="딥팩토리" />
+                  <LogoImg alt="딥팩토리" />
                 </Logo>
               </Link>
 
               <button className={styles.toggleTab} onClick={toggleActive}>
-                <Image src={toggleIcon} alt="" />
+                <DrawerIcon />
               </button>
             </div>
           </header>
@@ -108,7 +106,7 @@ export function Drawer(props) {
     <div className={isToggle && styles.drawer_layer}>
       <DrawerBox isOpen={isToggle} ref={ref}>
         <button className={styles.toggleTab} onClick={toggleActive}>
-          <Image src={xIcon} alt="" />
+          <XbtnIcon />
         </button>
         <nav>
           <ul>
@@ -118,7 +116,7 @@ export function Drawer(props) {
                   <Link href={item.a}>
                     <a>
                       <p>{item.name}</p>
-                      <Image src={hrefIcon} alt={item.name} />
+                      <HrefIcon />
                     </a>
                   </Link>
                 </li>
