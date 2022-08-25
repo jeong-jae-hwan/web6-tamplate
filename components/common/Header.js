@@ -115,7 +115,7 @@ export function Drawer(props) {
                 <li key={i} className={styles.menu} onClick={toggleActive}>
                   <Link href={item.a}>
                     <a>
-                      <p>{item.name}</p>
+                      <span>{item.name}</span>
                       <HrefIcon />
                     </a>
                   </Link>
