@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './scroll-top-tab.module.css'
-import upIcon from 'public/icons/scroll-up-icon.svg'
+import UpIcon from 'public/icons/scroll-up-icon.svg'
 import Image from 'next/image'
 
 function ScrollTopTab() {
@@ -42,7 +42,7 @@ function ScrollTopTab() {
     <>
       {ScrollY > 30 && (
         <button className={styles.btnTop} onClick={handleTop}>
-          <Image src={upIcon} alt="" />
+          <UpIcon />
         </button>
       )}
     </>
