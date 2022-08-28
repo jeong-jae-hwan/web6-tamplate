@@ -9,10 +9,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   row-gap: ${({ gap }) => gap};
-  padding-right: ${({ paddingLR }) => paddingLR};
-  padding-left: ${({ paddingLR }) => paddingLR};
   padding-top: ${({ paddingT }) => paddingT};
   padding-bottom: ${({ paddingB }) => paddingB};
+  padding-right: ${({ paddingLR }) => paddingLR};
+  padding-left: ${({ paddingLR }) => paddingLR};
   transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {

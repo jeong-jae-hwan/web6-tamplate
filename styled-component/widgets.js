@@ -6,7 +6,7 @@ export const Logo = styled.a`
   align-items: center;
   transition: 0.3s ease-in-out;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1080px) {
     width: ${({ mWidth }) => mWidth};
   } ;
 `
@@ -47,4 +47,8 @@ export const Button = styled.button`
   &:disabled {
     background-color: #aaa;
   }
+
+  @media only screen and (max-width: 600px) {
+    height: ${({ height }) => (height ? height : '50px')};
+  } ;
 `
