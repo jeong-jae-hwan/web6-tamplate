@@ -70,12 +70,17 @@ export const DrawerBox = styled.div`
   max-width: 360px;
   height: 100vh;
   background-color: #fff;
-  padding: 80px 30px 40px;
+  padding: 80px 15px 30px;
   margin-left: 30px;
   transition: 0.3s ease-in-out;
   overflow: auto;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 340px;
+    padding: 80px 10px 30px;
   }
 `

@@ -5,10 +5,11 @@ import Link from 'next/link'
 import { DrawerBox, Wrapper } from 'styled-component/layout'
 import { ThemeProvider } from 'styled-components'
 import { Logo } from 'styled-component/widgets'
+import logoImg from 'public/images/logo.png'
 import DrawerIcon from 'public/icons/drawer-icon.svg'
 import HrefIcon from 'public/icons/href-icon.svg'
 import XbtnIcon from 'public/icons/xBtn-icon.svg'
-import LogoImg from 'public/images/logo.svg'
+import Image from 'next/image'
 
 export default function Header() {
   const router = useRouter()
@@ -42,12 +43,12 @@ export default function Header() {
           <header className={isFixed && styles.header_active}>
             <div className={styles.container}>
               <Link href="/">
-                <Logo width="31px" mWidth="28px">
-                  <LogoImg alt="딥팩토리" />
+                <Logo width="32px" mWidth="30px">
+                  <Image src={logoImg} alt="딥팩토리" />
                 </Logo>
               </Link>
 
-              <button className={styles.toggleTab} onClick={toggleActive}>
+              <button onClick={toggleActive}>
                 <DrawerIcon />
               </button>
             </div>

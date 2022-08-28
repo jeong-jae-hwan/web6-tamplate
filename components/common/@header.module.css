@@ -11,13 +11,6 @@
   align-items: center;
 }
 
-.toggleTab {
-  width: 34px;
-  display: flex;
-  align-items: center;
-  padding: 6px 0;
-}
-
 /* 토글 메뉴 구성 */
 .drawer_layer {
   z-index: 1000;
@@ -44,12 +37,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+}
+
+.menu {
+  margin-bottom: 10px;
 }
 
 .menu a {
   width: 100%;
-  padding: 5px 0;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,11 +59,5 @@
 @media only screen and (max-width: 800px) {
   .container {
     padding: 0 20px;
-  }
-
-  .toggleTab {
-    width: 24px;
-    display: flex;
-    align-items: center;
   }
 }
