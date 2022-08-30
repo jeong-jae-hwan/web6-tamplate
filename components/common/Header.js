@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Wrapper height="70px" mHeight="58px">
+        <Wrapper height="70px" m_height="58px">
           <header className={isFixed && styles.header_active}>
             <div className={styles.container}>
               <Link href="/">

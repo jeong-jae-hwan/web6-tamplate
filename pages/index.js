@@ -28,10 +28,11 @@ export default function Index() {
         <section>
           <Wrapper
             maxWidth="1080px"
-            paddingLR="60px"
-            paddingT="60px"
-            paddingB="100px"
-            gap="20px"
+            pT="50px"
+            pB="10px"
+            m_pT="20px"
+            pLR="20px"
+            gap="30px"
           >
             <button onClick={count}>++</button>
             <h1>결과: {countReducer}</h1>

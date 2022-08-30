@@ -2,44 +2,44 @@ import styled from 'styled-components'
 
 // 공통 레이아웃
 export const Wrapper = styled.div`
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth};
-  height: ${({ height }) => height};
+  transition: 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: ${({ maxWidth }) => maxWidth};
+  height: ${({ height }) => height};
   row-gap: ${({ gap }) => gap};
-  padding-top: ${({ paddingT }) => paddingT};
-  padding-bottom: ${({ paddingB }) => paddingB};
-  padding-right: ${({ paddingLR }) => paddingLR};
-  padding-left: ${({ paddingLR }) => paddingLR};
-  transition: 0.3s ease-in-out;
+  padding-top: ${({ pT }) => pT};
+  padding-bottom: ${({ pB }) => pB};
+  padding-right: ${({ pLR }) => pLR};
+  padding-left: ${({ pLR }) => pLR};
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: ${({ mHeight }) => mHeight};
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: ${({ mPaddingT }) => mPaddingT};
-    padding-bottom: ${({ mPaddingB }) => mPaddingB};
+    height: ${({ m_height }) => m_height};
+    padding-top: ${({ m_pT }) => m_pT};
+    padding-bottom: ${({ m_pB }) => m_pB};
+    padding-right: ${({ m_pLR }) => m_pLR};
+    padding-left: ${({ m_pLR }) => m_pLR};
     column-gap: ${({ gap }) => gap};
   }
 `
 
 export const WrapperRow = styled(Wrapper)`
   position: relative;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
-  display: flex;
-  flex-direction: row;
   column-gap: ${({ gap }) => gap};
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: ${({ mHeight }) => mHeight};
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: ${({ mPaddingT }) => mPaddingT};
-    padding-bottom: ${({ mPaddingB }) => mPaddingB};
+    height: ${({ m_height }) => m_height};
+    padding-top: ${({ m_pT }) => m_pT};
+    padding-bottom: ${({ m_pB }) => m_pB};
+    padding-right: ${({ m_pLR }) => m_pLR};
+    padding-left: ${({ m_pLR }) => m_pLR};
     column-gap: ${({ gap }) => gap};
   }
 `
