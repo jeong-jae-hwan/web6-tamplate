@@ -11,6 +11,12 @@
   align-items: center;
 }
 
+.drawer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* 토글 메뉴 구성 */
 .drawer_layer {
   z-index: 1000;

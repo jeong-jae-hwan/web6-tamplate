@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23" viewBox="0 0 27 23">
-  <g id="drawer-icon" transform="translate(-2306 -25)">
-    <rect id="사각형_5614" data-name="사각형 5614" width="23" height="4" rx="2" transform="translate(2309 25)" fill="#333"/>
-    <rect id="사각형_8093" data-name="사각형 8093" width="27" height="4" rx="2" transform="translate(2306 34.5)" fill="#333"/>
-    <rect id="사각형_8094" data-name="사각형 8094" width="23" height="4" rx="2" transform="translate(2309 44)" fill="#333"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22">
+  <g id="drawer-icon" transform="translate(-2307 -25)">
+    <rect id="사각형_5614" data-name="사각형 5614" width="23" height="3.5" rx="1.75" transform="translate(2310 25)" fill="#333"/>
+    <rect id="사각형_8093" data-name="사각형 8093" width="26" height="3.5" rx="1.75" transform="translate(2307 34.25)" fill="#333"/>
+    <rect id="사각형_8094" data-name="사각형 8094" width="23" height="3.5" rx="1.75" transform="translate(2310 43.5)" fill="#333"/>
   </g>
 </svg>

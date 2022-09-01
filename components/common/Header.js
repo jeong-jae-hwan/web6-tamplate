@@ -43,12 +43,12 @@ export default function Header() {
           <header className={isFixed && styles.header_active}>
             <div className={styles.container}>
               <Link href="/">
-                <Logo width="32px" mWidth="30px">
+                <Logo width="32px" mWidth="29px">
                   <Image src={logoImg} alt="딥팩토리" />
                 </Logo>
               </Link>
 
-              <button onClick={toggleActive}>
+              <button className={styles.drawer} onClick={toggleActive}>
                 <DrawerIcon />
               </button>
             </div>
