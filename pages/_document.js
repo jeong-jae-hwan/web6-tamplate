@@ -26,17 +26,10 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
-
   render() {
     return (
-      <Html>
-        <Head>
-          <style />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
-          />
-        </Head>
+      <Html lang="en">
+        <Head />
         <body>
           <Main />
           <NextScript />
