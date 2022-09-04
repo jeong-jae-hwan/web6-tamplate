@@ -215,7 +215,7 @@ input::-webkit-search-results-decoration {
 select {
   -webkit-appearance: none;
   appearance: none;
-  background: url('../public/icons/selec-icon.svg') no-repeat 100% 55%;
+  background: url('../public/icons/select-icon.svg') no-repeat 100% 55%;
   padding: 0 20px 0 0;
 }
 
