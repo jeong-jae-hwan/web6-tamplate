@@ -51,22 +51,21 @@ export function Drawer(props) {
         <button className={styles.toggleTab} onClick={toggleActive}>
           <XbtnIcon />
         </button>
-        <nav>
-          <ul>
-            {menuList.map((item, i) => {
-              return (
-                <li key={i} className={styles.menu} onClick={toggleActive}>
-                  <Link href={item.a}>
-                    <a>
-                      <span>{item.name}</span>
-                      <HrefIcon />
-                    </a>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+
+        <ul>
+          {menuList.map((item, i) => {
+            return (
+              <li key={i} className={styles.menu} onClick={toggleActive}>
+                <Link href={item.a}>
+                  <a>
+                    <span>{item.name}</span>
+                    <HrefIcon />
+                  </a>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </DrawerBox>
     </div>
   )

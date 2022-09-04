@@ -40,7 +40,11 @@ export default function Header() {
       <ThemeProvider theme={theme}>
         <Wrapper height="70px" m_height="58px">
           <header className={isFixed && styles.header_active}>
-            <div className={styles.container}>
+            <h1 aria-hidden="true" className={styles.title_hidden}>
+              딥팩토리
+            </h1>
+
+            <nav className={styles.container}>
               <Link href="/">
                 <Logo width="32px" mWidth="29px">
                   <Image src={logoImg} alt="딥팩토리" />
@@ -50,7 +54,7 @@ export default function Header() {
               <button className={styles.drawer} onClick={toggleActive}>
                 <DrawerIcon />
               </button>
-            </div>
+            </nav>
           </header>
         </Wrapper>
       </ThemeProvider>
