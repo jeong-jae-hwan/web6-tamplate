@@ -74,7 +74,7 @@
 }
 
 @media only screen and (max-width: 1080px) {
-  .container {
+  .nav_bar {
     padding: 0 20px;
   }
 }
