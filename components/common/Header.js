@@ -44,7 +44,7 @@ export default function Header() {
               딥팩토리
             </h1>
 
-            <nav className={styles.container}>
+            <nav className={styles.nav_bar}>
               <Link href="/">
                 <Logo width="32px" mWidth="29px">
                   <Image src={logoImg} alt="딥팩토리" />
