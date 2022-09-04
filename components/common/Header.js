@@ -51,7 +51,7 @@ export default function Header() {
                 </Logo>
               </Link>
 
-              <button className={styles.drawer} onClick={toggleActive}>
+              <button className={styles.drawer_tab} onClick={toggleActive}>
                 <DrawerIcon />
               </button>
             </nav>

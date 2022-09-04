@@ -67,7 +67,7 @@ export const DrawerBox = styled.div`
   top: 0;
   right: ${({ isOpen }) => (isOpen ? 0 : '-100%')};
   width: 100%;
-  max-width: 360px;
+  max-width: 340px;
   height: 100vh;
   background-color: #fff;
   padding: 80px 15px 30px;

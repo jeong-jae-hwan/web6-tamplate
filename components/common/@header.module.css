@@ -22,65 +22,14 @@
   height: 1px;
 }
 
-.drawer {
+.drawer_tab {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 토글 메뉴 구성 */
-.drawer_layer {
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.toggleTab {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-}
-
-.drawer_layer ul {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu {
-  margin-bottom: 10px;
-}
-
-.menu a {
-  width: 100%;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.menu a span {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
 @media only screen and (max-width: 1080px) {
   .nav_bar {
     padding: 0 20px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .menu a span {
-    font-size: 1rem;
   }
 }
