@@ -29,7 +29,7 @@ export default function Index() {
           <Wrapper
             maxWidth="1080px"
             pT="50px"
-            pB="10px"
+            pB="100px"
             m_pT="20px"
             pLR="20px"
             gap="30px"

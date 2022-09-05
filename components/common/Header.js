@@ -47,7 +47,7 @@ export default function Header() {
             <nav className={styles.nav_bar}>
               <Link href="/">
                 <Logo width="32px" mWidth="29px">
-                  <Image src={logoImg} alt="딥팩토리" />
+                  <Image src={logoImg} alt="딥팩토리" priority={true} />
                 </Logo>
               </Link>
 

@@ -14,18 +14,23 @@ export const Logo = styled.a`
 
 // 이미지 박스
 export const ImgBox = styled.div`
-  transition: 0.3s ease-in-out;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
+  border-radius: ${({ borderR }) => borderR};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
 
-  img {
-    width: 100%;
-  }
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    max-width: ${({ m_maxWidth }) => m_maxWidth};
+    height: ${({ m_height }) => m_height};
+    border-radius: ${({ m_borderR }) => m_borderR};
+  } ;
 `
 
 // 버튼 박스
