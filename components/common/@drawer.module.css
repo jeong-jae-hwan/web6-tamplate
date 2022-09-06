@@ -44,6 +44,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .menu {
+    margin-bottom: 10px;
+  }
   .menu a span {
     font-size: 1rem;
   }

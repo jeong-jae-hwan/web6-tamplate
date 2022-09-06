@@ -81,6 +81,6 @@ export const DrawerBox = styled.div`
 
   @media only screen and (max-width: 600px) {
     max-width: 320px;
-    padding: 80px 10px 30px;
+    padding: 64px 10px 30px;
   }
 `
