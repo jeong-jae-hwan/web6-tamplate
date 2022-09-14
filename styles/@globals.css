@@ -218,6 +218,9 @@ select {
   appearance: none;
   background: url('../public/icons/select-icon.svg') no-repeat 100% 55%;
   padding: 0 20px 0 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 select::-ms-expand {
