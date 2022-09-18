@@ -23,7 +23,7 @@ export default function Index() {
 
   return (
     <>
-      <SEO />
+      <SEO title="템플릿" />
       <ThemeProvider theme={theme}>
         <section>
           <Wrapper
