@@ -9,6 +9,8 @@ import logoImg from 'public/images/logo.png'
 import DrawerIcon from 'public/icons/drawer-icon.svg'
 import Image from 'next/image'
 import { Drawer } from './Drawer'
+import { useRecoilState } from 'recoil'
+import { drawerState } from 'atoms/toggle'
 
 export default function Header() {
   const router = useRouter()
@@ -26,9 +28,9 @@ export default function Header() {
   }, [])
 
   // 메뉴 토글
-  const [isToggle, setIsToggle] = useState(false)
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerState)
   const toggleActive = () => {
-    setIsToggle(!isToggle)
+    setIsDrawer(!isDrawer)
   }
 
   const theme = {
@@ -59,11 +61,7 @@ export default function Header() {
         </Wrapper>
       </ThemeProvider>
 
-      <Drawer
-        isToggle={isToggle}
-        setIsToggle={setIsToggle}
-        toggleActive={toggleActive}
-      />
+      <Drawer />
     </>
   )
 }

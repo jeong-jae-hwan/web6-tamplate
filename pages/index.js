@@ -1,22 +1,11 @@
-import { add } from '@redux/slice/counterSlice'
-import { useRouter } from 'next/router'
 import SEO from 'public/SEO'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Wrapper } from 'styles/@styled-component/layout'
 import { Button } from 'styles/@styled-component/widgets'
 import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
 
 export default function Index() {
-  const router = useRouter()
-  const countReducer = useSelector(({ count }) => count.value)
-  const dispatch = useDispatch()
-
-  const count = () => {
-    dispatch(add())
-  }
-
   const theme = {
     mobile: '800px',
   }
@@ -34,9 +23,6 @@ export default function Index() {
             pLR="20px"
             gap="30px"
           >
-            <button onClick={count}>++</button>
-            <h1>결과: {countReducer}</h1>
-
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the

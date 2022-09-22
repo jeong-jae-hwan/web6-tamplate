@@ -6,23 +6,26 @@ import { useRef } from 'react'
 import { DrawerBox } from 'styles/@styled-component/layout'
 import HrefIcon from 'public/icons/href-icon.svg'
 import XbtnIcon from 'public/icons/xBtn-icon.svg'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { drawerState } from 'atoms/toggle'
 
-export function Drawer(props) {
-  const { isToggle, setIsToggle, toggleActive } = props
+export function Drawer() {
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerState)
 
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()
-
   const clickModalOutside = event => {
-    if (isToggle && !ref.current.contains(event.target)) {
-      setIsToggle(false)
+    if (isDrawer && !ref.current?.contains(event.target)) {
+      setIsDrawer(false)
     }
   }
 
-  useEffect(() => {
-    ref.current.scrollTo(0, 0)
+  console.log(isDrawer)
 
-    if (isToggle) {
+  useEffect(() => {
+    ref.current?.scrollTo(0, 0)
+
+    if (isDrawer) {
       document.body.style.overflowY = 'hidden'
       document.body.style.position = 'fixed'
     } else {
@@ -34,7 +37,7 @@ export function Drawer(props) {
     return () => {
       document.removeEventListener('mousedown', clickModalOutside)
     }
-  }, [isToggle])
+  }, [isDrawer])
 
   const menuList = [
     { name: '포트폴리오', a: '/' },
@@ -46,16 +49,20 @@ export function Drawer(props) {
   ]
 
   return (
-    <div className={isToggle && styles.drawer_layer}>
-      <DrawerBox isOpen={isToggle} ref={ref}>
-        <button className={styles.toggleTab} onClick={toggleActive}>
+    <div className={isDrawer && styles.drawer_layer}>
+      <DrawerBox isOpen={isDrawer} ref={ref}>
+        <button className={styles.toggleTab} onClick={() => setIsDrawer(false)}>
           <XbtnIcon />
         </button>
 
         <ul>
           {menuList.map((item, i) => {
             return (
-              <li key={i} className={styles.menu} onClick={toggleActive}>
+              <li
+                key={i}
+                className={styles.menu}
+                onClick={() => setIsDrawer(false)}
+              >
                 <Link href={item.a}>
                   <a>
                     <span>{item.name}</span>

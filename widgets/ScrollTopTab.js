@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styles from './scroll-top-tab.module.css'
 import UpIcon from 'public/icons/scroll-up-icon.svg'
-import Image from 'next/image'
+import styled from 'styled-components'
 
 function ScrollTopTab() {
   const [ScrollY, setScrollY] = useState(0)
@@ -19,7 +18,6 @@ function ScrollTopTab() {
   }
 
   const handleTop = () => {
-    // 클릭하면 스크롤이 위로 올라가는 함수
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -38,12 +36,31 @@ function ScrollTopTab() {
     }
   })
 
+  const PositionTopTab = styled.button`
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 0.3s ease-in-out;
+  `
+
   return (
     <>
       {ScrollY > 30 && (
-        <button className={styles.btnTop} onClick={handleTop}>
+        <PositionTopTab onClick={handleTop}>
           <UpIcon />
-        </button>
+        </PositionTopTab>
       )}
     </>
   )

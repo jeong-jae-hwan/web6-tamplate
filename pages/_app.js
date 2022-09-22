@@ -3,6 +3,7 @@ import { store } from '/@redux/app/store'
 import { Provider } from 'react-redux'
 import Layout from 'public/Layout'
 import { useRouter } from 'next/router'
+import { RecoilRoot } from 'recoil'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -18,11 +19,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Provider>
+      <RecoilRoot>
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
+      </RecoilRoot>
     </>
   )
 }
