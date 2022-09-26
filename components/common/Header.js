@@ -62,9 +62,7 @@ export default function Header() {
       <ThemeProvider theme={theme}>
         <View height="70px" m_height="58px">
           <HeaderView m_height="58px">
-            <h1 aria-hidden="true" className={styles.title_hidden}>
-              딥팩토리
-            </h1>
+            <h1 aria-hidden="true">딥팩토리</h1>
 
             <nav className={styles.nav_bar}>
               <Link href="/">
