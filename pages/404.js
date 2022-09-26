@@ -5,8 +5,6 @@ import styles from 'styles/404.module.css'
 function Error() {
   const router = useRouter()
 
-  console.log(router)
-
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>

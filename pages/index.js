@@ -1,7 +1,7 @@
 import SEO from 'public/SEO'
 import React from 'react'
-import { Wrapper } from 'styles/@styled-component/layout'
-import { Button } from 'styles/@styled-component/widgets'
+import { View } from 'scss/layout'
+import { Button } from 'scss/widgets'
 import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
 
@@ -15,7 +15,7 @@ export default function Index() {
       <SEO title="템플릿" />
       <ThemeProvider theme={theme}>
         <section>
-          <Wrapper
+          <View
             maxWidth="1080px"
             pT="50px"
             pB="100px"
@@ -75,7 +75,7 @@ export default function Index() {
             </div>
 
             <Button boxShadow>버튼</Button>
-          </Wrapper>
+          </View>
         </section>
       </ThemeProvider>
     </>

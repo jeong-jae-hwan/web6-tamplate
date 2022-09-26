@@ -1,16 +1,16 @@
 import { useRouter } from 'next/router'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './@header.module.css'
 import Link from 'next/link'
-import { Wrapper } from 'styles/@styled-component/layout'
+import { HeaderView, View } from 'scss/layout'
 import { ThemeProvider } from 'styled-components'
-import { Logo } from 'styles/@styled-component/widgets'
+import { Logo } from 'scss/widgets'
 import logoImg from 'public/images/logo.png'
 import DrawerIcon from 'public/icons/drawer-icon.svg'
 import Image from 'next/image'
 import { Drawer } from './Drawer'
 import { useRecoilState } from 'recoil'
-import { drawerState } from 'atoms/toggle'
+import { drawerAtom } from 'atoms/toggle'
 
 export default function Header() {
   const router = useRouter()
@@ -28,7 +28,7 @@ export default function Header() {
   }, [])
 
   // 메뉴 토글
-  const [isDrawer, setIsDrawer] = useRecoilState(drawerState)
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
   const toggleActive = () => {
     setIsDrawer(!isDrawer)
   }
@@ -40,8 +40,8 @@ export default function Header() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Wrapper height="70px" m_height="58px">
-          <header className={isFixed && styles.header_active}>
+        <View height="70px" m_height="58px">
+          <HeaderView>
             <h1 aria-hidden="true" className={styles.title_hidden}>
               딥팩토리
             </h1>
@@ -57,8 +57,8 @@ export default function Header() {
                 <DrawerIcon />
               </button>
             </nav>
-          </header>
-        </Wrapper>
+          </HeaderView>
+        </View>
       </ThemeProvider>
 
       <Drawer />

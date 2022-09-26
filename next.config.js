@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['imagedelivery.net'],
+  },
 
   webpack(config) {
     config.module.rules.push({

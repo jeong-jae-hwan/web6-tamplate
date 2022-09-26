@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 // 공통 레이아웃
-export const Wrapper = styled.div`
-  transition: 0.3s ease-in-out;
+export const View = styled.div`
   width: 100%;
-  height: 100%;
-  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ flexStart }) => (flexStart ? 'flex-start' : 'column')};
   align-items: center;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
@@ -16,6 +13,7 @@ export const Wrapper = styled.div`
   padding-bottom: ${({ pB }) => pB};
   padding-right: ${({ pLR }) => pLR};
   padding-left: ${({ pLR }) => pLR};
+  transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     height: ${({ m_height }) => m_height};
@@ -23,64 +21,62 @@ export const Wrapper = styled.div`
     padding-bottom: ${({ m_pB }) => m_pB};
     padding-right: ${({ m_pLR }) => m_pLR};
     padding-left: ${({ m_pLR }) => m_pLR};
-    column-gap: ${({ gap }) => gap};
+    row-gap: ${({ m_gap }) => m_gap};
   }
 `
 
-export const WrapperRow = styled(Wrapper)`
+export const RowView = styled(View)`
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
-  column-gap: ${({ yGap }) => yGap};
-  row-gap: ${({ xGap }) => xGap};
-  margin-top: ${({ mT }) => mT};
+  column-gap: ${({ gap }) => gap};
+  transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    margin-top: ${({ m_mT }) => m_mT};
+    height: ${({ mHeight }) => mHeight};
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: ${({ mPaddingT }) => mPaddingT};
+    padding-bottom: ${({ mPaddingB }) => mPaddingB};
+    column-gap: ${({ m_gap }) => m_gap};
   }
 `
 
 // 공통 팝업 레이어
-export const LayerPopup = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+export const LayerBlur = styled.div`
+  z-index: 1000;
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1000;
 `
 
-// 햄버거 메뉴 박스
-export const DrawerBox = styled.div`
-  width: 100%;
-  max-width: 340px;
-  height: 100vh;
+export const HeaderView = styled.header`
   position: fixed;
   top: 0;
-  right: ${({ isOpen }) => (isOpen ? 0 : '-100%')};
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
-  padding: 80px 15px 30px;
-  margin-left: 30px;
+  border-bottom: 1px solid #e2e2e2;
   transition: 0.3s ease-in-out;
-  overflow: auto;
-  z-index: 1001;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media only screen and (max-width: 600px) {
-    max-width: 320px;
-    padding: 64px 10px 30px;
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    height: 58px;
   }
 `

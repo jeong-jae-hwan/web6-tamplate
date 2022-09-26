@@ -3,14 +3,15 @@ import styles from './@drawer.module.css'
 import React from 'react'
 import { useEffect } from 'react'
 import { useRef } from 'react'
-import { DrawerBox } from 'styles/@styled-component/layout'
+import { LayerBlur } from 'scss/layout'
 import HrefIcon from 'public/icons/href-icon.svg'
 import XbtnIcon from 'public/icons/xBtn-icon.svg'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { drawerState } from 'atoms/toggle'
+import { drawerAtom } from 'atoms/toggle'
+import { DrawerBox } from 'scss/widgets'
 
 export function Drawer() {
-  const [isDrawer, setIsDrawer] = useRecoilState(drawerState)
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
 
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()
@@ -20,17 +21,13 @@ export function Drawer() {
     }
   }
 
-  console.log(isDrawer)
-
   useEffect(() => {
     ref.current?.scrollTo(0, 0)
 
     if (isDrawer) {
       document.body.style.overflowY = 'hidden'
-      document.body.style.position = 'fixed'
     } else {
       document.body.style.overflowY = 'auto'
-      document.body.style.position = 'relative'
     }
 
     document.addEventListener('mousedown', clickModalOutside)
@@ -40,7 +37,7 @@ export function Drawer() {
   }, [isDrawer])
 
   const menuList = [
-    { name: '포트폴리오', a: '/' },
+    { name: '포트폴리오', a: '/ss' },
     { name: '서비스 소개', a: '/' },
     { name: '템플릿 구매', a: '/' },
     { name: '자주 묻는 질문', a: '/' },
@@ -49,7 +46,8 @@ export function Drawer() {
   ]
 
   return (
-    <div className={isDrawer && styles.drawer_layer}>
+    <>
+      <LayerBlur isOpen={isDrawer} />
       <DrawerBox isOpen={isDrawer} ref={ref}>
         <button className={styles.toggleTab} onClick={() => setIsDrawer(false)}>
           <XbtnIcon />
@@ -74,6 +72,6 @@ export function Drawer() {
           })}
         </ul>
       </DrawerBox>
-    </div>
+    </>
   )
 }
