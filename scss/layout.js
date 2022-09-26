@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 // 공통 레이아웃
 export const View = styled.div`
+  position: relative;
   width: 100%;
+  max-width: ${({ maxWidth }) => maxWidth};
+  height: ${({ height }) => height};
   display: flex;
   flex-direction: ${({ flexStart }) => (flexStart ? 'flex-start' : 'column')};
   align-items: center;
-  max-width: ${({ maxWidth }) => maxWidth};
-  height: ${({ height }) => height};
   row-gap: ${({ gap }) => gap};
   padding-top: ${({ pT }) => pT};
   padding-bottom: ${({ pB }) => pB};
@@ -26,11 +27,12 @@ export const View = styled.div`
 `
 
 export const RowView = styled(View)`
-  width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: row;
+  width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
   height: ${({ height }) => height};
   column-gap: ${({ gap }) => gap};
   transition: 0.3s ease-in-out;
@@ -47,6 +49,8 @@ export const RowView = styled(View)`
 
 // 공통 팝업 레이어
 export const LayerBlur = styled.div`
+  width: 100vw;
+  height: 100vh;
   z-index: 1000;
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
@@ -54,8 +58,6 @@ export const LayerBlur = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.2);
