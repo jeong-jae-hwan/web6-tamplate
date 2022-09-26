@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import styles from './@header.module.css'
 import Link from 'next/link'
-import { HeaderView, View } from 'scss/layout'
+import { HeaderView, View } from 'scss/layout-view'
 import { ThemeProvider } from 'styled-components'
 import { Logo } from 'scss/widgets'
 import logoImg from 'public/images/logo.png'
@@ -33,6 +33,26 @@ export default function Header() {
     setIsDrawer(!isDrawer)
   }
 
+  // 미디어 쿼리
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const mediaQuery = () => {
+      if (window.innerWidth <= 800) {
+        setIsMobile(true)
+      } else {
+        setIsMobile(false)
+      }
+    }
+
+    window.addEventListener('resize', mediaQuery)
+
+    return () => {
+      window.removeEventListener('resize', mediaQuery)
+      mediaQuery()
+    }
+  }, [isMobile])
+
+  //styles - theme
   const theme = {
     mobile: '800px',
   }
@@ -54,7 +74,7 @@ export default function Header() {
               </Link>
 
               <button className={styles.drawer_tab} onClick={toggleActive}>
-                <DrawerIcon />
+                <DrawerIcon width={isMobile ? '22px' : '27px'} />
               </button>
             </nav>
           </HeaderView>

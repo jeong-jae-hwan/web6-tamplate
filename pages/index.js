@@ -1,6 +1,6 @@
 import SEO from 'public/SEO'
 import React from 'react'
-import { View } from 'scss/layout'
+import { View } from 'scss/layout-view'
 import { Button } from 'scss/widgets'
 import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
