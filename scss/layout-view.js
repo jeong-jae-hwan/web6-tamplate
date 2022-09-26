@@ -78,6 +78,16 @@ export const HeaderView = styled.header`
   border-bottom: 1px solid #e2e2e2;
   transition: 0.3s ease-in-out;
 
+  h1 {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+  }
+
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     height: ${({ m_height }) => m_height};
   }
