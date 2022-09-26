@@ -79,6 +79,6 @@ export const HeaderView = styled.header`
   transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: 58px;
+    height: ${({ m_height }) => m_height};
   }
 `

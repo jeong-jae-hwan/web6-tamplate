@@ -41,7 +41,7 @@ export default function Header() {
     <>
       <ThemeProvider theme={theme}>
         <View height="70px" m_height="58px">
-          <HeaderView>
+          <HeaderView m_height="58px">
             <h1 aria-hidden="true" className={styles.title_hidden}>
               딥팩토리
             </h1>
