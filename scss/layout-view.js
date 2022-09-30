@@ -1,5 +1,36 @@
 import styled from 'styled-components'
 
+// 헤더 뷰
+export const HeaderView = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e2e2;
+  transition: 0.3s ease-in-out;
+
+  h1 {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    height: ${({ m_height }) => m_height};
+  }
+`
+
 // 공통 레이아웃
 export const View = styled.div`
   position: relative;
@@ -7,8 +38,8 @@ export const View = styled.div`
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
   display: flex;
-  flex-direction: ${({ flexStart }) => (flexStart ? 'flex-start' : 'column')};
-  align-items: center;
+  flex-direction: column;
+  align-items: ${({ flexStart }) => (flexStart ? 'flex-start' : 'center')};
   row-gap: ${({ gap }) => gap};
   padding-top: ${({ pT }) => pT};
   padding-bottom: ${({ pB }) => pB};
@@ -38,12 +69,14 @@ export const RowView = styled(View)`
   transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+    align-items: center;
     height: ${({ mHeight }) => mHeight};
     padding-right: 20px;
     padding-left: 20px;
     padding-top: ${({ mPaddingT }) => mPaddingT};
     padding-bottom: ${({ mPaddingB }) => mPaddingB};
-    column-gap: ${({ m_gap }) => m_gap};
+    row-gap: ${({ m_gap }) => m_gap};
   }
 `
 
@@ -61,34 +94,4 @@ export const LayerBlur = styled.div`
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.2);
-`
-
-export const HeaderView = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid #e2e2e2;
-  transition: 0.3s ease-in-out;
-
-  h1 {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    position: absolute;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-  }
-
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: ${({ m_height }) => m_height};
-  }
 `

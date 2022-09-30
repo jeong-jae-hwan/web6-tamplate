@@ -16,9 +16,9 @@ export const Logo = styled.a`
 export const ImgBox = styled.div`
   position: relative;
   width: ${({ width }) => (width ? width : '100%')};
+  height: ${({ height }) => height};
   max-width: ${({ maxWidth }) => maxWidth};
   min-width: ${({ minWidth }) => minWidth};
-  height: ${({ height }) => height};
   border-radius: ${({ borderR }) => borderR};
   display: flex;
   align-items: center;
@@ -40,6 +40,30 @@ export const ImgBox = styled.div`
     margin-top: ${({ m_mT }) => m_mT};
     margin-bottom: ${({ m_mB }) => m_mB};
     scale: ${({ scale }) => scale};
+  }
+`
+
+// 이미지 picture박스
+export const Picture = styled.picture`
+  width: ${({ width }) => (width ? width : '100%')};
+  height: ${({ height }) => height};
+  max-width: ${({ maxWidth }) => maxWidth};
+  min-width: ${({ minWidth }) => minWidth};
+  border-radius: ${({ borderR }) => borderR};
+  aspect-ratio: ${({ aspect }) => (aspect ? aspect : '16 / 9')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  margin-top: ${({ mT }) => mT};
+  margin-bottom: ${({ pB }) => pB};
+
+  img {
+    aspect-ratio: ${({ aspect }) => (aspect ? aspect : '16 / 9')};
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: ${({ objectFit }) => objectFit};
+    border-radius: ${({ borderR }) => borderR};
   }
 `
 
