@@ -28,7 +28,8 @@ export const ImgBox = styled.div`
     width: 100% !important;
     height: 100% !important;
     //
-    border-radius: 100%;
+    border-radius: ${({ borderRadius }) => borderRadius};
+    //
     object-fit: ${({ objectFit }) => objectFit};
   }
 
