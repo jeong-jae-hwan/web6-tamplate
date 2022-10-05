@@ -26,6 +26,7 @@ export const Picture = styled.picture`
 
   img {
     width: 100% !important;
+    height: ${({ height }) => height};
     //
     aspect-ratio: ${({ aspect }) => aspect};
     //
@@ -45,5 +46,9 @@ export const Picture = styled.picture`
     //
     margin-top: ${({ m_marginT }) => m_marginT};
     margin-bottom: ${({ m_marginB }) => m_marginB};
+
+    img {
+      height: ${({ m_height }) => m_height};
+    }
   }
 `
