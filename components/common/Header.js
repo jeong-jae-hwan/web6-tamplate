@@ -1,17 +1,27 @@
-import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import styles from './@header.module.css'
 import Link from 'next/link'
-import { HeaderView, View } from 'scss/layout-view'
-import { ThemeProvider } from 'styled-components'
-import { Logo } from 'scss/widgets'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+
+//components
+import { Drawer } from './Drawer'
+
+//png,svg
 import logoImg from 'public/images/logo.png'
 import DrawerIcon from 'public/icons/drawer-icon.svg'
-import Image from 'next/image'
-import { Drawer } from './Drawer'
+
+//atoms
+import styles from './@header.module.css'
 import { useRecoilState } from 'recoil'
 import { drawerAtom } from 'atoms/toggle'
 
+//styles
+import { ThemeProvider } from 'styled-components'
+import { HeaderView } from 'scss/layout-styled/HeaderView'
+import { Logo } from 'scss/image-styled/Logo'
+import { View } from 'scss/layout-styled/View'
+
+//
 export default function Header() {
   const router = useRouter()
   // 헤더 고정
@@ -33,25 +43,6 @@ export default function Header() {
     setIsDrawer(!isDrawer)
   }
 
-  // 미디어 쿼리
-  const [isMobile, setIsMobile] = useState(false)
-  useEffect(() => {
-    const mediaQuery = () => {
-      if (window.innerWidth <= 800) {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
-    }
-
-    window.addEventListener('resize', mediaQuery)
-
-    return () => {
-      window.removeEventListener('resize', mediaQuery)
-      mediaQuery()
-    }
-  }, [isMobile])
-
   //styles - theme
   const theme = {
     mobile: '800px',
@@ -72,7 +63,7 @@ export default function Header() {
               </Link>
 
               <button className={styles.drawer_tab} onClick={toggleActive}>
-                <DrawerIcon width={isMobile ? '22px' : '27px'} />
+                <DrawerIcon width="26px" />
               </button>
             </nav>
           </HeaderView>

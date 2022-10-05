@@ -1,15 +1,23 @@
-import Link from 'next/link'
-import styles from './@drawer.module.css'
 import React from 'react'
 import { useEffect } from 'react'
 import { useRef } from 'react'
-import { LayerBlur } from 'scss/layout-view'
-import HrefIcon from 'public/icons/href-icon.svg'
-import XbtnIcon from 'public/icons/xBtn-icon.svg'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { drawerAtom } from 'atoms/toggle'
-import { DrawerBox } from 'scss/widgets'
+import Link from 'next/link'
 
+//atoms
+import { useRecoilState } from 'recoil'
+import { drawerAtom } from 'atoms/toggle'
+
+//styles
+import styles from './@drawer.module.css'
+import { DrawerBox } from 'scss/modal-styled/DrawerBox'
+import { TabBox } from 'scss/tab-styled/TabBox'
+import { LayerBlur } from 'scss/layout-styled/LayerBlur'
+
+//svg
+import HrefIcon from 'public/icons/href-icon.svg'
+import XTabIcon from 'public/icons/x-tab-icon.svg'
+
+//
 export function Drawer() {
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
 
@@ -49,9 +57,14 @@ export function Drawer() {
     <>
       <LayerBlur isOpen={isDrawer} />
       <DrawerBox isOpen={isDrawer} ref={ref}>
-        <button className={styles.toggleTab} onClick={() => setIsDrawer(false)}>
-          <XbtnIcon />
-        </button>
+        <TabBox
+          position="absolute"
+          top="16px"
+          right="20px"
+          onClick={() => setIsDrawer(false)}
+        >
+          <XTabIcon width="25px" fill="#ccc" />
+        </TabBox>
 
         <ul>
           {menuList.map((item, i) => {

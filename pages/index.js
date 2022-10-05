@@ -1,10 +1,16 @@
-import SEO from 'public/SEO'
 import React from 'react'
-import { View } from 'scss/layout-view'
-import { Button } from 'scss/widgets'
+
+//components
+import SEO from 'public/SEO'
+
+//styles
 import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
+import { Picture } from 'scss/image-styled/Picture'
+import { Button } from 'scss/tab-styled/Button'
+import { View } from 'scss/layout-styled/View'
 
+//
 export default function Index() {
   const theme = {
     mobile: '800px',
@@ -17,12 +23,18 @@ export default function Index() {
         <section>
           <View
             maxWidth="1080px"
-            pT="50px"
-            pB="100px"
-            m_pT="20px"
-            pLR="20px"
+            paddingT="50px"
+            paddingB="100px"
+            paddingLR="20px"
             gap="30px"
+            m_paddingT="20px"
           >
+            <Picture borderRadius="10px" aspect="16/11">
+              <img
+                src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
+                alt=""
+              />
+            </Picture>
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the
