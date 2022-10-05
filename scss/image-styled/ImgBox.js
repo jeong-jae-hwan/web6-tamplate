@@ -5,8 +5,8 @@ export const ImgBox = styled.div`
   position: relative;
   //
   width: ${({ width }) => (width ? width : '100%')};
-  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '100%')};
-  min-width: ${({ minWidth }) => (minWidth ? minWidth : '100%')};
+  max-width: ${({ maxWidth }) => maxWidth};
+  min-width: ${({ minWidth }) => minWidth};
   height: ${({ height }) => height};
   //
   border-radius: ${({ borderRadius }) => borderRadius};
