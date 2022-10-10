@@ -6,12 +6,11 @@ export const Button = styled.button`
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => (height ? height : '54px')};
   //
-  background-color: ${({ fill }) => (fill ? fill : '#333')};
-  color: ${({ color }) => (color ? color : '#fff')};
-  //
   border-radius: ${({ borderRadius }) =>
     borderRadius ? borderRadius : '100px'};
   //
+  background-color: ${({ fill }) => (fill ? fill : '#333')};
+  color: ${({ color }) => (color ? color : '#fff')};
   box-shadow: ${({ boxShadow }) => boxShadow && '0 3px 20px rgba(0,0,0,0.11)'};
   //
   font-size: ${({ fontSize }) => fontSize};
