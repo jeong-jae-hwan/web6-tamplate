@@ -17,6 +17,8 @@ export const ImgBox = styled.div`
   //
   margin-top: ${({ marginT }) => marginT};
   margin-bottom: ${({ marginB }) => marginB};
+  margin-right: ${({ marginR }) => marginR};
+  margin-left: ${({ marginL }) => marginL};
   //
 
   span {
@@ -42,5 +44,7 @@ export const ImgBox = styled.div`
     //
     margin-top: ${({ m_marginT }) => m_marginT};
     margin-bottom: ${({ m_marginB }) => m_marginB};
+    margin-right: ${({ m_marginR }) => m_marginR};
+    margin-left: ${({ m_marginL }) => m_marginL};
   }
 `

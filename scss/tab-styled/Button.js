@@ -6,6 +6,11 @@ export const Button = styled.button`
   max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => (height ? height : '54px')};
   //
+  margin-top: ${({ marginT }) => marginT};
+  margin-bottom: ${({ marginB }) => marginB};
+  margin-right: ${({ marginR }) => marginR};
+  margin-left: ${({ marginL }) => marginL};
+  //
   border-radius: ${({ borderRadius }) =>
     borderRadius ? borderRadius : '100px'};
   //
@@ -31,5 +36,10 @@ export const Button = styled.button`
   @media only screen and (max-width: 640px) {
     max-width: 100%;
     height: ${({ height }) => (height ? height : '50px')};
+    //
+    margin-top: ${({ m_marginT }) => m_marginT};
+    margin-bottom: ${({ m_marginB }) => m_marginB};
+    margin-right: ${({ m_marginR }) => m_marginR};
+    margin-left: ${({ m_marginL }) => m_marginL};
   } ;
 `

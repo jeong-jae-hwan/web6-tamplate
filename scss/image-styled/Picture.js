@@ -21,6 +21,8 @@ export const Picture = styled.picture`
   //
   margin-top: ${({ marginT }) => marginT};
   margin-bottom: ${({ marginB }) => marginB};
+  margin-right: ${({ marginR }) => marginR};
+  margin-left: ${({ marginL }) => marginL};
   //
   transition: 0.3s ease-in-out;
 
@@ -46,6 +48,8 @@ export const Picture = styled.picture`
     //
     margin-top: ${({ m_marginT }) => m_marginT};
     margin-bottom: ${({ m_marginB }) => m_marginB};
+    margin-right: ${({ m_marginR }) => m_marginR};
+    margin-left: ${({ m_marginL }) => m_marginL};
 
     img {
       height: ${({ m_height }) => m_height};

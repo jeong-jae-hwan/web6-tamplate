@@ -19,6 +19,11 @@ export const View = styled.div`
   padding-right: ${({ paddingLR }) => paddingLR};
   padding-left: ${({ paddingLR }) => paddingLR};
   //
+  margin-top: ${({ marginT }) => marginT};
+  margin-bottom: ${({ marginB }) => marginB};
+  margin-right: ${({ marginR }) => marginR};
+  margin-left: ${({ marginL }) => marginL};
+  //
   transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
@@ -28,6 +33,11 @@ export const View = styled.div`
     padding-bottom: ${({ m_paddingB }) => m_paddingB};
     padding-right: ${({ m_paddingLR }) => m_paddingLR};
     padding-left: ${({ m_paddingLR }) => m_paddingLR};
+    //
+    margin-top: ${({ m_marginT }) => m_marginT};
+    margin-bottom: ${({ m_marginB }) => m_marginB};
+    margin-right: ${({ m_marginR }) => m_marginR};
+    margin-left: ${({ m_marginL }) => m_marginL};
     //
     row-gap: ${({ m_gap }) => m_gap};
   }
