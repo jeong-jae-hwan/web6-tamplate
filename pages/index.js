@@ -6,9 +6,11 @@ import SEO from 'public/SEO'
 //styles
 import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
-import { Picture } from 'scss/image-styled/Picture'
-import { Button } from 'scss/tab-styled/Button'
 import { View } from 'scss/layout-styled/View'
+
+//custom-style
+import Button from 'custom/tabs/Button'
+import Picture from 'custom/imgs/Picture'
 
 //
 export default function Index() {
@@ -29,12 +31,13 @@ export default function Index() {
             gap="30px"
             m_paddingT="20px"
           >
-            <Picture borderRadius="10px" aspect="16/11">
-              <img
-                src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
-                alt=""
-              />
-            </Picture>
+            <Picture
+              src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
+              alt=""
+              borderRadius="10px"
+              aspect="16/11"
+            />
+
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the
@@ -86,7 +89,9 @@ export default function Index() {
               from repetition, injected humour, or non-characteristic words etc.
             </div>
 
-            <Button boxShadow>버튼</Button>
+            <Button width="100%" onClick={() => alert('ss')}>
+              버튼
+            </Button>
           </View>
         </section>
       </ThemeProvider>

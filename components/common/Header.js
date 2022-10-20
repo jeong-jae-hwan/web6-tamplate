@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 //components
 import { Drawer } from './Drawer'
+
+//custom-style
+import ImgBox from 'custom/imgs/ImgBox'
 
 //png,svg
 import logoImg from 'public/images/logo.png'
@@ -20,6 +22,7 @@ import { ThemeProvider } from 'styled-components'
 import { HeaderView } from 'scss/layout-styled/HeaderView'
 import { Logo } from 'scss/image-styled/Logo'
 import { View } from 'scss/layout-styled/View'
+import DrawerTab from 'custom/tabs/DrawerTab'
 
 //
 export default function Header() {
@@ -45,7 +48,7 @@ export default function Header() {
 
   //styles - theme
   const theme = {
-    mobile: '800px',
+    mobile: '768px',
   }
 
   return (
@@ -57,14 +60,18 @@ export default function Header() {
 
             <nav className={styles.nav_bar}>
               <Link href="/">
-                <Logo width="32px" mWidth="29px">
-                  <Image src={logoImg} alt="딥팩토리" priority={true} />
-                </Logo>
+                <a>
+                  <ImgBox
+                    src={logoImg}
+                    alt="딥팩토리"
+                    width="32px"
+                    m_width="29px"
+                    priority={true}
+                  />
+                </a>
               </Link>
 
-              <button className={styles.drawer_tab} onClick={toggleActive}>
-                <DrawerIcon width="26px" />
-              </button>
+              <DrawerTab width="26px" m_width="24px" onClick={toggleActive} />
             </nav>
           </HeaderView>
         </View>
