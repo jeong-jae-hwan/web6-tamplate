@@ -7,10 +7,12 @@ export const InputLine = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: ${({ gap }) => (gap ? gap : '14px')};
+  column-gap: ${({ gap }) => (gap ? gap : '12px')};
   //
-  margin-top: ${({ marginT }) => marginT};
-  margin-bottom: ${({ marginB }) => marginB};
+  padding: 10px 0 8px;
+  //
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
   //
   border-bottom: 1px solid #e5e5e5;
 
@@ -18,6 +20,12 @@ export const InputLine = styled.div`
   input {
     width: 100%;
     font-size: 0.938rem;
-    padding: 10px 0;
+  }
+
+  //
+  textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 0.938rem;
   }
 `

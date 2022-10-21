@@ -6,7 +6,7 @@ export const DrawerBox = styled.div`
   //
   position: fixed;
   top: 0;
-  right: ${({ isOpen }) => (isOpen ? 0 : '-100%')};
+  right: ${({ isActive }) => (isActive ? 0 : '-100%')};
   //
   width: 100%;
   max-width: 400px;
@@ -17,7 +17,7 @@ export const DrawerBox = styled.div`
   background-color: ${({ fill }) => (fill ? fill : '#fff')};
   //
   overflow: auto;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &::-webkit-scrollbar {
     display: none;

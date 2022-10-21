@@ -4,10 +4,10 @@ export const Label = styled.label`
   width: 100%;
   //
   font-size: 13px;
-  color: #555;
+  color: #666;
   //
-  margin-top: ${({ marginT }) => marginT};
-  margin-bottom: ${({ marginB }) => marginB};
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
 
   span {
     font-size: 12px;

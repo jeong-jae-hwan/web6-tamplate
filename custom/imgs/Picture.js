@@ -75,6 +75,8 @@ export default function Picture(props) {
       //
       object-fit: ${objectFit};
       aspect-ratio: ${aspect};
+      //
+      user-select: none;
     }
 
     @media only screen and (max-width: ${({ theme }) => theme.mobile}) {

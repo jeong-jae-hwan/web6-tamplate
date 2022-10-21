@@ -10,8 +10,10 @@ import { drawerAtom } from 'atoms/toggle'
 //styles
 import styles from './@drawer.module.css'
 import { DrawerBox } from 'scss/modal-styled/DrawerBox'
-import { TabBox } from 'scss/tab-styled/TabBox'
 import { LayerBlur } from 'scss/layout-styled/LayerBlur'
+
+//custom_styles
+import IconTab from 'custom/tabs/IconTab'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
@@ -45,7 +47,7 @@ export function Drawer() {
   }, [isDrawer])
 
   const menuList = [
-    { name: '포트폴리오', a: '/ss' },
+    { name: '가입하기', a: '/join' },
     { name: '서비스 소개', a: '/' },
     { name: '템플릿 구매', a: '/' },
     { name: '자주 묻는 질문', a: '/' },
@@ -55,16 +57,16 @@ export function Drawer() {
 
   return (
     <>
-      <LayerBlur isOpen={isDrawer} />
-      <DrawerBox isOpen={isDrawer} ref={ref}>
-        <TabBox
+      <LayerBlur isActive={isDrawer} />
+      <DrawerBox isActive={isDrawer} ref={ref}>
+        <IconTab
           position="absolute"
           top="16px"
           right="20px"
           onClick={() => setIsDrawer(false)}
         >
-          <XTabIcon width="25px" fill="#ccc" />
-        </TabBox>
+          <XTabIcon fill="#ccc" />
+        </IconTab>
 
         <ul>
           {menuList.map((item, i) => {

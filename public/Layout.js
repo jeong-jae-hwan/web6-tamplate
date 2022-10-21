@@ -2,7 +2,7 @@ import Footer from '@/components/common/Footer'
 import Header from '@/components/common/Header'
 import { useRouter } from 'next/router'
 import React from 'react'
-import ScrollTopTab from 'widgets/ScrollTopTab'
+import ScrollTopTab from 'custom/tabs/ScrollTopTab'
 
 function Layout({ children }) {
   const router = useRouter()

@@ -20,7 +20,6 @@ import { drawerAtom } from 'atoms/toggle'
 //styles
 import { ThemeProvider } from 'styled-components'
 import { HeaderView } from 'scss/layout-styled/HeaderView'
-import { Logo } from 'scss/image-styled/Logo'
 import { View } from 'scss/layout-styled/View'
 import DrawerTab from 'custom/tabs/DrawerTab'
 
@@ -77,6 +76,7 @@ export default function Header() {
         </View>
       </ThemeProvider>
 
+      {/* 드로어 메뉴 */}
       <Drawer />
     </>
   )

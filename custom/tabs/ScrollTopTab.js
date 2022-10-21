@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
+//svg
 import UpIcon from 'public/icons/scroll-up-icon.svg'
+//styles
 import styled from 'styled-components'
+//atom
+import { useRecoilValue } from 'recoil'
+import { modalStateAtom } from 'atoms/toggle'
 
-function ScrollTopTab() {
+//
+export default function ScrollTopTab() {
   const [ScrollY, setScrollY] = useState(0)
   const [BtnStatus, setBtnStatus] = useState(false) // 버튼 상태
+  const modalActive = useRecoilValue(modalStateAtom)
 
   const handleFollow = () => {
     setScrollY(window.pageYOffset)
-    if (ScrollY > 40) {
+    if (ScrollY > 100) {
       // 100 이상이면 버튼이 보이게
       setBtnStatus(true)
     } else {
@@ -52,12 +59,13 @@ function ScrollTopTab() {
     font-weight: 500;
     cursor: pointer;
     z-index: 9999;
+    user-select: none;
     transition: 0.3s ease-in-out;
   `
 
   return (
     <>
-      {ScrollY > 30 && (
+      {ScrollY > 100 && !modalActive && (
         <PositionTopTab onClick={handleTop}>
           <UpIcon />
         </PositionTopTab>
@@ -65,5 +73,3 @@ function ScrollTopTab() {
     </>
   )
 }
-
-export default ScrollTopTab

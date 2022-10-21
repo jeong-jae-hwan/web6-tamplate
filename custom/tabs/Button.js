@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
+//
 export default function Button(props) {
   const {
     children,
+    ref,
     type,
     disabled,
     variant,
@@ -84,8 +86,9 @@ export default function Button(props) {
     box-shadow: ${boxShadow && '0 3px 20px rgba(0,0,0,0.11)'};
     //
     background-color: ${fill ? fill : '#333'};
-    color: #f0f0f0;
+    color: ${color ? color : '#f0f0f0'};
     //
+    user-select: none;
     transition: 0.3s ease-in-out;
 
     //
@@ -96,6 +99,10 @@ export default function Button(props) {
     &:disabled {
       cursor: auto;
       color: #a0a0a0;
+      background-color: #e0e0e0;
+    }
+
+    &:focus {
       background-color: #e0e0e0;
     }
 
@@ -141,16 +148,25 @@ export default function Button(props) {
       background-color: transparent;
       border: 1px solid ${storke ? storke : '#ccc'};
     }
+
+    &:focus {
+      border: 1px solid ${storke ? storke : '#ccc'};
+    }
   `
 
   return (
     <>
       {variant === 'stroke' ? (
-        <ButtonStroke disabled={disabled} type={type} onClick={onClick}>
+        <ButtonStroke
+          disabled={disabled}
+          type={type}
+          onClick={onClick}
+          ref={ref}
+        >
           {children}
         </ButtonStroke>
       ) : (
-        <Button type={type} disabled={disabled} onClick={onClick}>
+        <Button type={type} disabled={disabled} onClick={onClick} ref={ref}>
           {children}
         </Button>
       )}

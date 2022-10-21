@@ -7,7 +7,7 @@ export const OverlapTab = styled.button`
   //
   padding: 3px 8px;
   //
-  background-color: ${({ isActive }) => (isActive ? '#e2e2e2' : '#3b425c')};
+  background-color: ${({ isActive }) => (isActive ? '#e2e2e2' : '#333')};
   color: ${({ isActive }) => (isActive ? '#797979' : '#fff')};
   //
   border-radius: 100px;

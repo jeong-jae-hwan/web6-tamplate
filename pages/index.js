@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //components
 import SEO from 'public/SEO'
 
 //styles
-import { ThemeProvider } from 'styled-components'
 import styles from 'styles/home.module.css'
+import { ThemeProvider } from 'styled-components'
 import { View } from 'scss/layout-styled/View'
 
 //custom-style
 import Button from 'custom/tabs/Button'
 import Picture from 'custom/imgs/Picture'
+import AlartDialog from 'custom/modals/AlartDialog'
+import ModalSheet from 'custom/modals/ModalSheet'
+import AlartSnackbar from 'custom/modals/AlartSnackbar'
+import { useRecoilState } from 'recoil'
+import { modalStateAtom } from 'atoms/toggle'
 
 //
 export default function Index() {
   const theme = {
-    mobile: '800px',
+    mobile: '600px',
   }
+
+  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
+  const [isDialog, setIsDialog] = useState(false)
+  const [isSheet, setIsSheet] = useState(false)
+  const [isSnack, setIsSnack] = useState(false)
 
   return (
     <>
@@ -24,12 +34,11 @@ export default function Index() {
       <ThemeProvider theme={theme}>
         <section>
           <View
-            maxWidth="1080px"
-            paddingT="50px"
-            paddingB="100px"
+            maxWidth="600px"
+            paddingTop="50px"
+            paddingBottom="80px"
             paddingLR="20px"
             gap="30px"
-            m_paddingT="20px"
           >
             <Picture
               src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
@@ -62,36 +71,76 @@ export default function Index() {
               Lorem Ipsum is not simply random text. It has roots in a piece of
               classical Latin literature from 45 BC, making it over 2000 years
               old. Richard McClintock, a Latin professor at Hampden-Sydney
-              College in Virginia, looked up one of the more obscure Latin
-              words, consectetur, from a Lorem Ipsum passage, and going through
-              the cites of the word in classical literature, discovered the
-              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-              1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and
-              Evil) by Cicero, written in 45 BC. This book is a treatise on the
-              theory of ethics, very popular during the Renaissance. The first
-              line of Lorem Ipsum Lorem ipsum dolor sit amet comes from a line
-              in section 1.10.32. The standard chunk of Lorem Ipsum used since
-              the 1500s is reproduced below for those interested. Sections
-              1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero
-              are also reproduced in their exact original form, accompanied by
-              English versions from the 1914 translation by H. Rackham. Where
-              can I get some? There are many variations of passages of Lorem
-              Ipsum available, but the majority have suffered alteration in some
-              form, by injected humour, or randomised words which dont look even
-              slightly believable. If you are going to use a passage of Lorem
-              Ipsum, you need to be sure there isnt anything embarrassing hidden
-              in the middle of text. All the Lorem Ipsum generators on the
-              Internet tend to repeat predefined chunks as necessary, making
-              this the first true generator on the Internet. It uses a
-              dictionary of over 200 Latin words, combined with a handful of
-              model sentence structures, to generate Lorem Ipsum which looks
-              reasonable. The generated Lorem Ipsum is therefore always free
-              from repetition, injected humour, or non-characteristic words etc.
+            </div>
+            <div className={styles.tabbox}>
+              <Button
+                width="100%"
+                onClick={() => {
+                  setIsDialog(!isDialog)
+                  setIsModalActive(true)
+                }}
+              >
+                dialog
+              </Button>
+
+              <Button
+                variant="stroke"
+                width="100%"
+                onClick={() => {
+                  setIsSheet(!isSheet)
+                  setIsModalActive(true)
+                }}
+              >
+                modalSheet
+              </Button>
+
+              <Button
+                variant="stroke"
+                width="100%"
+                onClick={() => {
+                  setIsSnack(!isSnack)
+                  setIsModalActive(true)
+                }}
+              >
+                snackbar
+              </Button>
             </div>
 
-            <Button width="100%" onClick={() => alert('ss')}>
-              버튼
-            </Button>
+            <AlartDialog
+              isActive={isDialog}
+              isCancel={() => {
+                setIsDialog(!isDialog)
+                setIsModalActive(false)
+              }}
+              isSubmit={() => {
+                setIsDialog(!isDialog)
+                setIsModalActive(false)
+              }}
+              title="타이틀입니다"
+              subTitle={
+                '안녕하세요 딥팩토리 입니다. \n 안녕하세요 딥팩토리 입니다.'
+              }
+            />
+
+            <ModalSheet
+              isActive={isSheet}
+              isCancel={() => {
+                setIsSheet(!isSheet)
+                setIsModalActive(false)
+              }}
+            >
+              <h1>타이틀</h1>
+            </ModalSheet>
+
+            <AlartSnackbar
+              isActive={isSnack}
+              isCancel={() => {
+                setIsSnack(!isSnack)
+                setIsModalActive(false)
+              }}
+            >
+              <p>비밀번호가 일치하지 않습니다</p>
+            </AlartSnackbar>
           </View>
         </section>
       </ThemeProvider>

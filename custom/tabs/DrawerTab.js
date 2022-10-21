@@ -1,6 +1,9 @@
 import styled from 'styled-components'
+
+//svg
 import DrawerIcon from 'public/icons/drawer-icon.svg'
 
+//
 export default function DrawerTab(props) {
   const { onClick, width, fill, m_width } = props
 
@@ -15,6 +18,7 @@ export default function DrawerTab(props) {
     justify-content: center;
     align-items: center;
     //
+    user-select: none;
     transition: 0.3s ease-in-out;
 
     @media only screen and (max-width: ${({ theme }) => theme.mobile}) {

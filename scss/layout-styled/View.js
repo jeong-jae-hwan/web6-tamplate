@@ -5,22 +5,24 @@ export const View = styled.div`
   position: relative;
   //
   width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '1200px')};
   //
   height: ${({ height }) => height};
+  min-height: ${({ minHeight }) => minHeight};
+  max-height: ${({ maxHeight }) => maxHeight};
   //
   display: flex;
   flex-direction: column;
   align-items: ${({ flexStart }) => (flexStart ? 'flex-start' : 'center')};
   row-gap: ${({ gap }) => gap};
   //
-  padding-top: ${({ paddingT }) => paddingT};
-  padding-bottom: ${({ paddingB }) => paddingB};
+  padding-top: ${({ paddingTop }) => paddingTop};
+  padding-bottom: ${({ paddingBottom }) => paddingBottom};
   padding-right: ${({ paddingLR }) => paddingLR};
   padding-left: ${({ paddingLR }) => paddingLR};
   //
-  margin-top: ${({ marginT }) => marginT};
-  margin-bottom: ${({ marginB }) => marginB};
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-right: ${({ marginR }) => marginR};
   margin-left: ${({ marginL }) => marginL};
   //
@@ -28,14 +30,16 @@ export const View = styled.div`
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     height: ${({ m_height }) => m_height};
+    min-height: ${({ m_minHeight }) => m_minHeight};
+    max-height: ${({ m_maxHeight }) => m_maxHeight};
     //
-    padding-top: ${({ m_paddingT }) => m_paddingT};
-    padding-bottom: ${({ m_paddingB }) => m_paddingB};
+    padding-top: ${({ m_paddingTop }) => m_paddingTop};
+    padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
     padding-right: ${({ m_paddingLR }) => m_paddingLR};
     padding-left: ${({ m_paddingLR }) => m_paddingLR};
     //
-    margin-top: ${({ m_marginT }) => m_marginT};
-    margin-bottom: ${({ m_marginB }) => m_marginB};
+    margin-top: ${({ m_marginTop }) => m_marginTop};
+    margin-bottom: ${({ m_marginBottom }) => m_marginBottom};
     margin-right: ${({ m_marginR }) => m_marginR};
     margin-left: ${({ m_marginL }) => m_marginL};
     //
@@ -60,9 +64,11 @@ export const RowView = styled(View)`
     row-gap: ${({ m_gap }) => m_gap};
     //
     height: ${({ m_height }) => m_height};
+    min-height: ${({ m_minHeight }) => m_minHeight};
+    max-height: ${({ m_maxHeight }) => m_maxHeight};
     //
-    padding-top: ${({ m_paddingT }) => m_paddingT};
-    padding-bottom: ${({ m_paddingB }) => m_paddingB};
+    padding-top: ${({ m_paddingTop }) => m_paddingTop};
+    padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
     padding-right: ${({ m_paddingLR }) => m_paddingLR};
     padding-left: ${({ m_paddingLR }) => m_paddingLR};
   }
