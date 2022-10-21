@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="current" height="current" viewBox="0 0 9 18">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 9 18">
   <path id="back-icon" d="M17.638,1.969l-7.7,6.71a1.182,1.182,0,0,1-1.6.02L.365,2.15A1.169,1.169,0,0,1,0,1.321,1.146,1.146,0,0,1,.35.5,1.168,1.168,0,0,1,1.159.169h.015a1.159,1.159,0,0,1,.78.291L9.1,6.283,16.022.309A1.2,1.2,0,0,1,17.64.321a1.143,1.143,0,0,1,.36.825,1.14,1.14,0,0,1-.362.823" transform="translate(9) rotate(90)" fill="current"/>
 </svg>

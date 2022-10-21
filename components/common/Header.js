@@ -69,7 +69,7 @@ export default function Header() {
                 </a>
               </Link>
 
-              <DrawerTab width='26px' m_width='24px' onClick={drawerActive} />
+              <DrawerTab width='28px' m_width='24px' onClick={drawerActive} />
             </nav>
           </HeaderView>
         </View>
