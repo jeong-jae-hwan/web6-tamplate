@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+
 //svg
 import UpIcon from 'public/icons/scroll-up-icon.svg'
+
 //styles
-import styled from 'styled-components'
+import { css } from '@emotion/react'
+
 //atom
 import { useRecoilValue } from 'recoil'
 import { modalStateAtom } from 'atoms/toggle'
@@ -43,32 +46,33 @@ export default function ScrollTopTab() {
     }
   })
 
-  const PositionTopTab = styled.button`
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    border-radius: 100px;
-    background-color: #fff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666;
-    font-weight: 500;
-    cursor: pointer;
-    z-index: 9999;
-    user-select: none;
-    transition: 0.3s ease-in-out;
-  `
-
   return (
     <>
       {ScrollY > 100 && !modalActive && (
-        <PositionTopTab onClick={handleTop}>
+        <button
+          onClick={handleTop}
+          css={`
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 100px;
+            background-color: #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-weight: 500;
+            cursor: pointer;
+            z-index: 9999;
+            user-select: none;
+            transition: 0.3s ease-in-out;
+          `}
+        >
           <UpIcon />
-        </PositionTopTab>
+        </button>
       )}
     </>
   )

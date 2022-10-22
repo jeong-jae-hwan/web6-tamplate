@@ -17,7 +17,7 @@ export const Dialog = styled.div`
   display: flex;
   flex-direction: column;
   //
-  padding: 25px 20px 20px;
+  padding: 28px 20px 20px;
   //
   background-color: #fff;
   border-radius: 14px;

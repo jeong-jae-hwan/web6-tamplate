@@ -8,14 +8,19 @@ import styles from 'styles/home.module.css'
 import { ThemeProvider } from 'styled-components'
 import { View } from 'scss/layout-styled/View'
 
+import img from 'public/images/1.png'
+
 //custom-style
 import Button from 'custom/tabs/Button'
-import Picture from 'custom/imgs/Picture'
 import AlartDialog from 'custom/modals/AlartDialog'
 import ModalSheet from 'custom/modals/ModalSheet'
 import AlartSnackbar from 'custom/modals/AlartSnackbar'
+import Picture from 'custom/imgs/Picture'
+
+//atoms
 import { useRecoilState } from 'recoil'
 import { modalStateAtom } from 'atoms/toggle'
+import ImgBox from 'custom/imgs/ImgBox'
 
 //
 export default function Index() {
@@ -45,6 +50,7 @@ export default function Index() {
               alt=""
               borderRadius="10px"
               aspect="16/11"
+              mediaMoblie="500px"
             />
 
             <div className={styles.wrapper}>
@@ -72,6 +78,7 @@ export default function Index() {
               classical Latin literature from 45 BC, making it over 2000 years
               old. Richard McClintock, a Latin professor at Hampden-Sydney
             </div>
+
             <div className={styles.tabbox}>
               <Button
                 width="100%"

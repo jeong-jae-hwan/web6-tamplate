@@ -6,15 +6,14 @@ import SEO from 'public/SEO'
 //styles
 import { ThemeProvider } from 'styled-components'
 import { View } from 'scss/layout-styled/View'
-
-//custom_styles
-import Checkbox from 'custom/inputs/Checkbox'
-import InputField from 'custom/inputs/InputField'
 import { InputLine } from 'scss/input-styled/InputLine'
 import { ErrorMsg } from 'scss/input-styled/ErrorMsg'
 import { Label } from 'scss/input-styled/Label'
 import { OverlapTab } from 'scss/input-styled/OverlapTab'
 import { InputBox } from 'scss/input-styled/InputBox'
+
+//custom_styles
+import Checkbox from 'custom/inputs/Checkbox'
 
 //
 export default function Join() {
@@ -27,8 +26,6 @@ export default function Join() {
   const [val1, setVal1] = useState('')
   const [val2, setVal2] = useState('')
 
-  console.log(val1, val2)
-
   return (
     <>
       <SEO title="회원가입" />
@@ -40,13 +37,15 @@ export default function Join() {
             paddingBottom="80px"
             paddingLR="20px"
           >
-            {/* <Checkbox
+            <Checkbox
               id="ss"
               checked={isCheck}
               onChange={() => setIsCheck(!isCheck)}
+              mediaMobile="768px"
+              m_fontSize="20px"
             >
               children
-            </Checkbox> */}
+            </Checkbox>
 
             <Label>sss</Label>
             <InputBox>

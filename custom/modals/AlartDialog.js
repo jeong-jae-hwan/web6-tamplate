@@ -2,15 +2,15 @@ import { useEffect, useRef } from 'react'
 
 //style
 import styled from 'styled-components'
-import { LayerBlur } from 'scss/layout-styled/LayerBlur'
 import { Dialog } from 'scss/modal-styled/Dialog'
 
 //custom_styles
-import IconTab from 'custom/tabs/IconTab'
 import Button from 'custom/tabs/Button'
+import IconTab from 'custom/tabs/IconTab'
 
 //svg
 import TabIcon from 'public/icons/x-tab-icon.svg'
+import { LayerBlur } from 'scss/layout-styled/LayerBlur'
 
 //
 export default function AlartDialog(props) {
@@ -38,40 +38,13 @@ export default function AlartDialog(props) {
   }, [isActive])
 
   //styles
-  const TitleBox = styled.div`
-    width: 100%;
-    //
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-    //
-    margin-bottom: 24px;
-
-    h3 {
-      font-size: 1.25rem;
-      white-space: pre-line;
-    }
-
-    p {
-      font-size: 0.938rem;
-      color: #797979;
-      white-space: pre-line;
-      line-height: 1.35;
-    }
-  `
 
   return (
     <>
       <LayerBlur isActive={isActive} />
       <Dialog isActive={isActive} ref={ref}>
-        <IconTab
-          position="absolute"
-          top="14px"
-          right="14px"
-          width="26px"
-          onClick={isCancel}
-        >
-          <TabIcon fill="#ddd" />
+        <IconTab onClick={isCancel} position="absolute" top="14px" right="14px">
+          <TabIcon width="25px" height="25px" fill="#ddd" />
         </IconTab>
 
         <TitleBox>
@@ -84,3 +57,25 @@ export default function AlartDialog(props) {
     </>
   )
 }
+
+const TitleBox = styled.div`
+  width: 100%;
+  //
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  //
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 1.25rem;
+    white-space: pre-line;
+  }
+
+  p {
+    font-size: 0.938rem;
+    color: #797979;
+    white-space: pre-line;
+    line-height: 1.35;
+  }
+`

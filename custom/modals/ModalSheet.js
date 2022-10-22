@@ -34,7 +34,7 @@ export default function ModalSheet(props) {
           width="26px"
           onClick={isCancel}
         >
-          <TabIcon fill="#ddd" />
+          <TabIcon fill="#ddd" width="25px" height="25px" />
         </IconTab>
         {children}
       </Sheet>

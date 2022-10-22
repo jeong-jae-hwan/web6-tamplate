@@ -24,7 +24,7 @@ export const Sheet = styled.div`
   border-radius: 18px 18px 0 0;
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
   //
-  transition: 0.35s ease-in-out;
+  transition: 0.25s ease-in-out;
   overflow-y: auto;
 
   &::-webkit-scrollbar {
