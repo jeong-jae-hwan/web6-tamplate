@@ -5,7 +5,7 @@ import SEO from 'public/SEO'
 
 //styles
 import styles from 'styles/home.module.css'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/react'
 import { View } from 'scss/layout-styled/View'
 
 //custom-style

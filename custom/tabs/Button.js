@@ -115,9 +115,11 @@ export default function Button(props) {
     }
 
     &:focus {
-      ${variant === 'stroke'
-        ? `1px solid ${hoverStroke ? hoverStroke : '#f0f0f0'}`
-        : `background-color: ${hoverFill ? hoverFill : '#232429'};`}
+      background-color: ${variant === 'stroke'
+        ? '#f0f0f0'
+        : `${hoverFill ? hoverFill : '#212229'}`};
+      border: ${variant === 'stroke' &&
+      `1px solid ${hoverStroke ? hoverStroke : '#f0f0f0'}`};
     }
 
     //
