@@ -16,6 +16,7 @@ export default function ScrollTopTab() {
   const [BtnStatus, setBtnStatus] = useState(false) // 버튼 상태
   const modalActive = useRecoilValue(modalStateAtom)
 
+  // 스크롤 수치 감지
   const handleFollow = () => {
     setScrollY(window.pageYOffset)
     if (ScrollY > 100) {
@@ -27,6 +28,7 @@ export default function ScrollTopTab() {
     }
   }
 
+  // 탭 위로 핸들러
   const handleTop = () => {
     window.scrollTo({
       top: 0,
@@ -46,31 +48,31 @@ export default function ScrollTopTab() {
     }
   })
 
+  // 스타일
+  const tabStyled = css`
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 9999;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+  `
+
   return (
     <>
       {ScrollY > 100 && !modalActive && (
-        <button
-          onClick={handleTop}
-          css={`
-            position: fixed;
-            bottom: 30px;
-            right: 20px;
-            width: 44px;
-            height: 44px;
-            border-radius: 100px;
-            background-color: #fff;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-weight: 500;
-            cursor: pointer;
-            z-index: 9999;
-            user-select: none;
-            transition: 0.3s ease-in-out;
-          `}
-        >
+        <button onClick={handleTop} css={tabStyled}>
           <UpIcon />
         </button>
       )}

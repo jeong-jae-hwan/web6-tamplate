@@ -6,7 +6,6 @@ import SEO from 'public/SEO'
 //styles
 import { ThemeProvider } from 'styled-components'
 import { View } from 'scss/layout-styled/View'
-import { InputLine } from 'scss/input-styled/InputLine'
 import { ErrorMsg } from 'scss/input-styled/ErrorMsg'
 import { Label } from 'scss/input-styled/Label'
 import { OverlapTab } from 'scss/input-styled/OverlapTab'

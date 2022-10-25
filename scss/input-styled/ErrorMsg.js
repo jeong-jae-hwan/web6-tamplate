@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 에러메시지
 export const ErrorMsg = styled.p`

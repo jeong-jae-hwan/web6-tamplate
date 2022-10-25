@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 공통 팝업 레이어
 export const LayerBlur = styled.div`

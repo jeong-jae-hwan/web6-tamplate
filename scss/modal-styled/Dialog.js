@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 모달 다이아로그
 export const Dialog = styled.div`

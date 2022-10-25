@@ -8,8 +8,6 @@ import styles from 'styles/home.module.css'
 import { ThemeProvider } from 'styled-components'
 import { View } from 'scss/layout-styled/View'
 
-import img from 'public/images/1.png'
-
 //custom-style
 import Button from 'custom/tabs/Button'
 import AlartDialog from 'custom/modals/AlartDialog'
@@ -20,7 +18,6 @@ import Picture from 'custom/imgs/Picture'
 //atoms
 import { useRecoilState } from 'recoil'
 import { modalStateAtom } from 'atoms/toggle'
-import ImgBox from 'custom/imgs/ImgBox'
 
 //
 export default function Index() {
@@ -49,8 +46,9 @@ export default function Index() {
               src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
               alt=""
               borderRadius="10px"
-              aspect="16/11"
-              mediaMoblie="500px"
+              aspect="16/10"
+              mediaMobile="500"
+              m_marginTop="16px"
             />
 
             <div className={styles.wrapper}>

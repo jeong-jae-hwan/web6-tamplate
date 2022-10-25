@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 공통 레이아웃
 export const View = styled.div`

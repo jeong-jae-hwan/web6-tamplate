@@ -17,10 +17,11 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, modalStateAtom } from 'atoms/toggle'
 
 //styles
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/react'
 import { HeaderView } from 'scss/layout-styled/HeaderView'
 import { View } from 'scss/layout-styled/View'
 import DrawerTab from 'custom/tabs/DrawerTab'
+import Image from 'next/image'
 
 //
 export default function Header() {

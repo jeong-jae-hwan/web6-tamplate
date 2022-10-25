@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 햄버거 메뉴 박스
 export const DrawerBox = styled.div`

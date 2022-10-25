@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 //중복확인
 export const OverlapTab = styled.button`

@@ -18,38 +18,33 @@ export default function IconTab(props) {
     m_height,
   } = props
 
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      ref={ref}
-      css={`
-        position: ${position};
-        top: ${top};
-        bottom: ${bottom};
-        left: ${left};
-        right: ${right};
-        //
-        width: ${width ? width : '25px'};
-        height: ${height};
-        //
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        //
-        rotate: ${isActive && '180deg'};
-        //
-        user-select: none;
-        transition: 0.3s ease-in-out;
+  const tabStyled = css`
+    position: ${position};
+    top: ${top};
+    bottom: ${bottom};
+    left: ${left};
+    right: ${right};
+    //
+    width: ${width ? width : '25px'};
+    height: ${height};
+    //
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //
+    rotate: ${isActive && '180deg'};
+    //
+    user-select: none;
+    transition: 0.3s ease-in-out;
 
-        @media only screen and (max-width: ${mediaMobile
-            ? mediaMobile
-            : '768px'}) {
-          width: ${m_width};
-          height: ${m_height};
-        }
-      `}
-    >
+    @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
+      width: ${m_width};
+      height: ${m_height};
+    }
+  `
+
+  return (
+    <button type="button" onClick={onClick} ref={ref} css={tabStyled}>
       {children}
     </button>
   )

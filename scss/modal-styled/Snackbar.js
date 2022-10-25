@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 모달 스넥바
 export const SnackbarWrap = styled.div`

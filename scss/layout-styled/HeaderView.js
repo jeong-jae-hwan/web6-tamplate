@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 헤더 뷰
 export const HeaderView = styled.header`

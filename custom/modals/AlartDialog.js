@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 //style
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Dialog } from 'scss/modal-styled/Dialog'
 
 //custom_styles

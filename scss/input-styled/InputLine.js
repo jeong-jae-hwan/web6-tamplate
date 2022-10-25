@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 // 라인 형태의 인풋 스타일
 export const InputLine = styled.div`

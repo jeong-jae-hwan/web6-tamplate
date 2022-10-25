@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
+    "@emotion/css": "^11.10.0",
     "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.3",
     "antd": "^4.22.6",
