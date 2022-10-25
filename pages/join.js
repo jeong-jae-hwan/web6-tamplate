@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import SEO from 'public/SEO'
 
 //styles
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/react'
 import { View } from 'scss/layout-styled/View'
 import { ErrorMsg } from 'scss/input-styled/ErrorMsg'
 import { Label } from 'scss/input-styled/Label'
@@ -41,7 +41,6 @@ export default function Join() {
               checked={isCheck}
               onChange={() => setIsCheck(!isCheck)}
               mediaMobile="768px"
-              m_fontSize="20px"
             >
               children
             </Checkbox>

@@ -68,6 +68,8 @@ export default function ImgBox(props) {
     margin-right: ${marginRight};
     //
     transition: 0.3s ease-in-out;
+
+    //
     span {
       width: 100%;
       height: 100%;

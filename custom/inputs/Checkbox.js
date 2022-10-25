@@ -7,6 +7,7 @@ export default function Checkbox(props) {
     mediaMobile,
     children,
     id,
+    width,
     checked,
     value,
     onChange,
@@ -30,7 +31,7 @@ export default function Checkbox(props) {
   } = props
 
   const checkStyled = css`
-    width: ${({ width }) => (width ? width : '100%')};
+    width: ${width ? width : '20px'};
     //
     display: flex;
     align-items: center;
@@ -45,7 +46,6 @@ export default function Checkbox(props) {
     //
     transition: 0.3s ease-in-out;
 
-    //
     input {
       width: ${size ? size : '20px'};
       height: ${size ? size : '20px'};
@@ -73,44 +73,42 @@ export default function Checkbox(props) {
       background-color: #333;
     }
 
-    label {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      //
-      font-size: ${fontSize ? fontSize : '0.938rem'};
-      font-weight: ${fontWeight};
-      color: ${color ? color : '#555'};
-      //
-      cursor: pointer;
-      user-select: none;
-      transition: 0.3s ease-in-out;
-    }
-
     @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
       margin-top: ${m_marginTop};
       margin-bottom: ${m_marginBottom};
       margin-left: ${m_marginLeft};
       margin-right: ${m_marginRight};
+    }
 
-      //
-      input {
-        width: ${m_size ? m_size : '18px'};
-        height: ${m_size ? m_size : '18px'};
-        min-width: ${m_size ? m_size : '18px'};
-        min-height: ${m_size ? m_size : '18px'};
-      }
-      //
+    input {
+      width: ${m_size ? m_size : '18px'};
+      height: ${m_size ? m_size : '18px'};
+      min-width: ${m_size ? m_size : '18px'};
+      min-height: ${m_size ? m_size : '18px'};
+    }
+  `
 
-      label {
-        font-size: ${m_fontSize ? m_fontSize : '0.938rem'};
-      }
+  const labelStyled = css`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //
+    font-size: ${fontSize ? fontSize : '0.938rem'};
+    font-weight: ${fontWeight};
+    /* color: ${color ? color : '#555'}; */
+    //
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
+      font-size: ${m_fontSize ? m_fontSize : '0.938rem'};
     }
   `
 
   return (
-    <div ref={ref} onClick={onClick} css={checkStyled}>
+    <div css={checkStyled} ref={ref} onClick={onClick}>
       <input
         type="checkbox"
         id={id}
@@ -118,7 +116,9 @@ export default function Checkbox(props) {
         value={value}
         onChange={onChange}
       />
-      <label htmlFor={id}>{children}</label>
+      <label htmlFor={id} css={labelStyled}>
+        {children}
+      </label>
     </div>
   )
 }

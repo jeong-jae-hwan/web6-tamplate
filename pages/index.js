@@ -46,9 +46,9 @@ export default function Index() {
               src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
               alt=""
               borderRadius="10px"
-              aspect="16/10"
+              aspect="16/11"
               mediaMobile="500"
-              m_marginTop="16px"
+              m_marginTop="10px"
             />
 
             <div className={styles.wrapper}>
