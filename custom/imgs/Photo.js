@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import { css } from '@emotion/react'
+import Image from 'next/image';
+import { css } from '@emotion/react';
 
-export default function ImgBox(props) {
+export default function Photo(props) {
   const {
     mediaMobile,
     src,
@@ -39,7 +39,7 @@ export default function ImgBox(props) {
     m_marginRight,
     m_borderRadius,
     m_aspect,
-  } = props
+  } = props;
 
   const imgBoxStyled = css`
     position: ${position};
@@ -104,7 +104,7 @@ export default function ImgBox(props) {
         aspect-ratio: ${m_aspect};
       }
     }
-  `
+  `;
 
   return (
     <div css={imgBoxStyled}>
@@ -117,5 +117,5 @@ export default function ImgBox(props) {
         priority={priority}
       />
     </div>
-  )
+  );
 }
