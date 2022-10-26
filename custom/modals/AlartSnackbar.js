@@ -1,49 +1,47 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
 //style
-import { SnackbarWrap, Snackbar } from 'scss/modal-styled/Snackbar'
-
-//custom_styles
-import IconTab from 'custom/tabs/IconTab'
+import { SnackbarWrap, Snackbar } from 'scss/modal-styled/Snackbar';
+import { IconTab } from 'scss/tab-styled/IconTab';
 
 //svg
-import TabIcon from 'public/icons/x-tab-icon.svg'
+import TabIcon from 'public/icons/x-tab-icon.svg';
 
 //
 export default function AlartSnackbar(props) {
-  const { isActive, isCancel, children } = props
+  const { isActive, isCancel, children } = props;
 
   // 모달 고정 및 외부 클릭감지
-  const ref = useRef()
-  const clickModalOutside = event => {
+  const ref = useRef();
+  const clickModalOutside = (event) => {
     if (isActive && !ref.current?.contains(event.target)) {
-      isCancel()
+      isCancel();
     }
-  }
+  };
 
   useEffect(() => {
-    document.addEventListener('mousedown', clickModalOutside)
+    document.addEventListener('mousedown', clickModalOutside);
     return () => {
-      document.removeEventListener('mousedown', clickModalOutside)
-    }
-  }, [isActive])
+      document.removeEventListener('mousedown', clickModalOutside);
+    };
+  }, [isActive]);
 
   return (
     <>
       <SnackbarWrap isActive={isActive} ref={ref}>
         <Snackbar>
           <IconTab
-            position="absolute"
-            top="14px"
-            right="14px"
-            width="22px"
+            position='absolute'
+            top='10px'
+            right='10px'
+            width='22px'
             onClick={isCancel}
           >
-            <TabIcon fill="#ddd" width="25px" height="25px" />
+            <TabIcon fill='#ddd' width='22px' height='22px' />
           </IconTab>
           {children}
         </Snackbar>
       </SnackbarWrap>
     </>
-  )
+  );
 }

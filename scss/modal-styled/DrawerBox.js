@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 // 햄버거 메뉴 박스
 export const DrawerBox = styled.div`
@@ -12,9 +12,8 @@ export const DrawerBox = styled.div`
   max-width: 400px;
   height: 100vh;
   //
-  padding: 80px 15px 30px;
-  //
   background-color: ${({ fill }) => (fill ? fill : '#fff')};
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
   //
   overflow: auto;
   transition: 0.2s ease-in-out;
@@ -25,6 +24,5 @@ export const DrawerBox = styled.div`
 
   @media only screen and (max-width: 700px) {
     max-width: 320px;
-    padding: 60px 5px 40px;
   }
-`
+`;

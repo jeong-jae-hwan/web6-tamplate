@@ -11,6 +11,11 @@
   flex-direction: column;
 }
 
+.menus {
+  transition: 0.3s ease-in-out;
+  padding: 80px 15px 30px;  
+}
+
 .menu {
   margin-bottom: 10px;
 }
@@ -29,10 +34,16 @@
 }
 
 @media only screen and (max-width: 600px) {
+.menus {
+    padding: 60px 5px 40px;
+  }
+
   .menu {
     margin-bottom: 10px;
   }
   .menu a span {
     font-size: 1rem;
   }
+
+  
 }

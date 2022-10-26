@@ -1,54 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 //components
-import SEO from 'public/SEO'
+import SEO from 'public/SEO';
 
 //styles
-import styles from 'styles/home.module.css'
-import { ThemeProvider } from '@emotion/react'
-import { View } from 'scss/layout-styled/View'
+import styles from 'styles/home.module.css';
+import { ThemeProvider } from '@emotion/react';
+import { View } from 'scss/layout-styled/View';
 
 //custom-style
-import Button from 'custom/tabs/Button'
-import AlartDialog from 'custom/modals/AlartDialog'
-import ModalSheet from 'custom/modals/ModalSheet'
-import AlartSnackbar from 'custom/modals/AlartSnackbar'
-import Picture from 'custom/imgs/Picture'
+import Button from 'custom/tabs/Button';
+import AlartDialog from 'custom/modals/AlartDialog';
+import ModalSheet from 'custom/modals/ModalSheet';
+import AlartSnackbar from 'custom/modals/AlartSnackbar';
+import Picture from 'custom/imgs/Picture';
 
 //atoms
-import { useRecoilState } from 'recoil'
-import { modalStateAtom } from 'atoms/toggle'
+import { useRecoilState } from 'recoil';
+import { modalStateAtom } from 'atoms/toggle';
 
 //
 export default function Index() {
   const theme = {
     mobile: '600px',
-  }
+  };
 
-  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
-  const [isDialog, setIsDialog] = useState(false)
-  const [isSheet, setIsSheet] = useState(false)
-  const [isSnack, setIsSnack] = useState(false)
+  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom);
+  const [isDialog, setIsDialog] = useState(false);
+  const [isSheet, setIsSheet] = useState(false);
+  const [isSnack, setIsSnack] = useState(false);
 
   return (
     <>
-      <SEO title="템플릿" />
+      <SEO title='템플릿' />
       <ThemeProvider theme={theme}>
         <section>
           <View
-            maxWidth="600px"
-            paddingTop="50px"
-            paddingBottom="80px"
-            paddingLR="20px"
-            gap="30px"
+            maxWidth='600px'
+            paddingTop='50px'
+            paddingBottom='80px'
+            paddingLR='20px'
+            m_paddingTop='20px'
+            gap='30px'
           >
             <Picture
-              src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
-              alt=""
-              borderRadius="10px"
-              aspect="16/11"
-              mediaMobile="500"
-              m_marginTop="10px"
+              src='https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842'
+              alt=''
+              borderRadius='10px'
+              aspect='16/11'
+              mediaMobile='500'
+              m_marginTop='10px'
             />
 
             <div className={styles.wrapper}>
@@ -79,32 +80,32 @@ export default function Index() {
 
             <div className={styles.tabbox}>
               <Button
-                width="100%"
+                width='100%'
                 onClick={() => {
-                  setIsDialog(!isDialog)
-                  setIsModalActive(true)
+                  setIsDialog(!isDialog);
+                  setIsModalActive(true);
                 }}
               >
                 dialog
               </Button>
 
               <Button
-                variant="stroke"
-                width="100%"
+                variant='stroke'
+                width='100%'
                 onClick={() => {
-                  setIsSheet(!isSheet)
-                  setIsModalActive(true)
+                  setIsSheet(!isSheet);
+                  setIsModalActive(true);
                 }}
               >
                 modalSheet
               </Button>
 
               <Button
-                variant="stroke"
-                width="100%"
+                variant='stroke'
+                width='100%'
                 onClick={() => {
-                  setIsSnack(!isSnack)
-                  setIsModalActive(true)
+                  setIsSnack(!isSnack);
+                  setIsModalActive(true);
                 }}
               >
                 snackbar
@@ -114,34 +115,76 @@ export default function Index() {
             <AlartDialog
               isActive={isDialog}
               isCancel={() => {
-                setIsDialog(!isDialog)
-                setIsModalActive(false)
+                setIsDialog(!isDialog);
+                setIsModalActive(false);
               }}
               isSubmit={() => {
-                setIsDialog(!isDialog)
-                setIsModalActive(false)
+                setIsDialog(!isDialog);
+                setIsModalActive(false);
               }}
-              title="타이틀입니다"
+              title='타이틀입니다'
               subTitle={
                 '안녕하세요 딥팩토리 입니다. \n 안녕하세요 딥팩토리 입니다.'
               }
             />
 
             <ModalSheet
+              gap='10px'
+              paddingLR='20px'
               isActive={isSheet}
               isCancel={() => {
-                setIsSheet(!isSheet)
-                setIsModalActive(false)
+                setIsSheet(!isSheet);
+                setIsModalActive(false);
               }}
             >
               <h1>타이틀</h1>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also
+                the leap into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.Lorem Ipsum is simply dummy
+                text of the printing and typesetting industry. Lorem Ipsum has
+                been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it
+                to make a type specimen book. It has survived not only five
+                centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s
+                with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software
+                like Aldus PageMaker including versions of Lorem Ipsum.Lorem
+                Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
             </ModalSheet>
 
             <AlartSnackbar
               isActive={isSnack}
               isCancel={() => {
-                setIsSnack(!isSnack)
-                setIsModalActive(false)
+                setIsSnack(!isSnack);
+                setIsModalActive(false);
               }}
             >
               <p>비밀번호가 일치하지 않습니다</p>
@@ -150,5 +193,5 @@ export default function Index() {
         </section>
       </ThemeProvider>
     </>
-  )
+  );
 }
