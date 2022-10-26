@@ -7,6 +7,7 @@ import { Drawer } from './Drawer';
 
 //custom-style
 import Photo from 'custom/imgs/Photo';
+import DrawerTab from 'custom/tabs/DrawerTab';
 
 //png,svg
 import logoImg from 'public/images/logo.png';
@@ -20,8 +21,6 @@ import { drawerAtom, modalStateAtom } from 'atoms/toggle';
 import { ThemeProvider } from '@emotion/react';
 import { HeaderView } from 'scss/layout-styled/HeaderView';
 import { View } from 'scss/layout-styled/View';
-import DrawerTab from 'custom/tabs/DrawerTab';
-import Image from 'next/image';
 
 //
 export default function Header() {
