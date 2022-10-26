@@ -67,7 +67,7 @@ export default function Header() {
                   alt="딥팩토리 디자인"
                   priority={true}
                   width="32px"
-                  mWidth="26px"
+                  m_width="26px"
                 />
               </Link>
 
