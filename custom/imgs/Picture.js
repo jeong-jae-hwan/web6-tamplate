@@ -73,7 +73,7 @@ export default function Picture(props) {
       minWidth: m_minWidth,
       //
       height: m_height,
-      maxHeight: m_height,
+      maxHeight: m_maxHeight,
       minHeight: m_minHeight,
       //
       marginTop: m_marginTop,
@@ -103,7 +103,7 @@ export default function Picture(props) {
 
     [mq[0]]: {
       height: m_height,
-      maxHeight: m_height,
+      maxHeight: m_maxHeight,
       minHeight: m_minHeight,
       //
       aspectRatio: m_aspect,

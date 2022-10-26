@@ -1,81 +1,80 @@
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 //components
-import { Drawer } from './Drawer';
+import { Drawer } from './Drawer'
 
 //custom-style
-import Photo from 'custom/imgs/Photo';
-import DrawerTab from 'custom/tabs/DrawerTab';
+import DrawerTab from 'custom/tabs/DrawerTab'
 
 //png,svg
-import logoImg from 'public/images/logo.png';
+import logoImg from 'public/images/logo.png'
 
 //atoms
-import styles from './@header.module.css';
-import { useRecoilState } from 'recoil';
-import { drawerAtom, modalStateAtom } from 'atoms/toggle';
+import styles from './@header.module.css'
+import { useRecoilState } from 'recoil'
+import { drawerAtom, modalStateAtom } from 'atoms/toggle'
 
 //styles
-import { ThemeProvider } from '@emotion/react';
-import { HeaderView } from 'scss/layout-styled/HeaderView';
-import { View } from 'scss/layout-styled/View';
+import { ThemeProvider } from '@emotion/react'
+import { HeaderView } from 'scss/layout-styled/HeaderView'
+import { View } from 'scss/layout-styled/View'
+import { Logo } from 'scss/img-styled/Logo'
+import Photo from 'custom/imgs/Photo'
 
 //
 export default function Header() {
-  const router = useRouter();
+  const router = useRouter()
   // 헤더 고정
-  const [isFixed, setIsFixed] = useState(false);
+  const [isFixed, setIsFixed] = useState(false)
   const scrollActive = () => {
     if (window.scrollY >= 50) {
-      setIsFixed(true);
+      setIsFixed(true)
     } else {
-      setIsFixed(false);
+      setIsFixed(false)
     }
-  };
+  }
   useEffect(() => {
-    window.addEventListener('scroll', scrollActive);
-  }, []);
+    window.addEventListener('scroll', scrollActive)
+  }, [])
 
   // 메뉴 토글
-  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom);
-  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom);
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
+  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
   const drawerActive = () => {
-    setIsDrawer(!isDrawer);
-    setIsModalActive(true);
-  };
+    setIsDrawer(!isDrawer)
+    setIsModalActive(true)
+  }
 
   //styles - theme
   const theme = {
     mobile: '768px',
-  };
+  }
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <View height='70px' m_height='58px'>
-          <HeaderView m_height='58px'>
-            <h1 aria-hidden='true'>딥팩토리</h1>
+        <View height="70px" m_height="58px">
+          <HeaderView m_height="58px">
+            <h1 aria-hidden="true">딥팩토리</h1>
 
             <nav className={styles.nav_bar}>
-              <Link href='/'>
-                <a>
-                  <Photo
-                    src={logoImg}
-                    alt='딥팩토리'
-                    mediaMobile='768px'
-                    width='32px'
-                    m_width='29px'
-                    priority={true}
-                  />
-                </a>
+              <Link href="/">
+                <Photo
+                  src={logoImg}
+                  alt="딥팩토리 디자인"
+                  priority={true}
+                  width="32px"
+                  mWidth="26px"
+                />
               </Link>
 
               <DrawerTab
-                width='28px'
-                height='28px'
-                m_width='24px'
+                width="28px"
+                height="28px"
+                m_width="24px"
                 onClick={drawerActive}
               />
             </nav>
@@ -86,5 +85,5 @@ export default function Header() {
       {/* 드로어 메뉴 */}
       <Drawer />
     </>
-  );
+  )
 }

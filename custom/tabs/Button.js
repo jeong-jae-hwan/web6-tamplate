@@ -109,7 +109,7 @@ export default function Button(props) {
 
     &:disabled {
       cursor: auto;
-      color: ${variant === 'stroke' ? '#c2c2c2' : '#a0a0a0'};
+      color: ${variant === 'stroke' ? '#c2c2c2' : '#aaa'};
       background-color: ${variant === 'stroke' ? 'transparent' : '#e0e0e0'};
       border: ${variant === 'stroke' && '1px solid #ccc'};
     }
