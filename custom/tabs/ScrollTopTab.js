@@ -46,7 +46,7 @@ export default function ScrollTopTab() {
     return () => {
       window.removeEventListener('scroll', handleFollow)
     }
-  })
+  }, [ScrollY])
 
   // 스타일
   const tabStyled = css`
