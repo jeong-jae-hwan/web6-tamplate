@@ -13,7 +13,7 @@ import IconTab from 'custom/tabs/IconTab'
 
 //
 export default function ModalSheet(props) {
-  const { isActive, isCancel, children, gap, paddingLR } = props
+  const { isActive, isCancel, children, maxWidth, gap, paddingLR } = props
 
   // 모달 고정 핸들러
   const ref = useRef()
@@ -31,7 +31,7 @@ export default function ModalSheet(props) {
   return (
     <>
       <LayerBlur isActive={isActive} />
-      <Sheet isActive={isActive} ref={ref}>
+      <Sheet isActive={isActive} maxWidth={maxWidth} ref={ref}>
         {/* 닫기 탭 */}
         <IconTab
           sticky={true}

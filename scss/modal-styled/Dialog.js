@@ -11,7 +11,7 @@ export const Dialog = styled.div`
     isActive ? 'translate(-50%, -50%)' : 'translate(-50%, 0)'};
   //
   width: 100%;
-  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '320px')};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '300px')};
   height: ${({ height }) => height};
   //
   display: flex;
