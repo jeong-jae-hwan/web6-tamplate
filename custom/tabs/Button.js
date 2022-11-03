@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 //
 export default function Button(props) {
   const {
-    mediaMobile,
     children,
     ref,
     type,

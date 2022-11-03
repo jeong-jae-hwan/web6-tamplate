@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 export default function IconTab(props) {
   const {
     sticky,
-    mediaMobile,
     children,
     ref,
     onClick,

@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 //
 export default function Photo(props) {
   const {
-    mediaMobile,
     src,
     alt,
     layout,

@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 //
 export default function Checkbox(props) {
   const {
-    mediaMobile,
     children,
     id,
     width,
