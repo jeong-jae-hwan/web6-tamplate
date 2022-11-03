@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export default function IconTab(props) {
   const {
@@ -19,7 +20,7 @@ export default function IconTab(props) {
     m_height,
   } = props
 
-  const tabStyled = css`
+  const TabStyled = styled.div`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
@@ -37,7 +38,8 @@ export default function IconTab(props) {
     //
     user-select: none;
     transition: 0.3s ease-in-out;
-    @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
+
+    @media only screen and (max-width: ${({ theme }) => theme}) {
       width: ${m_width};
       height: ${m_height};
     }
@@ -58,14 +60,14 @@ export default function IconTab(props) {
     <>
       {sticky ? (
         <div css={stickyStyles}>
-          <button type="button" onClick={onClick} ref={ref} css={tabStyled}>
+          <TabStyled type="button" onClick={onClick} ref={ref}>
             {children}
-          </button>
+          </TabStyled>
         </div>
       ) : (
-        <button type="button" onClick={onClick} ref={ref} css={tabStyled}>
+        <TabStyled type="button" onClick={onClick} ref={ref}>
           {children}
-        </button>
+        </TabStyled>
       )}
     </>
   )

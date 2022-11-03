@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import { css } from '@emotion/react';
+import Image from 'next/image'
+import styled from '@emotion/styled'
 
+//
 export default function Photo(props) {
   const {
     mediaMobile,
@@ -39,9 +40,9 @@ export default function Photo(props) {
     m_marginRight,
     m_borderRadius,
     m_aspect,
-  } = props;
+  } = props
 
-  const imgBoxStyled = css`
+  const ImgBoxStyled = styled.div`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
@@ -69,11 +70,6 @@ export default function Photo(props) {
     //
     transition: 0.3s ease-in-out;
 
-    //
-    span {
-      width: 100%;
-      height: 100%;
-    }
     img {
       width: 100%;
       height: 100%;
@@ -85,7 +81,7 @@ export default function Photo(props) {
       //
       user-select: none;
     }
-    @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
+    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
       width: ${m_width};
       max-width: ${m_maxWidth};
       min-width: ${m_minWidth};
@@ -104,10 +100,10 @@ export default function Photo(props) {
         aspect-ratio: ${m_aspect};
       }
     }
-  `;
+  `
 
   return (
-    <div css={imgBoxStyled}>
+    <ImgBoxStyled>
       <Image
         src={src}
         alt={alt}
@@ -116,6 +112,6 @@ export default function Photo(props) {
         objectPosition={objectPosition}
         priority={priority}
       />
-    </div>
-  );
+    </ImgBoxStyled>
+  )
 }

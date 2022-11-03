@@ -40,7 +40,6 @@ export default function Join() {
               id="ss"
               checked={isCheck}
               onChange={() => setIsCheck(!isCheck)}
-              mediaMobile="768px"
             >
               children
             </Checkbox>

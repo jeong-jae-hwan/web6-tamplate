@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 //
 export default function Button(props) {
@@ -52,7 +52,7 @@ export default function Button(props) {
     m_borderRadius,
   } = props
 
-  const styled = css`
+  const TabBox = styled.div`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
@@ -63,7 +63,7 @@ export default function Button(props) {
     align-items: center;
     justify-content: center;
     //
-    width: ${width ? width : 'auto'};
+    width: ${width ? width : '100%'};
     max-width: ${maxWidth};
     min-width: ${minWidth};
     //
@@ -71,8 +71,8 @@ export default function Button(props) {
     max-height: ${maxHeight};
     min-height: ${minHeight};
     //
-    padding-top: ${paddingTB ? paddingTB : '0.875em'};
-    padding-bottom: ${paddingTB ? paddingTB : '0.875em'};
+    padding-top: ${paddingTB ? paddingTB : '1em'};
+    padding-bottom: ${paddingTB ? paddingTB : '1em'};
     padding-left: ${paddingLR ? paddingLR : '1.375em'};
     padding-right: ${paddingLR ? paddingLR : '1.375em'};
     //
@@ -85,7 +85,7 @@ export default function Button(props) {
     font-weight: ${fontWeight ? fontWeight : 400};
     //
     border-radius: ${borderRadius ? borderRadius : '1em'};
-    box-shadow: ${boxShadow && '0 3px 20px rgba(0,0,0,0.11)'};
+    box-shadow: ${boxShadow && '0 3px 20px rgba(0,0,0,0.2)'};
     //
     background-color: ${variant === 'stroke'
       ? '#fff'
@@ -123,7 +123,7 @@ export default function Button(props) {
     }
 
     //
-    @media (max-width: ${mediaMobile ? mediaMobile : '768px'}) {
+    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
       width: ${m_width};
       max-width: ${m_maxWidth};
       min-width: ${m_minWidth};
@@ -149,14 +149,13 @@ export default function Button(props) {
   `
 
   return (
-    <button
+    <TabBox
       disabled={disabled}
-      type={type}
+      type={type ? type : 'button'}
       onClick={onClick}
       ref={ref}
-      css={styled}
     >
       {children}
-    </button>
+    </TabBox>
   )
 }

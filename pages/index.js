@@ -36,7 +36,6 @@ export default function Index() {
       <ThemeProvider theme={theme}>
         <section>
           <View
-            mediaMobile="600"
             maxWidth="600px"
             paddingTop="50px"
             paddingBottom="80px"
@@ -49,7 +48,6 @@ export default function Index() {
               alt=""
               borderRadius="10px"
               aspect="16/11"
-              mediaMobile="500"
               m_marginTop="10px"
             />
 
