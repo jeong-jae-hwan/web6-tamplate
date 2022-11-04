@@ -17,6 +17,13 @@ export default function IconTab(props) {
     height,
     m_width,
     m_height,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    paddingTop,
+    paddingBottom,
+    paddingLR,
   } = props
 
   const TabStyled = styled.div`
@@ -37,6 +44,16 @@ export default function IconTab(props) {
     //
     user-select: none;
     transition: 0.3s ease-in-out;
+    //
+    margin-top: ${marginTop};
+    margin-bottom: ${marginBottom};
+    margin-left: ${marginLeft};
+    margin-right: ${marginRight};
+    //
+    padding-top: ${paddingTop};
+    padding-bottom: ${paddingBottom};
+    padding-left: ${paddingLR};
+    padding-right: ${paddingLR};
 
     @media only screen and (max-width: ${({ theme }) => theme}) {
       width: ${m_width};
@@ -53,6 +70,7 @@ export default function IconTab(props) {
     position: sticky;
     top: 14px;
     right: 14px;
+    cursor: pointer;
   `
 
   return (

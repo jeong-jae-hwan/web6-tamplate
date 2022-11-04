@@ -15,7 +15,7 @@ import logoImg from 'public/images/logo.png'
 //atoms
 import styles from './@header.module.css'
 import { useRecoilState } from 'recoil'
-import { drawerAtom, modalStateAtom } from 'atoms/toggle'
+import { drawerAtom, modalStateAtom } from 'atoms/layout'
 
 //styles
 import { ThemeProvider } from '@emotion/react'

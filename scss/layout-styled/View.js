@@ -23,8 +23,8 @@ export const View = styled.div`
   //
   margin-top: ${({ marginTop }) => marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom};
-  margin-right: ${({ marginR }) => marginR};
-  margin-left: ${({ marginL }) => marginL};
+  margin-right: ${({ marginRight }) => marginRight};
+  margin-left: ${({ marginLeft }) => marginLeft};
   //
   transition: 0.3s ease-in-out;
 

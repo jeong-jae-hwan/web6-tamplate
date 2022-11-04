@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { drawerAtom, modalStateAtom } from 'atoms/toggle'
+import { drawerAtom, modalStateAtom } from 'atoms/layout'
 
 //styles
 import styles from './@drawer.module.css'

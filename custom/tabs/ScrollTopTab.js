@@ -8,7 +8,7 @@ import { css } from '@emotion/react'
 
 //atom
 import { useRecoilValue } from 'recoil'
-import { modalStateAtom } from 'atoms/toggle'
+import { modalStateAtom } from 'atoms/layout'
 
 //
 export default function ScrollTopTab() {

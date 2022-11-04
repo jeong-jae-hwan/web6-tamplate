@@ -17,7 +17,8 @@ import Picture from 'custom/imgs/Picture'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { modalStateAtom } from 'atoms/toggle'
+import { modalStateAtom } from 'atoms/layout'
+import Photo from 'custom/imgs/Photo'
 
 //
 export default function Index() {
@@ -43,12 +44,14 @@ export default function Index() {
             m_paddingTop="20px"
             gap="30px"
           >
-            <Picture
-              src="https://artmug.kr/image/goods_img1/1/14903.jpg?ver=1619490842"
+            <Photo
+              src="https://imagedelivery.net/vJSpkH6oHM7zquolzolo7A/2edbc04e-9895-4311-9e9b-29cceab51600/public"
               alt=""
               borderRadius="10px"
               aspect="16/11"
               m_marginTop="10px"
+              imageWidth={200}
+              imageHeight={100}
             />
 
             <div className={styles.wrapper}>

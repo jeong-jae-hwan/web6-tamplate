@@ -24,11 +24,10 @@ export const InputBox = styled.div`
   }
 
   //
+
   textarea {
-    textarea {
-      width: 100%;
-      height: 100%;
-      font-size: 0.938rem;
-    }
+    width: 100%;
+    height: 100%;
+    font-size: 0.938rem;
   }
 `

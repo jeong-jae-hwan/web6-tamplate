@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 //
 export default function Photo(props) {
   const {
+    imageWidth,
+    imageHeight,
     src,
     alt,
     layout,
@@ -110,6 +112,9 @@ export default function Photo(props) {
         objectFit={objectFit}
         objectPosition={objectPosition}
         priority={priority}
+        quality={100}
+        width={imageWidth}
+        height={imageHeight}
       />
     </ImgBoxStyled>
   )
