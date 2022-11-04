@@ -7,7 +7,7 @@ export const drawerAtom = atom({
 })
 
 // 모달 동작시 : scrollTop 감지 상태
-export const modalStateAtom = atom({
+export const scrollTopTabAtom = atom({
   key: 'modalActive',
   default: false,
 })

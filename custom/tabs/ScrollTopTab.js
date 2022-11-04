@@ -8,13 +8,13 @@ import { css } from '@emotion/react'
 
 //atom
 import { useRecoilValue } from 'recoil'
-import { modalStateAtom } from 'atoms/layout'
+import { scrollTopTabAtom } from 'atoms/layout'
 
 //
 export default function ScrollTopTab() {
   const [ScrollY, setScrollY] = useState(0)
   const [BtnStatus, setBtnStatus] = useState(false) // 버튼 상태
-  const modalActive = useRecoilValue(modalStateAtom)
+  const tabView = useRecoilValue(scrollTopTabAtom)
 
   // 스크롤 수치 감지
   const handleFollow = () => {
@@ -71,7 +71,7 @@ export default function ScrollTopTab() {
 
   return (
     <>
-      {ScrollY > 100 && !modalActive && (
+      {ScrollY > 100 && !tabView && (
         <button onClick={handleTop} css={tabStyled}>
           <UpIcon />
         </button>

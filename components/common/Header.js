@@ -15,7 +15,7 @@ import logoImg from 'public/images/logo.png'
 //atoms
 import styles from './@header.module.css'
 import { useRecoilState } from 'recoil'
-import { drawerAtom, modalStateAtom } from 'atoms/layout'
+import { drawerAtom, scrollTopTabAtom } from 'atoms/layout'
 
 //styles
 import { ThemeProvider } from '@emotion/react'
@@ -40,7 +40,7 @@ export default function Header() {
 
   // 메뉴 토글
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
+  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
   const drawerActive = () => {
     setIsDrawer(!isDrawer)
     setIsModalActive(true)

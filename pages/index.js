@@ -14,11 +14,12 @@ import AlartDialog from 'custom/modals/AlartDialog'
 import ModalSheet from 'custom/modals/ModalSheet'
 import AlartSnackbar from 'custom/modals/AlartSnackbar'
 import Picture from 'custom/imgs/Picture'
+import Photo from 'custom/imgs/Photo'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { modalStateAtom } from 'atoms/layout'
-import Photo from 'custom/imgs/Photo'
+import { scrollTopTabAtom } from 'atoms/layout'
+import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
 
 //
 export default function Index() {
@@ -26,10 +27,10 @@ export default function Index() {
     mobile: '600px',
   }
 
-  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
-  const [isDialog, setIsDialog] = useState(false)
-  const [isSheet, setIsSheet] = useState(false)
-  const [isSnack, setIsSnack] = useState(false)
+  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
+  const [isDialog, setIsDialog] = useRecoilState(dialogAtom)
+  const [isSheet, setIsSheet] = useRecoilState(modalSheetAtom)
+  const [isSnack, setIsSnack] = useRecoilState(snackbarAtom)
 
   return (
     <>

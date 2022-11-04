@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { drawerAtom, modalStateAtom } from 'atoms/layout'
+import { drawerAtom, scrollTopTabAtom } from 'atoms/layout'
 
 //styles
 import styles from './@drawer.module.css'
@@ -22,7 +22,7 @@ import IconTab from 'custom/tabs/IconTab'
 //
 export function Drawer() {
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-  const [modalActive, setIsModalActive] = useRecoilState(modalStateAtom)
+  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
 
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()

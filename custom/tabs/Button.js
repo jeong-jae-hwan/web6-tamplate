@@ -96,6 +96,7 @@ export default function Button(props) {
     //
     user-select: none;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 
     //
     &:hover {
