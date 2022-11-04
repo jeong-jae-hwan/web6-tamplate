@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 export const View = styled.div`
   position: relative;
   //
-  width: 100%;
+  width: ${({ width }) => (width ? width : '100%')};
   max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '1200px')};
   //
   height: ${({ height }) => height};

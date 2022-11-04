@@ -20,6 +20,7 @@ import Photo from 'custom/imgs/Photo'
 import { useRecoilState } from 'recoil'
 import { scrollTopTabAtom } from 'atoms/layout'
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
+import AccordionTab from 'custom/tabs/AccordionTab'
 
 //
 export default function Index() {

@@ -22,7 +22,7 @@ import IconTab from 'custom/tabs/IconTab'
 //
 export function Drawer() {
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
+  const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
 
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()
@@ -38,8 +38,10 @@ export function Drawer() {
 
     if (isDrawer) {
       document.body.style.overflowY = 'hidden'
+      setScrollTopTab(true)
     } else {
       document.body.style.overflowY = 'auto'
+      setScrollTopTab(false)
     }
 
     document.addEventListener('mousedown', clickModalOutside)

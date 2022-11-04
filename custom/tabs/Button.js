@@ -61,6 +61,7 @@ export default function Button(props) {
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 10px;
     //
     width: ${width ? width : '100%'};
     max-width: ${maxWidth};

@@ -40,10 +40,8 @@ export default function Header() {
 
   // 메뉴 토글
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
   const drawerActive = () => {
     setIsDrawer(!isDrawer)
-    setIsModalActive(true)
   }
 
   //styles - theme
