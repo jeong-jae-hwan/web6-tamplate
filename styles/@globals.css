@@ -32,7 +32,6 @@ body {
   align-items: center;
 }
 
-
 main {
   width: 100%;
   height: 100%;
@@ -139,6 +138,11 @@ input:-webkit-autofill:active {
   border-radius: 10px;
 }
 
+input:focus {
+  outline: none;
+  border-radius: 0;
+}
+
 input {
   background: transparent;
   border: none;
@@ -147,15 +151,14 @@ input {
   border-radius: 0;
 }
 
-input:focus {
-  outline: none;
-  border-radius: 0;
-  background-color: none;
-}
-
 input[type='text'],
 input[type='email'],
-input[type='password'] {
+input[type='password'],
+input[type='number'],
+textarea {
+  background: transparent;
+  outline: none;
+  text-decoration: all 0.3s ease-in-out;
   border-radius: 0;
 }
 
@@ -182,7 +185,6 @@ textarea {
 
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
 }
 
@@ -196,18 +198,5 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
-  display: none;
-}
-
-/* 셀렉트 박스 */
-select {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-select::-ms-expand {
   display: none;
 }
