@@ -36,7 +36,7 @@ export default function Picture(props) {
     m_aspect,
   } = props
 
-  const PictureStyle = styled.div`
+  const PictureStyle = styled.picture`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
