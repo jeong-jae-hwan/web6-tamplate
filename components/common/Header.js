@@ -15,7 +15,7 @@ import logoImg from 'public/images/logo.png'
 //atoms
 import styles from './@header.module.css'
 import { useRecoilState } from 'recoil'
-import { drawerAtom, scrollTopTabAtom } from 'atoms/layout'
+import { drawerAtom } from 'atoms/layout'
 
 //styles
 import { ThemeProvider } from '@emotion/react'
@@ -67,12 +67,7 @@ export default function Header() {
                 />
               </Link>
 
-              <DrawerTab
-                width="28px"
-                height="28px"
-                m_width="24px"
-                onClick={drawerActive}
-              />
+              <DrawerTab size="28px" onClick={drawerActive} />
             </nav>
           </HeaderView>
         </View>

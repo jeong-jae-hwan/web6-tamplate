@@ -6,7 +6,7 @@ import ToggleIcon from 'public/icons/accordion-icon.svg'
 
 //
 export default function AccordionTab(props) {
-  const { children, onClick, isActive, marginTop, marginBottom } = props
+  const { children, onClick, isActive, size, marginTop, marginBottom } = props
 
   const Accordion = styled.button`
     width: 100%;
@@ -33,9 +33,11 @@ export default function AccordionTab(props) {
     display: flex;
     align-items: center;
     column-gap: 12px;
+    font-size: 1rem;
 
     p {
       font-weight: 500;
+      font-size: 0.975rem;
     }
   `
 
@@ -45,6 +47,13 @@ export default function AccordionTab(props) {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: ${size ? size : '13px'};
+    height: ${size ? size : '13px'};
+
+    svg {
+      width: ${size ? size : '13px'};
+      height: ${size ? size : '13px'};
+    }
   `
 
   return (

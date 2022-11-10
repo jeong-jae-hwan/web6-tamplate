@@ -21,6 +21,7 @@ import { useRecoilState } from 'recoil'
 import { scrollTopTabAtom } from 'atoms/layout'
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
 import AccordionTab from 'custom/tabs/AccordionTab'
+import BackTab from 'custom/tabs/BackTab'
 
 //
 export default function Index() {
@@ -56,6 +57,9 @@ export default function Index() {
               imageHeight={100}
             />
 
+            <BackTab />
+
+            <AccordionTab isActive={true}>sss</AccordionTab>
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the

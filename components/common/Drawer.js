@@ -29,7 +29,7 @@ export function Drawer() {
   const clickModalOutside = event => {
     if (isDrawer && !ref.current?.contains(event.target)) {
       setIsDrawer(false)
-      setIsModalActive(false)
+      setScrollTopTab(false)
     }
   }
 
