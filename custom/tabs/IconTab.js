@@ -13,10 +13,8 @@ export default function IconTab(props) {
     bottom,
     left,
     right,
-    width,
-    height,
-    m_width,
-    m_height,
+    size,
+    m_size,
     marginTop,
     marginBottom,
     marginLeft,
@@ -26,15 +24,15 @@ export default function IconTab(props) {
     paddingLR,
   } = props
 
-  const TabStyled = styled.div`
+  const TabStyled = styled.button`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
     left: ${left};
     right: ${right};
     //
-    width: ${width ? width : '25px'};
-    height: ${height};
+    width: ${size ? size : '25px'};
+    height: ${size ? size : '25px'};
     //
     display: flex;
     justify-content: center;
@@ -55,9 +53,19 @@ export default function IconTab(props) {
     padding-left: ${paddingLR};
     padding-right: ${paddingLR};
 
-    @media only screen and (max-width: ${({ theme }) => theme}) {
-      width: ${m_width};
-      height: ${m_height};
+    svg {
+      width: ${size ? size : '25px'};
+      height: ${size ? size : '25px'};
+    }
+
+    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+      width: ${m_size ? m_size : '23px'};
+      height: ${m_size ? m_size : '23px'};
+
+      svg {
+        width: ${m_size ? m_size : '23px'};
+        height: ${m_size ? m_size : '23px'};
+      }
     }
   `
 

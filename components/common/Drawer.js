@@ -69,10 +69,9 @@ export function Drawer() {
           sticky={true}
           position="absolute"
           right="14px"
-          width="28px"
           onClick={() => setIsDrawer(false)}
         >
-          <TabIcon fill="#ddd" width="25px" height="25px" />
+          <TabIcon fill="#ddd" />
         </IconTab>
 
         <ul className={styles.menus}>
