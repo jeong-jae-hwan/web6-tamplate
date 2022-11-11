@@ -1,9 +1,14 @@
-import Footer from '@/components/common/Footer'
-import Header from '@/components/common/Header'
-import { useRouter } from 'next/router'
 import React from 'react'
+import { useRouter } from 'next/router'
+
+//custom
 import ScrollTopTab from 'custom/tabs/ScrollTopTab'
 
+//components
+import Footer from '@/components/common/Footer'
+import Header from '@/components/common/Header'
+
+//
 function Layout({ children }) {
   const router = useRouter()
   const errorPage = router.pathname === '/404'
