@@ -57,9 +57,9 @@ export default function Index() {
               imageHeight={100}
             />
 
-            <BackTab />
+            <BackTab fill="red" />
 
-            <AccordionTab isActive={true}>sss</AccordionTab>
+            <AccordionTab>sss</AccordionTab>
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the

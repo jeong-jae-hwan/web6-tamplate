@@ -13,8 +13,8 @@ export default function DrawerTab(props) {
   `
 
   const tabStyled = css`
-    width: ${size ? size : '24px'};
-    height: ${size ? size : '24px'};
+    width: ${size ? size : '28px'};
+    height: ${size ? size : '28px'};
     //
     display: flex;
     justify-content: center;
@@ -24,17 +24,18 @@ export default function DrawerTab(props) {
     transition: 0.3s ease-in-out;
 
     svg {
-      width: ${size ? size : '24px'};
-      height: ${size ? size : '24px'};
+      width: 100%;
+      width: 100%;
+      transition: 0.3s ease-in-out;
     }
 
     @media (max-width: 768px) {
-      width: ${m_size ? m_size : `calc(${size} - 5px)`};
-      height: ${m_size ? m_size : `calc(${size} - 5px)`};
+      width: ${m_size ? m_size : `23px`};
+      height: ${m_size ? m_size : `23px`};
 
       svg {
-        width: ${m_size ? m_size : `calc(${size} - 5px)`};
-        height: ${m_size ? m_size : `calc(${size} - 5px)`};
+        width: 100%;
+        width: 100%;
       }
     }
   `
