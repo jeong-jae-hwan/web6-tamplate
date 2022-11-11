@@ -12,9 +12,15 @@ import Button from 'custom/tabs/Button'
 import TabIcon from 'public/icons/x-tab-icon.svg'
 import { LayerBlur } from 'scss/layout-styled/LayerBlur'
 
+//atom
+import { scrollTopTabAtom } from 'atoms/layout'
+import { useRecoilState } from 'recoil'
+
 //
 export default function AlartDialog(props) {
   const { isActive, isCancel, isSubmit, title, subTitle } = props
+
+  const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
 
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()
@@ -27,8 +33,10 @@ export default function AlartDialog(props) {
   useEffect(() => {
     if (isActive) {
       document.body.style.overflowY = 'hidden'
+      setScrollTopTab(true)
     } else {
       document.body.style.overflowY = 'auto'
+      setScrollTopTab(false)
     }
 
     document.addEventListener('mousedown', clickModalOutside)

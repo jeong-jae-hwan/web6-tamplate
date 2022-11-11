@@ -18,7 +18,7 @@ import Photo from 'custom/imgs/Photo'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { scrollTopTabAtom } from 'atoms/layout'
+
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
 import AccordionTab from 'custom/tabs/AccordionTab'
 import BackTab from 'custom/tabs/BackTab'
@@ -29,7 +29,6 @@ export default function Index() {
     mobile: '600px',
   }
 
-  const [modalActive, setIsModalActive] = useRecoilState(scrollTopTabAtom)
   const [isDialog, setIsDialog] = useRecoilState(dialogAtom)
   const [isSheet, setIsSheet] = useRecoilState(modalSheetAtom)
   const [isSnack, setIsSnack] = useRecoilState(snackbarAtom)
@@ -91,7 +90,6 @@ export default function Index() {
                 width="100%"
                 onClick={() => {
                   setIsDialog(!isDialog)
-                  setIsModalActive(true)
                 }}
               >
                 dialog
@@ -102,7 +100,6 @@ export default function Index() {
                 width="100%"
                 onClick={() => {
                   setIsSheet(!isSheet)
-                  setIsModalActive(true)
                 }}
               >
                 modalSheet
@@ -113,7 +110,6 @@ export default function Index() {
                 width="100%"
                 onClick={() => {
                   setIsSnack(!isSnack)
-                  setIsModalActive(true)
                 }}
               >
                 snackbar
@@ -124,11 +120,9 @@ export default function Index() {
               isActive={isDialog}
               isCancel={() => {
                 setIsDialog(!isDialog)
-                setIsModalActive(false)
               }}
               isSubmit={() => {
                 setIsDialog(!isDialog)
-                setIsModalActive(false)
               }}
               title="타이틀입니다"
               subTitle={
@@ -142,7 +136,6 @@ export default function Index() {
               isActive={isSheet}
               isCancel={() => {
                 setIsSheet(!isSheet)
-                setIsModalActive(false)
               }}
             >
               <h1>타이틀</h1>
@@ -192,7 +185,6 @@ export default function Index() {
               isActive={isSnack}
               isCancel={() => {
                 setIsSnack(!isSnack)
-                setIsModalActive(false)
               }}
             >
               <p>비밀번호가 일치하지 않습니다</p>

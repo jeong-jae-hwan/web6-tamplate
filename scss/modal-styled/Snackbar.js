@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 // 모달 스넥바
 export const SnackbarWrap = styled.div`
-  z-index: 9999;
+  z-index: 99999;
   //
   position: fixed;
   top: ${({ isActive }) => (isActive ? '0' : '-100%')};

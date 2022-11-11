@@ -11,9 +11,15 @@ import TabIcon from 'public/icons/x-tab-icon.svg'
 //custom_styled
 import IconTab from 'custom/tabs/IconTab'
 
+//atom
+import { scrollTopTabAtom } from 'atoms/layout'
+import { useRecoilState } from 'recoil'
+
 //
 export default function ModalSheet(props) {
   const { isActive, isCancel, children, maxWidth, gap, paddingLR } = props
+
+  const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
 
   // 모달 고정 핸들러
   const ref = useRef()
@@ -23,8 +29,10 @@ export default function ModalSheet(props) {
 
     if (isActive) {
       document.body.style.overflowY = 'hidden'
+      setScrollTopTab(true)
     } else {
       document.body.style.overflowY = 'auto'
+      setScrollTopTab(false)
     }
   }, [isActive])
 
