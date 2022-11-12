@@ -69,6 +69,7 @@ export function Drawer() {
           sticky={true}
           position="absolute"
           right="14px"
+          m_size="23px"
           onClick={() => setIsDrawer(false)}
         >
           <TabIcon fill="#ddd" />

@@ -15,7 +15,7 @@ export const LayerBlur = styled.div`
   flex-direction: column;
   align-items: center;
   //
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.25);
 `

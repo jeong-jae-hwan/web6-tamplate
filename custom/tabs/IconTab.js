@@ -59,12 +59,12 @@ export default function IconTab(props) {
     }
 
     @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-      width: ${m_size ? m_size : '23px'};
-      height: ${m_size ? m_size : '23px'};
+      width: ${m_size};
+      height: ${m_size};
 
       svg {
-        width: ${m_size ? m_size : '23px'};
-        height: ${m_size ? m_size : '23px'};
+        width: ${m_size};
+        height: ${m_size};
       }
     }
   `

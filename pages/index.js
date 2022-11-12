@@ -117,27 +117,14 @@ export default function Index() {
             </div>
 
             <AlartDialog
-              isActive={isDialog}
-              isCancel={() => {
-                setIsDialog(!isDialog)
-              }}
-              isSubmit={() => {
-                setIsDialog(!isDialog)
-              }}
+              onCancel={true}
               title="타이틀입니다"
               subTitle={
                 '안녕하세요 딥팩토리 입니다. \n 안녕하세요 딥팩토리 입니다.'
               }
             />
 
-            <ModalSheet
-              gap="10px"
-              paddingLR="20px"
-              isActive={isSheet}
-              isCancel={() => {
-                setIsSheet(!isSheet)
-              }}
-            >
+            <ModalSheet gap="10px" paddingLR="20px">
               <h1>타이틀</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -181,12 +168,7 @@ export default function Index() {
               </p>
             </ModalSheet>
 
-            <AlartSnackbar
-              isActive={isSnack}
-              isCancel={() => {
-                setIsSnack(!isSnack)
-              }}
-            >
+            <AlartSnackbar isActive={isSnack}>
               <p>비밀번호가 일치하지 않습니다</p>
             </AlartSnackbar>
           </View>

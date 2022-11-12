@@ -8,18 +8,24 @@ import { IconTab } from 'scss/tab-styled/IconTab'
 //svg
 import TabIcon from 'public/icons/x-tab-icon.svg'
 
+//atom
+import { snackbarAtom } from 'atoms/modal'
+import { useRecoilState } from 'recoil'
+
 //
-export default function AlartSnackbar(props) {
-  const { isActive, isCancel, children } = props
+export default function AlartSnackbar({ children }) {
   const theme = {
     mobile: '600px',
   }
 
+  // atom
+  const [isSnackBar, setIsSnackBar] = useRecoilState(snackbarAtom)
+
   // 모달 고정 및 외부 클릭감지
   const ref = useRef()
   const clickModalOutside = event => {
-    if (isActive && !ref.current?.contains(event.target)) {
-      isCancel()
+    if (isSnackBar && !ref.current?.contains(event.target)) {
+      setIsSnackBar(false)
     }
   }
 
@@ -28,20 +34,20 @@ export default function AlartSnackbar(props) {
     return () => {
       document.removeEventListener('mousedown', clickModalOutside)
     }
-  }, [isActive])
+  }, [isSnackBar])
 
   return (
     <ThemeProvider theme={theme}>
-      <SnackbarWrap isActive={isActive} ref={ref}>
+      <SnackbarWrap isActive={isSnackBar} ref={ref}>
         <Snackbar>
           <IconTab
             position="absolute"
-            top="10px"
-            right="10px"
+            top="8px"
+            right="8px"
             width="22px"
-            onClick={isCancel}
+            onClick={() => setIsSnackBar(false)}
           >
-            <TabIcon fill="#ddd" width="22px" height="22px" />
+            <TabIcon fill="#ddd" />
           </IconTab>
           {children}
         </Snackbar>

@@ -14,12 +14,14 @@ import IconTab from 'custom/tabs/IconTab'
 //atom
 import { scrollTopTabAtom } from 'atoms/layout'
 import { useRecoilState } from 'recoil'
+import { modalSheetAtom } from 'atoms/modal'
 
 //
 export default function ModalSheet(props) {
-  const { isActive, isCancel, children, maxWidth, gap, paddingLR } = props
+  const { isCancel, children, maxWidth, gap, paddingLR } = props
 
   const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
+  const [isActive, setIsActive] = useRecoilState(modalSheetAtom)
 
   // 모달 고정 핸들러
   const ref = useRef()
@@ -45,10 +47,10 @@ export default function ModalSheet(props) {
           sticky={true}
           position="absolute"
           right="14px"
-          width="28px"
-          onClick={isCancel}
+          size="28px"
+          onClick={() => setIsActive(false)}
         >
-          <TabIcon fill="#ddd" width="28px" height="28px" />
+          <TabIcon fill="#ccc" />
         </IconTab>
 
         {/* 화면 */}
