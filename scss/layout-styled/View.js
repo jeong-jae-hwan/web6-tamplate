@@ -35,11 +35,13 @@ export const View = styled.div`
     min-height: ${({ m_minHeight }) => m_minHeight};
     max-height: ${({ m_maxHeight }) => m_maxHeight};
     //
+    padding: ${({ m_padding }) => m_padding};
     padding-top: ${({ m_paddingTop }) => m_paddingTop};
     padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
     padding-right: ${({ m_paddingLR }) => m_paddingLR};
     padding-left: ${({ m_paddingLR }) => m_paddingLR};
     //
+    margin: ${({ m_margin }) => m_margin};
     margin-top: ${({ m_marginTop }) => m_marginTop};
     margin-bottom: ${({ m_marginBottom }) => m_marginBottom};
     margin-right: ${({ m_marginR }) => m_marginR};
@@ -69,6 +71,7 @@ export const RowView = styled(View)`
     min-height: ${({ m_minHeight }) => m_minHeight};
     max-height: ${({ m_maxHeight }) => m_maxHeight};
     //
+    padding: ${({ m_padding }) => m_padding};
     padding-top: ${({ m_paddingTop }) => m_paddingTop};
     padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
     padding-right: ${({ m_paddingLR }) => m_paddingLR};

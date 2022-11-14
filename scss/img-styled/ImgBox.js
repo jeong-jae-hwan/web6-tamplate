@@ -15,6 +15,7 @@ export const ImgBox = styled.div`
   align-items: center;
   justify-content: center;
   //
+  margin: ${({ margin }) => margin};
   margin-top: ${({ marginTop }) => marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   //
@@ -40,6 +41,7 @@ export const ImgBox = styled.div`
     //
     border-radius: ${({ m_borderRadius }) => m_borderRadius};
     //
+    margin: ${({ m_margin }) => m_margin};
     margin-top: ${({ m_marginTop }) => m_marginTop};
     margin-bottom: ${({ m_marginBottom }) => m_marginBottom};
   }

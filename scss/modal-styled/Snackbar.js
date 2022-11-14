@@ -16,7 +16,7 @@ export const SnackbarWrap = styled.div`
   display: flex;
   flex-direction: column;
   //
-  padding: 31px 20px;
+  padding: 30px 20px;
 
   //
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
@@ -32,17 +32,4 @@ export const SnackbarWrap = styled.div`
     top: auto;
     bottom: ${({ isActive }) => (isActive ? '0' : '-100%')};
   }
-`
-
-export const Snackbar = styled.div`
-  //
-  position: relative;
-  //
-  width: 100%;
-  //
-  padding: 20px 20px 20px;
-  //
-  background-color: #fff;
-  border-radius: 14px;
-  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.12);
 `

@@ -12,6 +12,6 @@ export const Logo = styled.div`
   transition: 0.3s ease-in-out;
 
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    width: ${({ mWidth }) => mWidth};
+    width: ${({ m_width }) => m_width};
   } ;
 `

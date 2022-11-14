@@ -34,5 +34,17 @@ export const IconTab = styled.button`
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     width: ${({ m_width }) => m_width};
     height: ${({ m_height }) => m_height};
+    //
+    padding: ${({ m_padding }) => m_padding};
+    padding-top: ${({ m_paddingTop }) => m_paddingTop};
+    padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
+    padding-right: ${({ m_paddingLR }) => m_paddingLR};
+    padding-left: ${({ m_paddingLR }) => m_paddingLR};
+    //
+    margin: ${({ m_margin }) => m_margin};
+    margin-top: ${({ m_marginTop }) => m_marginTop};
+    margin-bottom: ${({ m_marginBottom }) => m_marginBottom};
+    margin-right: ${({ m_marginRight }) => m_marginRight};
+    margin-left: ${({ m_marginLeft }) => m_marginLeft};
   }
 `
