@@ -106,9 +106,11 @@ export default function Index() {
               </Button>
 
               <Button
+                type="button"
                 variant="stroke"
                 width="100%"
-                onClick={() => {
+                onClick={e => {
+                  e.preventDefault()
                   setIsSnack(!isSnack)
                 }}
               >
@@ -168,9 +170,7 @@ export default function Index() {
               </p>
             </ModalSheet>
 
-            <AlartSnackbar isActive={isSnack}>
-              <p>비밀번호가 일치하지 않습니다</p>
-            </AlartSnackbar>
+            <AlartSnackbar />
           </View>
         </section>
       </ThemeProvider>

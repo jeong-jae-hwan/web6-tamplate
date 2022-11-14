@@ -14,7 +14,7 @@ import { useRecoilState } from 'recoil'
 import { View } from 'scss/layout-styled/View'
 
 //
-export default function AlartSnackbar({ children, isActive }) {
+export default function AlartSnackbar({ children }) {
   // atom
   const [isSnackBar, setIsSnackBar] = useRecoilState(snackbarAtom)
 
@@ -47,6 +47,8 @@ export default function AlartSnackbar({ children, isActive }) {
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
+    z-index: 2;
 
     svg {
       width: 20px;
@@ -55,16 +57,34 @@ export default function AlartSnackbar({ children, isActive }) {
     }
   `
 
+  const titleBox = css`
+    p {
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 0.875rem;
+      color: #999;
+    }
+  `
+
   return (
     <ThemeProvider theme={{ mobile: '600px' }}>
       <SnackbarWrap isActive={isSnackBar} ref={ref}>
         <div css={snackbarStyled}>
-          <button css={tabStyled}>
+          <button css={tabStyled} onClick={() => setIsSnackBar(false)}>
             <TabIcon fill="#ccc" />
           </button>
 
           <View flexStart padding="20px">
-            {children}
+            {children ? (
+              children
+            ) : (
+              <div css={titleBox}>
+                <p>👍 요청하신 처리가 완료되었습니다!</p>
+                <span>해당 팝업은 아무 곳이나 클릭해도 사라져요!</span>
+              </div>
+            )}
           </View>
         </div>
       </SnackbarWrap>

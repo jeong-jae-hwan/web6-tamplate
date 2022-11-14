@@ -150,12 +150,7 @@ export default function Button(props) {
   `
 
   return (
-    <TabBox
-      disabled={disabled}
-      type={type ? type : 'button'}
-      onClick={onClick}
-      ref={ref}
-    >
+    <TabBox disabled={disabled} type={type ? type : 'button'} onClick={onClick}>
       {children}
     </TabBox>
   )
