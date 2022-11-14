@@ -14,11 +14,13 @@ export const IconTab = styled.button`
   align-items: center;
   justify-content: center;
   //
+  padding: ${({ padding }) => padding};
   padding-top: ${({ paddingTop }) => paddingTop};
   padding-bottom: ${({ paddingBottom }) => paddingBottom};
   padding-right: ${({ paddingLR }) => paddingLR};
   padding-left: ${({ paddingLR }) => paddingLR};
   //
+  margin: ${({ margin }) => margin};
   margin-top: ${({ marginTop }) => marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-right: ${({ marginRight }) => marginRight};

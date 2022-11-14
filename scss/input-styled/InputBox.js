@@ -11,6 +11,7 @@ export const InputBox = styled.div`
   //
   padding: 12px;
   //
+  margin: ${({ margin }) => margin};
   margin-top: ${({ marginTop }) => (marginTop ? marginTop : '5px')};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   //

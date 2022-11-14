@@ -11,6 +11,7 @@ export const InputLine = styled.div`
   //
   padding: 10px 0 8px;
   //
+  margin: ${({ margin }) => margin};
   margin-top: ${({ marginTop }) => marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   //

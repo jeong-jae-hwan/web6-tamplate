@@ -9,9 +9,9 @@ export const ErrorMsg = styled.p`
   justify-content: ${({ center }) => center && 'center'};
   column-gap: 4px;
   //
-  font-size: 13px;
+  font-size: 0.813rem;
   color: ${({ type }) => (type === 'info' ? '#1B7EFF' : '#ff4558')};
   //
-  margin-top: ${({ marginTop }) => (marginTop ? marginTop : '4px')};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0.308em')};
   margin-bottom: ${({ marginBottom }) => marginBottom};
 `

@@ -16,11 +16,13 @@ export const View = styled.div`
   align-items: ${({ flexStart }) => (flexStart ? 'flex-start' : 'center')};
   row-gap: ${({ gap }) => gap};
   //
+  padding: ${({ padding }) => padding};
   padding-top: ${({ paddingTop }) => paddingTop};
   padding-bottom: ${({ paddingBottom }) => paddingBottom};
   padding-right: ${({ paddingLR }) => paddingLR};
   padding-left: ${({ paddingLR }) => paddingLR};
   //
+  margin: ${({ margin }) => margin};
   margin-top: ${({ marginTop }) => marginTop};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-right: ${({ marginRight }) => marginRight};

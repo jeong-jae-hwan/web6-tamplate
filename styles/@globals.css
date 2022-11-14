@@ -211,3 +211,18 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
   display: none;
 }
+
+/* 셀렉트 박스 */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  /* background: url('public/icons/accordion-icon.svg') no-repeat 90% 55%; */
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+select::-ms-expand {
+  display: none;
+}
