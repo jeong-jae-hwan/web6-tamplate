@@ -12,7 +12,7 @@ export const modalSheetAtom = atom({
   default: false,
 })
 
-// 모달 시트
+// 스넥바
 export const snackbarAtom = atom({
   key: 'snackbar',
   default: false,

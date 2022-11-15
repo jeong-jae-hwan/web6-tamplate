@@ -10,25 +10,17 @@ import { View } from 'scss/layout-styled/View'
 
 //custom-style
 import Button from 'custom/tabs/Button'
-import AlartDialog from 'custom/modals/AlartDialog'
-import ModalSheet from 'custom/modals/ModalSheet'
-import AlartSnackbar from 'custom/modals/AlartSnackbar'
-import Picture from 'custom/imgs/Picture'
 import Photo from 'custom/imgs/Photo'
+import Snackbar from 'custom/modals/Snackbar'
+import ModalSheet from 'custom/modals/ModalSheet'
+import Dialog from 'custom/modals/Dialog'
 
 //atoms
 import { useRecoilState } from 'recoil'
-
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
-import AccordionTab from 'custom/tabs/AccordionTab'
-import BackTab from 'custom/tabs/BackTab'
 
 //
 export default function Index() {
-  const theme = {
-    mobile: '600px',
-  }
-
   const [isDialog, setIsDialog] = useRecoilState(dialogAtom)
   const [isSheet, setIsSheet] = useRecoilState(modalSheetAtom)
   const [isSnack, setIsSnack] = useRecoilState(snackbarAtom)
@@ -36,7 +28,7 @@ export default function Index() {
   return (
     <>
       <SEO title="템플릿" />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{ mobile: '600px' }}>
         <section>
           <View
             maxWidth="600px"
@@ -56,9 +48,6 @@ export default function Index() {
               imageHeight={100}
             />
 
-            <BackTab fill="red" />
-
-            <AccordionTab>sss</AccordionTab>
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the
@@ -118,15 +107,16 @@ export default function Index() {
               </Button>
             </div>
 
-            <AlartDialog
-              onCancel={true}
+            <Dialog
+              isActive={isDialog}
+              onCancel={() => setIsDialog(false)}
               title="타이틀입니다"
               subTitle={
                 '안녕하세요 딥팩토리 입니다. \n 안녕하세요 딥팩토리 입니다.'
               }
             />
 
-            <ModalSheet gap="10px" paddingLR="20px">
+            <ModalSheet isActive={isSheet} onCancel={() => setIsSheet(false)}>
               <h1>타이틀</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -170,7 +160,7 @@ export default function Index() {
               </p>
             </ModalSheet>
 
-            <AlartSnackbar />
+            <Snackbar />
           </View>
         </section>
       </ThemeProvider>
