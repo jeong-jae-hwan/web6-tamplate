@@ -10,9 +10,14 @@ export default function InputField(props) {
     type,
     tab,
     label,
+    important,
     isActive,
     onClick,
     width,
+    maxWidth,
+    minWidth,
+    m_maxWidth,
+    m_minWidth,
     margin,
     fontSize,
   } = props
@@ -20,6 +25,8 @@ export default function InputField(props) {
   //styled
   const FieldStyled = styled.div`
     width: ${width ? width : '100%'};
+    max-width: ${maxWidth};
+    min-width: ${minWidth};
     margin: ${margin};
     display: flex;
     flex-direction: column;
@@ -27,6 +34,8 @@ export default function InputField(props) {
 
     @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
       width: 100%;
+      max-width: ${m_maxWidth};
+      min-width: ${m_minWidth};
     }
   `
 
@@ -36,7 +45,7 @@ export default function InputField(props) {
     align-items: center;
     justify-content: space-between;
     column-gap: 10px;
-    padding: 8px 0;
+    padding: ${label ? '8px 0' : '0 0 8px'};
     border-bottom: 1px solid #e5e5e5;
 
     input {
@@ -72,10 +81,18 @@ export default function InputField(props) {
     align-items: center;
     justify-content: space-between;
     column-gap: 10px;
-    padding: 12px 6px 12px 12px;
+    padding: 12px 8px 12px 12px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     margin-top: 4px;
+
+    select {
+      width: 100%;
+      -webkit-appearance: none; /* for chrome */
+      -moz-appearance: none; /*for firefox*/
+      appearance: none;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+    }
 
     input {
       width: 100%;
@@ -95,11 +112,20 @@ export default function InputField(props) {
       font-weight: 500;
       padding: 2px 4px;
     }
+
+    span {
+      font-size: 0.813rem;
+      color: #aaa;
+    }
   `
 
   return (
     <FieldStyled>
-      {label && <label css={labelStyled}>{label}</label>}
+      {label && (
+        <label css={labelStyled}>
+          {label} <span className={important && 'important'}>{important}</span>
+        </label>
+      )}
 
       {/* 기본형 라인 타입 인풋 */}
       {!shape && (
@@ -140,7 +166,7 @@ const labelStyled = css`
   display: flex;
   column-gap: 0.308em;
 
-  .importent {
+  .important {
     font-size: 0.975rem;
     color: #fc4848;
   }
@@ -198,11 +224,9 @@ const SelectIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="10"
-      height="5"
-      viewBox="0 0 10 5"
+      viewBox="0 0 12 5"
       css={css`
-        margin-right: 10px;
+        width: 14px;
       `}
     >
       <path
