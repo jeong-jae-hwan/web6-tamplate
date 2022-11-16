@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-//svg
-import UpIcon from 'public/icons/scroll-up-icon.svg'
-
 //styles
 import { css } from '@emotion/react'
 

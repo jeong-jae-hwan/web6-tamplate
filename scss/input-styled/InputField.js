@@ -72,7 +72,7 @@ export const InputLine = styled.div`
 
   span {
     width: 100%;
-    font-size: 13px;
+    font-size: 0.7rem;
     white-space: pre-line;
     display: ${({ validation }) => (validation ? 'flex' : 'none')};
     margin-top: 4px;
@@ -168,7 +168,7 @@ export const InputBox = styled.div`
 
   span {
     width: 100%;
-    font-size: 13px;
+    font-size: 0.7rem;
     white-space: pre-line;
     display: ${({ validation }) => (validation ? 'flex' : 'none')};
     margin-top: 4px;
