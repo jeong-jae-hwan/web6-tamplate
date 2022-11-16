@@ -26,6 +26,7 @@ export default function DrawerTab(props) {
     svg {
       width: 100%;
       width: 100%;
+      fill: ${fill};
       transition: 0.3s ease-in-out;
     }
 
@@ -43,7 +44,7 @@ export default function DrawerTab(props) {
   return (
     <div css={divStyled}>
       <button onClick={onClick} css={tabStyled}>
-        <DrawerIcon fill={fill} />
+        <DrawerIcon />
       </button>
     </div>
   )

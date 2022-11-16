@@ -8,8 +8,8 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, scrollTopTabAtom } from 'atoms/layout'
 
 //styles
-import styles from './@drawer.module.css'
-import { DrawerBox } from 'scss/modal-styled/DrawerBox'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { LayerBlur } from 'scss/layout-styled/LayerBlur'
 
 //svg
@@ -75,14 +75,10 @@ export function Drawer() {
           <TabIcon fill="#ddd" />
         </IconTab>
 
-        <ul className={styles.menus}>
+        <ul css={menusStyled}>
           {menuList.map((item, i) => {
             return (
-              <li
-                key={i}
-                className={styles.menu}
-                onClick={() => setIsDrawer(false)}
-              >
+              <li key={i} onClick={() => setIsDrawer(false)}>
                 <Link href={item.a}>
                   <span>{item.name}</span>
                   <HrefIcon />
@@ -95,3 +91,64 @@ export function Drawer() {
     </>
   )
 }
+
+//styled
+const DrawerBox = styled.div`
+  z-index: 1001;
+  //
+  position: fixed;
+  top: 0;
+  right: ${({ isActive }) => (isActive ? 0 : '-100%')};
+  //
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  //
+  background-color: #fff;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+  //
+  overflow: auto;
+  transition: 0.2s ease-in-out;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 320px;
+  }
+`
+
+const menusStyled = css`
+  transition: 0.3s ease-in-out;
+  padding: 80px 15px 30px;
+
+  @media (max-width: 600px) {
+    padding: 60px 5px 40px;
+  }
+
+  li {
+    margin-bottom: 10px;
+
+    @media (max-width: 600px) {
+      margin-bottom: 10px;
+    }
+
+    a {
+      width: 100%;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 1.125rem;
+        font-weight: 500;
+
+        @media (max-width: 600px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+`

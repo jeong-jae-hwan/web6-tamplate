@@ -1,13 +1,33 @@
 import React from 'react'
 
 //styles
-import styles from './@footer.module.css'
+import { css } from '@emotion/react'
 
 //
 export default function Footer() {
   return (
-    <footer className={styles.wrapper}>
-      <div className={styles.container}>FOOTER</div>
+    <footer css={footerStyled}>
+      <div className="wrap">FOOTER</div>
     </footer>
   )
 }
+
+//styled
+const footerStyled = css`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+
+  .wrap {
+    width: 100%;
+    max-width: 1260px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+
+    @media (max-width: 768px) {
+      padding: 50px 20px;
+    }
+  }
+`

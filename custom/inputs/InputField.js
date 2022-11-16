@@ -1,0 +1,217 @@
+import React from 'react'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+
+//
+export default function InputField(props) {
+  const {
+    children,
+    shape,
+    type,
+    tab,
+    label,
+    isActive,
+    onClick,
+    width,
+    margin,
+    fontSize,
+  } = props
+
+  //styled
+  const FieldStyled = styled.div`
+    width: ${width ? width : '100%'};
+    margin: ${margin};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+      width: 100%;
+    }
+  `
+
+  const lineFieldStyled = css`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+
+    input {
+      width: 100%;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+    }
+
+    select {
+      width: 100%;
+      -webkit-appearance: none; /* for chrome */
+      -moz-appearance: none; /*for firefox*/
+      appearance: none;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+    }
+
+    button {
+      white-space: nowrap;
+      font-size: 0.813rem;
+      font-weight: 500;
+      color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
+      padding: 2px 4px;
+    }
+  `
+
+  const boxFieldStyled = css`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 12px 6px 12px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-top: 4px;
+
+    input {
+      width: 100%;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+    }
+
+    button {
+      white-space: nowrap;
+      font-size: 0.813rem;
+      color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
+      font-weight: 500;
+      padding: 2px 4px;
+    }
+  `
+
+  return (
+    <FieldStyled>
+      {label && <label css={labelStyled}>{label}</label>}
+
+      {/* 기본형 라인 타입 인풋 */}
+      {!shape && (
+        <div css={lineFieldStyled}>
+          {type === 'date' && <CalenderIcon />}
+          {children}
+          {type === 'select' && <SelectIcon />}
+          {tab && (
+            <button type="button" onClick={onClick}>
+              {tab}
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* 박스 타입 인풋 */}
+      {shape === 'box' && (
+        <div css={boxFieldStyled}>
+          {type === 'date' && <CalenderIcon />}
+          {children}
+          {type === 'select' && <SelectIcon />}
+          {tab && (
+            <button type="button" onClick={onClick}>
+              {tab}
+            </button>
+          )}
+        </div>
+      )}
+    </FieldStyled>
+  )
+}
+
+//styled
+const labelStyled = css`
+  width: 100%;
+  font-size: 0.813rem;
+  color: #666;
+  display: flex;
+  column-gap: 0.308em;
+
+  .importent {
+    font-size: 0.975rem;
+    color: #fc4848;
+  }
+
+  span {
+    color: #4baafc;
+  }
+`
+
+// 달력아이콘
+const CalenderIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+    >
+      <g id="calendar-icon" transform="translate(-1 -1)">
+        <path
+          id="패스_18206"
+          data-name="패스 18206"
+          d="M8.237,5.406a.692.692,0,0,1-.692-.692V1.692a.692.692,0,1,1,1.385,0V4.714A.692.692,0,0,1,8.237,5.406Z"
+          transform="translate(-2.014)"
+          fill="#bababa"
+        />
+        <path
+          id="패스_18207"
+          data-name="패스 18207"
+          d="M19.147,5.406a.692.692,0,0,1-.692-.692V1.692a.692.692,0,0,1,1.385,0V4.714A.692.692,0,0,1,19.147,5.406Z"
+          transform="translate(-5.371)"
+          fill="#bababa"
+        />
+        <path
+          id="패스_18208"
+          data-name="패스 18208"
+          d="M1,14.356v5.715A3.042,3.042,0,0,0,4.039,23.11H15.961A3.042,3.042,0,0,0,19,20.071V14.356Z"
+          transform="translate(0 -4.11)"
+          fill="#bababa"
+        />
+        <path
+          id="패스_18209"
+          data-name="패스 18209"
+          d="M19,9.533V6.221a3.042,3.042,0,0,0-3.039-3.039h-.108v2.2a2.077,2.077,0,0,1-4.154,0v-2.2H8.3v2.2a2.077,2.077,0,0,1-4.154,0v-2.2H4.039A3.042,3.042,0,0,0,1,6.221V9.533Z"
+          transform="translate(0 -0.671)"
+          fill="#bababa"
+        />
+      </g>
+    </svg>
+  )
+}
+
+// Selectdrop 아이콘
+const SelectIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="10"
+      height="5"
+      viewBox="0 0 10 5"
+      css={css`
+        margin-right: 10px;
+      `}
+    >
+      <path
+        id="패스_32796"
+        data-name="패스 32796"
+        d="M9.8,3.906,5.523.179A.657.657,0,0,0,4.634.168L.2,3.805a.65.65,0,0,0-.2.461.637.637,0,0,0,.194.455.649.649,0,0,0,.45.185H.652a.644.644,0,0,0,.433-.162L5.058,1.51,8.9,4.828a.665.665,0,0,0,.9-.006.623.623,0,0,0,0-.916"
+        transform="translate(10 5) rotate(180)"
+        fill="#aaa"
+      />
+    </svg>
+  )
+}
