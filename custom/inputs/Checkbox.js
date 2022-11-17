@@ -10,6 +10,7 @@ export default function Checkbox(props) {
     type,
     children,
     id,
+    name,
     checked,
     value,
     onChange,
@@ -48,15 +49,20 @@ export default function Checkbox(props) {
         background-size: 100% 100%;
         background-position: 50%;
         background-repeat: no-repeat;
-        background-color: #1f7bda;
+        background-color: #4b5c6c;
       }
     }
 
     label {
       font-size: ${fontSize ? fontSize : '0.938rem'};
-      font-weight: ${fontWeight ? fontWeight : '0.938rem'};
+      font-weight: ${fontWeight ? fontWeight : '400'};
       color: ${color ? color : '#555'};
       cursor: pointer;
+
+      span {
+        font-size: 0.813rem;
+        color: #999;
+      }
     }
   `
 
@@ -64,6 +70,7 @@ export default function Checkbox(props) {
     <div css={checkStyled} ref={ref}>
       <input
         type={type ? type : 'checkbox'}
+        name={name ? name : 'check'}
         id={id ? id : 'checkbox'}
         checked={checked}
         value={value}
