@@ -18,6 +18,7 @@ import Dialog from 'custom/modals/Dialog'
 //atoms
 import { useRecoilState } from 'recoil'
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
+import InputField from 'custom/inputs/InputField'
 
 //
 export default function Index() {
@@ -47,6 +48,11 @@ export default function Index() {
               imageWidth={200}
               imageHeight={100}
             />
+
+            <InputField label="ss" type="select">
+              <input placeholder="ss" />
+              <button>setIsSheet</button>
+            </InputField>
 
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the

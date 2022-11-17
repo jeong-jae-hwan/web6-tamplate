@@ -44,34 +44,40 @@ export default function InputField(props) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 10px;
-    padding: ${label ? '8px 0' : '0 0 8px'};
     border-bottom: 1px solid #e5e5e5;
-
-    input {
-      width: 100%;
-      font-size: ${fontSize ? fontSize : '0.938rem'};
-    }
 
     select {
       width: 100%;
       -webkit-appearance: none; /* for chrome */
       -moz-appearance: none; /*for firefox*/
       appearance: none;
+      font-size: ${fontSize ? fontSize : '0.938rem'};
+      padding: 8px 0 8px;
     }
 
-    textarea {
+    select option[value=''][disabled] {
+      display: none;
+    }
+
+    input {
       width: 100%;
-      height: 100%;
       font-size: ${fontSize ? fontSize : '0.938rem'};
+      padding: 8px 0 8px;
     }
 
     button {
       white-space: nowrap;
       font-size: 0.813rem;
-      font-weight: 500;
       color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
-      padding: 2px 4px;
+      font-weight: 500;
+      padding: 0.6em;
+    }
+
+    span {
+      white-space: nowrap;
+      padding: 0.6em;
+      font-size: 0.813rem;
+      color: #aaa;
     }
   `
 
@@ -80,11 +86,10 @@ export default function InputField(props) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 10px;
-    padding: 12px 8px 12px 12px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     margin-top: 4px;
+    padding-right: ${type === 'select' && '8px'};
 
     select {
       width: 100%;
@@ -92,16 +97,16 @@ export default function InputField(props) {
       -moz-appearance: none; /*for firefox*/
       appearance: none;
       font-size: ${fontSize ? fontSize : '0.938rem'};
+      padding: 12px 0 12px 12px;
+    }
+
+    select option[value=''][disabled] {
+      display: none;
     }
 
     input {
       width: 100%;
-      font-size: ${fontSize ? fontSize : '0.938rem'};
-    }
-
-    textarea {
-      width: 100%;
-      height: 100%;
+      padding: 12px 0 12px 12px;
       font-size: ${fontSize ? fontSize : '0.938rem'};
     }
 
@@ -110,11 +115,13 @@ export default function InputField(props) {
       font-size: 0.813rem;
       color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
       font-weight: 500;
-      padding: 2px 4px;
+      padding: 0.6em 0.8em;
     }
 
     span {
+      white-space: nowrap;
       font-size: 0.813rem;
+      padding: 0.6em 0.8em;
       color: #aaa;
     }
   `
@@ -130,7 +137,7 @@ export default function InputField(props) {
       {/* 기본형 라인 타입 인풋 */}
       {!shape && (
         <div css={lineFieldStyled}>
-          {type === 'date' && <CalenderIcon />}
+          {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
           {tab && (
@@ -144,7 +151,7 @@ export default function InputField(props) {
       {/* 박스 타입 인풋 */}
       {shape === 'box' && (
         <div css={boxFieldStyled}>
-          {type === 'date' && <CalenderIcon />}
+          {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
           {tab && (
@@ -177,13 +184,17 @@ const labelStyled = css`
 `
 
 // 달력아이콘
-const CalenderIcon = () => {
+const CalenderIcon = ({ shape }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
       viewBox="0 0 18 18"
+      css={css`
+        margin-right: ${(!shape || shape === 'line') && '10px'};
+        margin-left: ${shape === 'box' && '12px'};
+      `}
     >
       <g id="calendar-icon" transform="translate(-1 -1)">
         <path
