@@ -20,13 +20,14 @@ export default function Checkbox(props) {
     fontSize,
     fontWeight,
     color,
+    gap,
   } = props
 
   //styled
   const checkStyled = css`
     display: flex;
     align-items: center;
-    column-gap: 8px;
+    column-gap: ${gap ? gap : '8px'};
     margin: ${margin};
     cursor: pointer;
 
@@ -58,8 +59,10 @@ export default function Checkbox(props) {
       font-weight: ${fontWeight ? fontWeight : '400'};
       color: ${color ? color : '#555'};
       cursor: pointer;
+      white-space: pre-line;
 
       span {
+        white-space: nowrap;
         font-size: 0.813rem;
         color: #999;
       }

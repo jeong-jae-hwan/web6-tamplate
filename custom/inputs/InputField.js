@@ -66,6 +66,7 @@ export default function InputField(props) {
     }
 
     button {
+      width: auto;
       white-space: nowrap;
       font-size: 0.813rem;
       color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
@@ -74,6 +75,7 @@ export default function InputField(props) {
     }
 
     span {
+      width: auto;
       white-space: nowrap;
       padding: 0.6em;
       font-size: 0.813rem;
@@ -88,7 +90,6 @@ export default function InputField(props) {
     justify-content: space-between;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
-    margin-top: 4px;
     padding-right: ${type === 'select' && '8px'};
 
     select {
@@ -111,6 +112,7 @@ export default function InputField(props) {
     }
 
     button {
+      width: auto;
       white-space: nowrap;
       font-size: 0.813rem;
       color: ${isActive ? '#c2c2c2' : '#1F8DFF'};
@@ -119,6 +121,7 @@ export default function InputField(props) {
     }
 
     span {
+      width: auto;
       white-space: nowrap;
       font-size: 0.813rem;
       padding: 0.6em 0.8em;
@@ -172,6 +175,8 @@ const labelStyled = css`
   color: #666;
   display: flex;
   column-gap: 0.308em;
+  margin-bottom: 0.308em;
+  white-space: nowrap;
 
   .important {
     font-size: 0.975rem;
@@ -179,6 +184,7 @@ const labelStyled = css`
   }
 
   span {
+    white-space: nowrap;
     color: #4baafc;
   }
 `

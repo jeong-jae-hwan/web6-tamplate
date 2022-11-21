@@ -18,6 +18,7 @@ export const InputLine = styled.div`
     column-gap: 0.308em;
 
     span {
+      white-space: nowrap;
       display: flex;
       color: ${({ important }) => (important ? '#fc4848' : '#4baafc')};
     }
@@ -52,6 +53,7 @@ export const InputLine = styled.div`
     }
 
     button {
+      width: auto;
       white-space: nowrap;
       font-size: 0.813rem;
       font-weight: 500;
@@ -65,6 +67,8 @@ export const InputLine = styled.div`
     }
 
     span {
+      width: auto;
+      white-space: nowrap;
       font-size: 0.813rem;
       color: #aaa;
     }
@@ -105,11 +109,13 @@ export const InputBox = styled.div`
   margin: ${({ margin }) => margin};
 
   label {
+    white-space: nowrap;
     width: 100%;
     font-size: 0.813rem;
     color: #666;
     display: flex;
     column-gap: 0.308em;
+    margin-bottom: 0.308em;
 
     span {
       display: flex;
@@ -126,7 +132,6 @@ export const InputBox = styled.div`
     padding: 12px 6px 12px 12px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
-    margin-top: 4px;
 
     input {
       width: 100%;
@@ -148,6 +153,7 @@ export const InputBox = styled.div`
     }
 
     button {
+      width: auto;
       white-space: nowrap;
       font-size: 0.813rem;
       font-weight: 500;
@@ -161,6 +167,8 @@ export const InputBox = styled.div`
     }
 
     span {
+      width: auto;
+      white-space: nowrap;
       font-size: 0.813rem;
       color: #aaa;
     }

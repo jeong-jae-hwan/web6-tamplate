@@ -49,9 +49,11 @@ export default function Index() {
               imageHeight={100}
             />
 
-            <InputField label="ss" type="select">
-              <input placeholder="ss" />
-              <button>setIsSheet</button>
+            <InputField type="select">
+              <select>
+                <option>ss</option>
+                <option>ss</option>
+              </select>
             </InputField>
 
             <div className={styles.wrapper}>
