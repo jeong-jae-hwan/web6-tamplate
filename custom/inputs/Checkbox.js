@@ -51,6 +51,7 @@ export default function Checkbox(props) {
         background-position: 50%;
         background-repeat: no-repeat;
         background-color: #4b5c6c;
+        border-radius: 1000px;
       }
     }
 
