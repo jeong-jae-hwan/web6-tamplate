@@ -91,6 +91,7 @@ export default function InputField(props) {
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     padding-right: ${type === 'select' && '8px'};
+    margin-bottom: 4px;
 
     select {
       width: 100%;
@@ -175,7 +176,6 @@ const labelStyled = css`
   color: #666;
   display: flex;
   column-gap: 0.308em;
-  margin-bottom: 0.308em;
   white-space: nowrap;
 
   .important {
