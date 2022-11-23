@@ -1,6 +1,4 @@
 import 'styles/@globals.css'
-import { store } from '/@redux/store'
-import { Provider } from 'react-redux'
 import Layout from 'public/Layout'
 import { useRouter } from 'next/router'
 import { RecoilRoot } from 'recoil'
@@ -20,11 +18,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <RecoilRoot>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </RecoilRoot>
     </>
   )
