@@ -16,6 +16,7 @@ export default function ModalSheet(props) {
 
   // 모달 고정 핸들러
   const ref = useRef()
+
   useEffect(() => {
     ref.current?.scrollTo(0, 0)
 
@@ -29,13 +30,6 @@ export default function ModalSheet(props) {
   }, [isActive])
 
   // styled
-  const titleStyled = css`
-    width: 100%;
-    white-space: pre-line;
-    font-size: 1.25rem;
-    padding: 2em 1em 0.75em;
-  `
-
   const layerStyled = css`
     z-index: 6666;
     position: fixed;
@@ -92,35 +86,7 @@ export default function ModalSheet(props) {
     <>
       <div css={layerStyled} />
       <div css={sheetStyled} ref={ref}>
-        {/* 닫기 버튼 */}
-        <div css={stickyStyles}>
-          <button type="button" onClick={onCancel}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-              <g
-                id="그룹_96430"
-                data-name="그룹 96430"
-                transform="translate(-1139 -96)"
-              >
-                <circle
-                  id="타원_1270"
-                  data-name="타원 1270"
-                  cx="12.5"
-                  cy="12.5"
-                  r="12.5"
-                  transform="translate(1139 96)"
-                  fill="#fff"
-                />
-                <path
-                  id="xBtn"
-                  d="M25.481,7.8a12.5,12.5,0,1,0,0,17.677,12.5,12.5,0,0,0,0-17.677m-6.32,12.824-2.519-2.519-2.52,2.52a1.038,1.038,0,0,1-1.467-1.467l2.52-2.52L12.66,14.126a1.038,1.038,0,0,1,1.467-1.467l2.515,2.516,2.515-2.515a1.035,1.035,0,0,1,1.464,1.464l-2.515,2.515,2.52,2.519-.221.221.221-.221a1.038,1.038,0,0,1-1.467,1.467"
-                  transform="translate(1134.858 91.858)"
-                  fill="current"
-                />
-              </g>
-            </svg>
-          </button>
-        </div>
-
+        <BackTab onCancel={onCancel} />
         {/* 화면 */}
         {title && <h1 css={titleStyled}>{title}</h1>}
         {children}
@@ -130,37 +96,76 @@ export default function ModalSheet(props) {
 }
 
 //styled
-// 탭버튼
-const stickyStyles = css`
-  z-index: 999;
+const titleStyled = css`
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-
-  button {
-    position: absolute;
-    right: 10px;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    transition: 0.3s ease-in-out;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      fill: #ccc;
-    }
-
-    @media (max-width: 600px) {
-      width: 24px;
-      height: 24px;
-    }
-  }
+  white-space: pre-line;
+  font-size: 1.25rem;
+  padding: 2em 1em 0.75em;
 `
+
+// x탭
+export const BackTab = ({ onCancel }) => {
+  const stickyStyles = css`
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+    button {
+      position: absolute;
+      right: 10px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      transition: 0.3s ease-in-out;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: #ccc;
+      }
+
+      @media (max-width: 600px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  `
+
+  return (
+    <div css={stickyStyles}>
+      <button type="button" onClick={onCancel}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+          <g
+            id="그룹_96430"
+            data-name="그룹 96430"
+            transform="translate(-1139 -96)"
+          >
+            <circle
+              id="타원_1270"
+              data-name="타원 1270"
+              cx="12.5"
+              cy="12.5"
+              r="12.5"
+              transform="translate(1139 96)"
+              fill="#fff"
+            />
+            <path
+              id="xBtn"
+              d="M25.481,7.8a12.5,12.5,0,1,0,0,17.677,12.5,12.5,0,0,0,0-17.677m-6.32,12.824-2.519-2.519-2.52,2.52a1.038,1.038,0,0,1-1.467-1.467l2.52-2.52L12.66,14.126a1.038,1.038,0,0,1,1.467-1.467l2.515,2.516,2.515-2.515a1.035,1.035,0,0,1,1.464,1.464l-2.515,2.515,2.52,2.519-.221.221.221-.221a1.038,1.038,0,0,1-1.467,1.467"
+              transform="translate(1134.858 91.858)"
+              fill="current"
+            />
+          </g>
+        </svg>
+      </button>
+    </div>
+  )
+}
