@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 import { View } from 'scss/layout-styled/View'
 
 //atom
-import { snackbarAtom } from 'atoms/modal'
+import { snackbarAtom } from 'atoms/moda-atoml'
 import { useRecoilState } from 'recoil'
 
 //

@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 //atom
-import { scrollTopTabAtom } from 'atoms/layout'
+import { scrollTopTabAtom } from 'atoms/layout-atom'
 import { useRecoilState } from 'recoil'
 
 //

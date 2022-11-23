@@ -92,6 +92,7 @@ export default function InputField(props) {
     border-radius: 8px;
     padding-right: ${type === 'select' && '8px'};
     margin-bottom: 4px;
+    background-color: #fff;
 
     select {
       width: 100%;

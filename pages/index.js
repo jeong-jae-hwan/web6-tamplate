@@ -17,7 +17,7 @@ import Dialog from 'custom/modals/Dialog'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/modal'
+import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/moda-atoml'
 import InputField from 'custom/inputs/InputField'
 
 //
