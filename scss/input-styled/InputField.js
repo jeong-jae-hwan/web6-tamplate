@@ -131,6 +131,7 @@ export const InputBox = styled.div`
     column-gap: 10px;
     padding: 12px 6px 12px 12px;
     border: 1px solid #e5e5e5;
+    background-color: #fff;
     border-radius: 8px;
 
     input {
