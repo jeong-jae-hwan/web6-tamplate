@@ -50,6 +50,10 @@ export const InputLine = styled.div`
       width: 100%;
       height: 100%;
       font-size: ${({ fontSize }) => (fontSize ? fontSize : '0.938rem')};
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     button {
@@ -151,6 +155,10 @@ export const InputBox = styled.div`
       width: 100%;
       height: 100%;
       font-size: ${({ fontSize }) => (fontSize ? fontSize : '0.938rem')};
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     button {
