@@ -88,11 +88,10 @@ export default function InputField(props) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     padding-right: ${type === 'select' && '8px'};
-    margin-bottom: 4px;
-    background-color: #fff;
 
     select {
       width: 100%;
@@ -178,6 +177,7 @@ const labelStyled = css`
   display: flex;
   column-gap: 0.308em;
   white-space: nowrap;
+  margin-bottom: 0.308em;
 
   .important {
     font-size: 0.975rem;
