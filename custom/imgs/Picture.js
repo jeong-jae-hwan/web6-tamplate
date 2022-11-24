@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export default function Picture(props) {
@@ -16,6 +18,7 @@ export default function Picture(props) {
     maxHeight,
     minHeight,
     borderRadius,
+    border,
     marginTop,
     marginBottom,
     marginRight,
@@ -34,9 +37,10 @@ export default function Picture(props) {
     m_marginRight,
     m_borderRadius,
     m_aspect,
+    onClick,
   } = props
 
-  const PictureStyle = styled.picture`
+  const picture = css`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
@@ -55,6 +59,7 @@ export default function Picture(props) {
     max-height: ${maxHeight};
     min-height: ${minHeight};
     //
+    border: ${border};
     border-radius: ${borderRadius ? borderRadius : '10px'};
     //
     margin-top: ${marginTop};
@@ -74,38 +79,18 @@ export default function Picture(props) {
       height: 100%;
       //
       border-radius: ${borderRadius};
+
       //
       object-fit: ${objectFit};
       aspect-ratio: ${aspect};
       //
       user-select: none;
     }
-
-    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-      width: ${m_width};
-      max-width: ${m_maxWidth};
-      min-width: ${m_minWidth};
-      //
-      height: ${m_height};
-      max-height: ${m_maxHeight};
-      min-height: ${m_minHeight};
-      //
-      margin-top: ${m_marginTop};
-      margin-bottom: ${m_marginBottom};
-      margin-left: ${m_marginLeft};
-      margin-right: ${m_marginRight};
-      //
-      border-radius: ${m_borderRadius};
-
-      img {
-        aspect-ratio: ${m_aspect};
-      }
-    }
   `
 
   return (
-    <PictureStyle>
+    <picture css={picture} onClick={onClick}>
       <img src={src} alt={alt} />
-    </PictureStyle>
+    </picture>
   )
 }

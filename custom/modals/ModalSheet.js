@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 //style
 import { css } from '@emotion/react'
@@ -10,6 +11,7 @@ import { useRecoilState } from 'recoil'
 //
 export default function ModalSheet(props) {
   const { children, isActive, onCancel, title, maxWidth } = props
+  const router = useRouter()
 
   // atoms = scrollToTab
   const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
@@ -28,6 +30,15 @@ export default function ModalSheet(props) {
       setScrollTopTab(false)
     }
   }, [isActive])
+
+  // 캔슬 모달
+  const handleOnCancel = () => {
+    if (onCancel) {
+      onCancel()
+    } else {
+      router.back()
+    }
+  }
 
   // styled
   const layerStyled = css`
@@ -86,7 +97,7 @@ export default function ModalSheet(props) {
     <>
       <div css={layerStyled} />
       <div css={sheetStyled} ref={ref}>
-        <BackTab onCancel={onCancel} />
+        <BackTab onCancel={handleOnCancel} />
         {/* 화면 */}
         {title && <h1 css={titleStyled}>{title}</h1>}
         {children}
