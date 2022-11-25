@@ -20,6 +20,7 @@ export default function Checkbox(props) {
     fontSize,
     fontWeight,
     color,
+    borderRadius,
     gap,
   } = props
 
@@ -32,14 +33,14 @@ export default function Checkbox(props) {
     cursor: pointer;
 
     input {
-      width: ${size ? size : '18px'};
-      height: ${size ? size : '18px'};
-      min-width: ${size ? size : '18px'};
-      min-height: ${size ? size : '18px'};
+      width: ${size ? size : '17px'};
+      height: ${size ? size : '17px'};
+      min-width: ${size ? size : '17px'};
+      min-height: ${size ? size : '17px'};
       border: 0px solid gainsboro;
-      border-radius: 100px;
+      border-radius: ${borderRadius ? borderRadius : '1000px'};
       appearance: none;
-      background-color: #eee;
+      background-color: #e2e2e2;
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
       //
       user-select: none;
@@ -50,8 +51,8 @@ export default function Checkbox(props) {
         background-size: 100% 100%;
         background-position: 50%;
         background-repeat: no-repeat;
-        background-color: #4b5c6c;
-        border-radius: 1000px;
+        background-color: #1f7bda;
+        border-radius: ${borderRadius ? borderRadius : '1000px'};
       }
     }
 
