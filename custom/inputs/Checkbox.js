@@ -8,6 +8,7 @@ export default function Checkbox(props) {
   const {
     ref,
     type,
+    key,
     children,
     id,
     name,
@@ -28,7 +29,7 @@ export default function Checkbox(props) {
   const checkStyled = css`
     display: flex;
     align-items: center;
-    column-gap: ${gap ? gap : '8px'};
+    column-gap: ${gap ? gap : '7px'};
     margin: ${margin};
     cursor: pointer;
 
@@ -74,6 +75,7 @@ export default function Checkbox(props) {
   return (
     <div css={checkStyled} ref={ref}>
       <input
+        key={key}
         type={type ? type : 'checkbox'}
         name={name ? name : 'check'}
         id={id ? id : 'checkbox'}
