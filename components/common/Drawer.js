@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { drawerAtom, scrollTopTabAtom } from 'atoms/layout'
+import { drawerAtom, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //styles
 import { css } from '@emotion/react'

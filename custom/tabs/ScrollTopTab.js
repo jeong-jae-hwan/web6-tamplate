@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 
 //atom
 import { useRecoilValue } from 'recoil'
-import { scrollTopTabAtom } from 'atoms/layout'
+import { scrollTopTabAtom } from 'atoms/layout-atom'
 
 //
 export default function ScrollTopTab() {

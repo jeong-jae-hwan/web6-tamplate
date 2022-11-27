@@ -19,12 +19,17 @@ import Dialog from 'custom/modals/Dialog'
 import { useRecoilState } from 'recoil'
 import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/moda-atoml'
 import InputField from 'custom/inputs/InputField'
+import { useRouter } from 'next/router'
 
 //
 export default function Index() {
+  const router = useRouter()
+
   const [isDialog, setIsDialog] = useRecoilState(dialogAtom)
   const [isSheet, setIsSheet] = useRecoilState(modalSheetAtom)
   const [isSnack, setIsSnack] = useRecoilState(snackbarAtom)
+
+  console.log(router)
 
   return (
     <>
@@ -96,7 +101,10 @@ export default function Index() {
                 variant="stroke"
                 width="100%"
                 onClick={() => {
-                  setIsSheet(!isSheet)
+                  router.push({
+                    pathname: '/',
+                    query: { detail: 'true' },
+                  })
                 }}
               >
                 modalSheet
@@ -124,7 +132,7 @@ export default function Index() {
               }
             />
 
-            <ModalSheet isActive={isSheet} onCancel={() => setIsSheet(false)}>
+            <ModalSheet>
               <h1>타이틀</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

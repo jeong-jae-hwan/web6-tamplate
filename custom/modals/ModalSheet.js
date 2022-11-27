@@ -22,14 +22,20 @@ export default function ModalSheet(props) {
   useEffect(() => {
     ref.current?.scrollTo(0, 0)
 
-    if (isActive) {
+    if (isActive || router.query.detail) {
       document.body.style.overflowY = 'hidden'
       setScrollTopTab(true)
     } else {
       document.body.style.overflowY = 'auto'
       setScrollTopTab(false)
     }
-  }, [isActive])
+  }, [isActive, router.query.detail])
+
+  useEffect(() => {
+    if (router.reload) {
+      alert('ss')
+    }
+  }, [])
 
   // 캔슬 모달
   const handleOnCancel = () => {
@@ -48,21 +54,21 @@ export default function ModalSheet(props) {
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: ${isActive ? 'flex' : 'none'};
+    display: ${router.query.detail || isActive ? 'flex' : 'none'};
     flex-direction: column;
     align-items: center;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     background-color: rgba(0, 0, 0, 0.25);
     transition: 0.25s ease-in-out;
-    opacity: ${isActive ? 1 : 0};
+    opacity: ${router.query.detail || isActive ? 1 : 0};
   `
 
   const sheetStyled = css`
     z-index: 7777;
     //
     position: fixed;
-    top: ${isActive ? '60px' : '100%'};
+    top: ${router.query.detail || isActive ? '60px' : '100%'};
     left: 50%;
     transform: translateX(-50%);
     //
@@ -79,7 +85,7 @@ export default function ModalSheet(props) {
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
     //
     transition: 0.25s ease-in-out;
-    opacity: ${isActive ? 1 : 0};
+    opacity: ${router.query.detail || isActive ? 1 : 0};
     overflow-y: auto;
 
     &::-webkit-scrollbar {

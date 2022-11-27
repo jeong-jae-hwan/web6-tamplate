@@ -14,7 +14,7 @@ import Logo from 'public/images/logo.svg'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { drawerAtom } from 'atoms/layout'
+import { drawerAtom } from 'atoms/layout-atom'
 
 //styles
 import { css } from '@emotion/react'
