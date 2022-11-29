@@ -25,18 +25,6 @@ export default function Picture(props) {
     marginLeft,
     aspect,
     objectFit,
-    m_width,
-    m_maxWidth,
-    m_minWidth,
-    m_height,
-    m_maxHeight,
-    m_minHeight,
-    m_marginTop,
-    m_marginBottom,
-    m_marginLeft,
-    m_marginRight,
-    m_borderRadius,
-    m_aspect,
     onClick,
   } = props
 
@@ -59,6 +47,8 @@ export default function Picture(props) {
     max-height: ${maxHeight};
     min-height: ${minHeight};
     //
+    aspect-ratio: ${aspect};
+    //
     border: ${border};
     border-radius: ${borderRadius ? borderRadius : '10px'};
     //
@@ -74,15 +64,16 @@ export default function Picture(props) {
       width: 100%;
       height: 100%;
     }
+
     img {
       width: 100%;
       height: 100%;
+
       //
       border-radius: ${borderRadius};
 
       //
       object-fit: ${objectFit};
-      aspect-ratio: ${aspect};
       //
       user-select: none;
     }

@@ -31,12 +31,6 @@ export default function ModalSheet(props) {
     }
   }, [isActive, router.query.detail])
 
-  useEffect(() => {
-    if (router.reload) {
-      alert('ss')
-    }
-  }, [])
-
   // 캔슬 모달
   const handleOnCancel = () => {
     if (onCancel) {

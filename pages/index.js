@@ -54,6 +54,8 @@ export default function Index() {
               imageHeight={100}
             />
 
+            <Button disabled="true">ss</Button>
+
             <InputField type="select">
               <select>
                 <option>ss</option>
@@ -98,7 +100,7 @@ export default function Index() {
               </Button>
 
               <Button
-                variant="stroke"
+                stroke
                 width="100%"
                 onClick={() => {
                   router.push({
