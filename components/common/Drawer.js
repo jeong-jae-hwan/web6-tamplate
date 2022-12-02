@@ -114,7 +114,7 @@ const DrawerBox = styled.div`
     display: none;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     max-width: 320px;
   }
 `
@@ -123,14 +123,14 @@ const menusStyled = css`
   transition: 0.3s ease-in-out;
   padding: 80px 15px 30px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     padding: 60px 5px 40px;
   }
 
   li {
     margin-bottom: 10px;
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       margin-bottom: 10px;
     }
 
@@ -145,7 +145,7 @@ const menusStyled = css`
         font-size: 1.125rem;
         font-weight: 500;
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           font-size: 1rem;
         }
       }
