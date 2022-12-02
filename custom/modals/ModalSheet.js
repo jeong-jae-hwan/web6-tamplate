@@ -10,15 +10,18 @@ import { useRecoilState } from 'recoil'
 
 //
 export default function ModalSheet(props) {
-  const { children, isActive, onCancel, title, maxWidth } = props
+  const { children, isActive, onCancel, title, maxWidth, position } = props
   const router = useRouter()
+  const ref = useRef()
 
+  //
+  //
   // atoms = scrollToTab
   const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
 
+  //
+  //
   // 모달 고정 핸들러
-  const ref = useRef()
-
   useEffect(() => {
     ref.current?.scrollTo(0, 0)
 
@@ -31,6 +34,15 @@ export default function ModalSheet(props) {
     }
   }, [isActive, router.query.detail])
 
+  //
+  //
+  // 윈도우 위치
+  useEffect(() => {
+    window.scrollTo(0, position)
+  }, [router.query.detail || isActive])
+
+  //
+  //
   // 캔슬 모달
   const handleOnCancel = () => {
     if (onCancel) {
