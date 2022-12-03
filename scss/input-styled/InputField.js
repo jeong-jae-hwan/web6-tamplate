@@ -66,8 +66,8 @@ export const InputLine = styled.div`
     }
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
     }
 
     span {
@@ -133,7 +133,7 @@ export const InputBox = styled.div`
     align-items: center;
     justify-content: space-between;
     column-gap: 10px;
-    padding: 12px 6px 12px 12px;
+    padding: 12px 8px 12px 12px;
     border: 1px solid #e5e5e5;
     background-color: #fff;
     border-radius: 8px;
@@ -171,8 +171,8 @@ export const InputBox = styled.div`
     }
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
 
     span {

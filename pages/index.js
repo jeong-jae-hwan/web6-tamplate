@@ -134,8 +134,7 @@ export default function Index() {
               }
             />
 
-            <ModalSheet>
-              <h1>타이틀</h1>
+            <ModalSheet isActive={router.query.detail} title="타이틀입니다.">
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industrys standard dummy text

@@ -5,12 +5,12 @@ import { useRouter } from 'next/router'
 import { css } from '@emotion/react'
 
 //atom
-import { scrollTopTabAtom } from 'atoms/layout-atom'
-import { useRecoilState } from 'recoil'
+import { scrollPosition, scrollTopTabAtom } from 'atoms/layout-atom'
+import { useRecoilState, useRecoilValue } from 'recoil'
 
 //
 export default function ModalSheet(props) {
-  const { children, isActive, onCancel, title, maxWidth, position } = props
+  const { children, isActive, onCancel, title, maxWidth } = props
   const router = useRouter()
   const ref = useRef()
 
@@ -18,6 +18,11 @@ export default function ModalSheet(props) {
   //
   // atoms = scrollToTab
   const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
+
+  // 스크롤 위치
+  const isPosition = useRecoilValue(scrollPosition)
+
+  console.log(isPosition)
 
   //
   //
@@ -38,7 +43,7 @@ export default function ModalSheet(props) {
   //
   // 윈도우 위치
   useEffect(() => {
-    window.scrollTo(0, position)
+    window.scrollTo(0, isPosition)
   }, [router.query.detail || isActive])
 
   //
@@ -120,10 +125,15 @@ export default function ModalSheet(props) {
 
 //styled
 const titleStyled = css`
+  z-index: 2;
   width: 100%;
   white-space: pre-line;
   font-size: 1.25rem;
-  padding: 2em 1em 0.75em;
+  padding: 2em 1em 0.5em;
+  min-height: 80px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
 `
 
 // x탭

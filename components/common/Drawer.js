@@ -114,7 +114,7 @@ const DrawerBox = styled.div`
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1080px) {
     max-width: 320px;
   }
 `
@@ -130,7 +130,7 @@ const menusStyled = css`
   li {
     margin-bottom: 10px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       margin-bottom: 10px;
     }
 
@@ -145,7 +145,7 @@ const menusStyled = css`
         font-size: 1.125rem;
         font-weight: 500;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
           font-size: 1rem;
         }
       }
