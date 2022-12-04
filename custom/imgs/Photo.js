@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 //
 export default function Photo(props) {
@@ -43,7 +43,7 @@ export default function Photo(props) {
     m_aspect,
   } = props
 
-  const ImgBoxStyled = styled.div`
+  const photo = css`
     position: ${position};
     top: ${top};
     bottom: ${bottom};
@@ -104,7 +104,7 @@ export default function Photo(props) {
   `
 
   return (
-    <ImgBoxStyled>
+    <div css={photo}>
       <Image
         src={src}
         alt={alt}
@@ -116,6 +116,6 @@ export default function Photo(props) {
         width={imageWidth}
         height={imageHeight}
       />
-    </ImgBoxStyled>
+    </div>
   )
 }
