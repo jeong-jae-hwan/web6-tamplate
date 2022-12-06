@@ -78,7 +78,13 @@ export function Drawer() {
         <ul css={menusStyled}>
           {menuList.map((item, i) => {
             return (
-              <li key={i} onClick={() => setIsDrawer(false)}>
+              <li
+                key={i}
+                onClick={() => {
+                  window.scrollTo(0, 0)
+                  setIsDrawer(false)
+                }}
+              >
                 <Link href={item.a}>
                   <span>{item.name}</span>
                   <HrefIcon />

@@ -22,8 +22,6 @@ export default function ModalSheet(props) {
   // 스크롤 위치
   const isPosition = useRecoilValue(scrollPosition)
 
-  console.log(isPosition)
-
   //
   //
   // 모달 고정 핸들러
