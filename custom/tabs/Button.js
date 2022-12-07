@@ -22,12 +22,14 @@ export default function Button(props) {
     hoverBorder,
     m_padding,
     m_margint,
+    borderRadius,
   } = props
 
   const Tab = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 8px;
     padding: padding;
     //
     width: 100%;
@@ -44,7 +46,7 @@ export default function Button(props) {
     background-color: ${fill ? fill : '#333'};
     color: ${color ? color : '#fff'};
     //
-    border-radius: 14px;
+    border-radius: ${borderRadius ? borderRadius : '14px'};
     box-shadow: ${boxShadow && '0 3px 20px rgba(0,0,0,0.2)'};
     //
     transition: all 0.3s ease-in-out;

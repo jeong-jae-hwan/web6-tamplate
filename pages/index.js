@@ -54,7 +54,7 @@ export default function Index() {
               imageHeight={100}
             />
 
-            <Button disabled="true">ss</Button>
+            <Button disabled={true}>ss</Button>
 
             <InputField type="select">
               <select>

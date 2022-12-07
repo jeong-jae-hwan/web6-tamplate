@@ -82,25 +82,6 @@ export default function Photo(props) {
       //
       user-select: none;
     }
-    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-      width: ${m_width};
-      max-width: ${m_maxWidth};
-      min-width: ${m_minWidth};
-      //
-      height: ${m_height};
-      max-height: ${m_maxHeight};
-      min-height: ${m_minHeight};
-      //
-      margin-top: ${m_marginTop};
-      margin-bottom: ${m_marginBottom};
-      margin-left: ${m_marginLeft};
-      margin-right: ${m_marginRight};
-      //
-      border-radius: ${m_borderRadius};
-      img {
-        aspect-ratio: ${m_aspect};
-      }
-    }
   `
 
   return (
