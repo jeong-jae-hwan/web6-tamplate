@@ -1,20 +1,13 @@
-import 'styles/@globals.css'
 import Layout from 'public/Layout'
-import { useRouter } from 'next/router'
+
+//css
+import 'styles/@globals.css'
+
+//recoils
 import { RecoilRoot } from 'recoil'
 
-function MyApp({ Component, pageProps }) {
-  const router = useRouter()
-  // useEffect(() => {
-  //   const handleRouteChange = url => {
-  //     gtag.pageview(url)
-  //   }
-  //   router.events.on('routeChangeComplete', handleRouteChange)
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange)
-  //   }
-  // }, [router.events])
-
+//
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <RecoilRoot>
@@ -25,5 +18,3 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
-export default MyApp

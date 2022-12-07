@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/react'
 
 //atom
-import { useRecoilValue } from 'recoil'
-import { scrollTopTabAtom } from 'atoms/layout-atom'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { scrollPosition, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //
 export default function ScrollTopTab() {
   const [ScrollY, setScrollY] = useState(0)
-  const [BtnStatus, setBtnStatus] = useState(false) // 버튼 상태
+  const [btnStatus, setBtnStatus] = useState(false) // 버튼 상태
   const tabView = useRecoilValue(scrollTopTabAtom)
 
   // 스크롤 수치 감지
@@ -25,6 +25,8 @@ export default function ScrollTopTab() {
     }
   }
 
+  //
+  //
   // 탭 위로 핸들러
   const handleTop = () => {
     window.scrollTo({
@@ -45,45 +47,33 @@ export default function ScrollTopTab() {
     }
   }, [ScrollY])
 
+  //
+  //
+  // 스크롤 위치 파악용
+  const [isPosition, setIsPosition] = useRecoilState(scrollPosition)
+
+  function onScroll() {
+    setIsPosition(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
   return (
     <>
       {ScrollY > 100 && !tabView && (
         <button onClick={handleTop} css={tabStyled}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-            <g id="scroll" transform="translate(-98 -931)">
-              <rect
-                id="사각형_8383"
-                data-name="사각형 8383"
-                width="16"
-                height="16"
-                transform="translate(98 931)"
-                fill="none"
-              />
-              <g
-                id="그룹_95636"
-                data-name="그룹 95636"
-                transform="translate(99 947) rotate(-90)"
-              >
-                <g
-                  id="그룹_94352"
-                  data-name="그룹 94352"
-                  transform="translate(0 0)"
-                >
-                  <path
-                    id="패스_86881"
-                    data-name="패스 86881"
-                    d="M10.448,13.759a1.055,1.055,0,0,1-1.432-.084A.983.983,0,0,1,9,12.326l3.763-4.32H.994A1,1,0,0,1,0,7a.989.989,0,0,1,.3-.7,1.007,1.007,0,0,1,.7-.284H12.7L9.14,1.692A.986.986,0,0,1,9.162.306,1.063,1.063,0,0,1,9.913,0h.005A1.115,1.115,0,0,1,10.7.36l5.03,6.054a.989.989,0,0,1,.008,1.358Z"
-                    transform="translate(0 0.001)"
-                    fill="#333"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
+          <TopTabIcon />
         </button>
       )}
     </>
   )
+
+  return isPosition
 }
 
 // 스타일
@@ -119,3 +109,34 @@ const tabStyled = css`
     }
   }
 `
+
+//아이콘
+const TopTabIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g id="scroll" transform="translate(-98 -931)">
+      <rect
+        id="사각형_8383"
+        data-name="사각형 8383"
+        width="16"
+        height="16"
+        transform="translate(98 931)"
+        fill="none"
+      />
+      <g
+        id="그룹_95636"
+        data-name="그룹 95636"
+        transform="translate(99 947) rotate(-90)"
+      >
+        <g id="그룹_94352" data-name="그룹 94352" transform="translate(0 0)">
+          <path
+            id="패스_86881"
+            data-name="패스 86881"
+            d="M10.448,13.759a1.055,1.055,0,0,1-1.432-.084A.983.983,0,0,1,9,12.326l3.763-4.32H.994A1,1,0,0,1,0,7a.989.989,0,0,1,.3-.7,1.007,1.007,0,0,1,.7-.284H12.7L9.14,1.692A.986.986,0,0,1,9.162.306,1.063,1.063,0,0,1,9.913,0h.005A1.115,1.115,0,0,1,10.7.36l5.03,6.054a.989.989,0,0,1,.008,1.358Z"
+            transform="translate(0 0.001)"
+            fill="#333"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+)
