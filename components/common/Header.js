@@ -87,6 +87,10 @@ const Box = styled.div`
     //
     transition: 0.3s ease-in-out;
 
+    @media (max-width: 1080px) {
+      height: 58px;
+    }
+
     h1 {
       width: 1px;
       height: 1px;
@@ -110,16 +114,8 @@ const Box = styled.div`
     }
 
     @media (max-width: 1080px) {
-      height: 58px;
-
-      nav {
-        padding: 0 20px;
-      }
+      padding: 0 20px;
     }
-  }
-
-  @media (max-width: 1080px) {
-    height: 58px;
   }
 `
 

@@ -3,7 +3,7 @@ import Layout from 'public/Layout'
 //css
 import 'styles/@globals.css'
 
-//recoils
+//atoms
 import { RecoilRoot } from 'recoil'
 
 //
