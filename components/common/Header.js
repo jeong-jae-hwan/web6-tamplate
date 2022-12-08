@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 
 //components
 import { Drawer } from './Drawer'
@@ -22,6 +21,7 @@ import styled from '@emotion/styled'
 
 //
 export default function Header() {
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
   const router = useRouter()
   // 헤더 고정
   const [isFixed, setIsFixed] = useState(false)
@@ -36,12 +36,6 @@ export default function Header() {
     window.addEventListener('scroll', scrollActive)
   }, [])
 
-  // 메뉴 토글
-  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-  const drawerActive = () => {
-    setIsDrawer(!isDrawer)
-  }
-
   return (
     <>
       <Box>
@@ -53,7 +47,7 @@ export default function Header() {
               <Logo alt="로고" />
             </Link>
 
-            <DrawerTab onClick={drawerActive} />
+            <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
           </nav>
         </header>
       </Box>

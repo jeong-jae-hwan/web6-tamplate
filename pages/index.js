@@ -17,7 +17,7 @@ import Dialog from 'custom/modals/Dialog'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { dialogAtom, modalSheetAtom, snackbarAtom } from 'atoms/moda-atoml'
+import { dialogAtom, snackbarAtom } from 'atoms/moda-atoml'
 import InputField from 'custom/inputs/InputField'
 import { useRouter } from 'next/router'
 
@@ -26,7 +26,6 @@ export default function Index() {
   const router = useRouter()
 
   const [isDialog, setIsDialog] = useRecoilState(dialogAtom)
-  const [isSheet, setIsSheet] = useRecoilState(modalSheetAtom)
   const [isSnack, setIsSnack] = useRecoilState(snackbarAtom)
 
   console.log(router)
