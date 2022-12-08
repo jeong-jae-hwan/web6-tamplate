@@ -29,7 +29,7 @@ export default function DrawerTab(props) {
         transition: 0.3s ease-in-out;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 1080px) {
         width: ${m_size ? m_size : `24px`};
         height: ${m_size ? m_size : `24px`};
       }

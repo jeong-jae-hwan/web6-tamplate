@@ -133,6 +133,9 @@ const logoStyled = css`
   width: 34px;
   height: 34px;
   transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     width: 100%;
