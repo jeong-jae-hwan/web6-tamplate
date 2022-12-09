@@ -150,7 +150,7 @@ input[type='number'],
 input[type='search'],
 select,
 textarea {
-  background: transparent;
+  background-color: transparent;
   outline: none;
   text-decoration: all 0.3s ease-in-out;
   border-radius: 0;
@@ -159,6 +159,7 @@ textarea {
 input:focus {
   outline: none;
   border-radius: 0;
+  background-color: transparent;
 }
 
 input[type='text']:focus,
@@ -170,6 +171,32 @@ select,
 textarea {
   outline: none;
   border-radius: 0;
+  background-color: transparent;
+  background: transparent;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 input[type='checkbox'],
