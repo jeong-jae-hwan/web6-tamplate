@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import { useRouter } from 'next/router'
 
 //
 export default function BackTab(props) {
@@ -77,9 +78,19 @@ export default function BackTab(props) {
     }
   `
 
+  // onClick
+  const router = useRouter()
+  const handelBack = i => {
+    if (onClick) {
+      onClick()
+    } else {
+      router.back()
+    }
+  }
+
   return (
     <div css={divStyled}>
-      <TabStyled type="button" onClick={onClick} ref={ref}>
+      <TabStyled type="button" onClick={handelBack} ref={ref}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
           <g id="back-icon" transform="translate(-216 -86)">
             <rect
