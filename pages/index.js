@@ -18,7 +18,6 @@ import Dialog from 'custom/modals/Dialog'
 //atoms
 import { useRecoilState } from 'recoil'
 import { dialogAtom, snackbarAtom } from 'atoms/moda-atoml'
-import InputField from 'custom/inputs/InputField'
 import { useRouter } from 'next/router'
 
 //
@@ -54,13 +53,6 @@ export default function Index() {
             />
 
             <Button disabled={true}>ss</Button>
-
-            <InputField type="select">
-              <select>
-                <option>ss</option>
-                <option>ss</option>
-              </select>
-            </InputField>
 
             <div className={styles.wrapper}>
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the

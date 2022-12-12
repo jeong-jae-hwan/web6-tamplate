@@ -41,7 +41,7 @@ export default function SelectField(props) {
     }
   `
 
-  const lineFieldStyled = css`
+  const LineStyled = styled.div`
     width: 100%;
     height: ${({ height }) => (height ? height : 'auto')};
     display: flex;
@@ -87,7 +87,7 @@ export default function SelectField(props) {
     }
   `
 
-  const boxFieldStyled = css`
+  const BoxStyled = styled.div`
     width: 100%;
     height: ${({ height }) => (height ? height : 'auto')};
     display: flex;
@@ -147,7 +147,7 @@ export default function SelectField(props) {
 
       {/* 기본형 라인 타입 인풋 */}
       {!shape && (
-        <div css={lineFieldStyled} key={key}>
+        <LineStyled key={key}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
@@ -156,12 +156,12 @@ export default function SelectField(props) {
               {tab}
             </button>
           )}
-        </div>
+        </LineStyled>
       )}
 
       {/* 박스 타입 인풋 */}
       {shape === 'box' && (
-        <div css={boxFieldStyled} key={key}>
+        <BoxStyled key={key}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
@@ -170,7 +170,7 @@ export default function SelectField(props) {
               {tab}
             </button>
           )}
-        </div>
+        </BoxStyled>
       )}
     </FieldStyled>
   )
