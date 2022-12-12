@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 //
-export default function InputField(props) {
+export default function SelectField(props) {
   const {
     children,
     shape,
@@ -20,11 +20,13 @@ export default function InputField(props) {
     m_minWidth,
     margin,
     fontSize,
+    key,
   } = props
 
   //styled
   const FieldStyled = styled.div`
     width: ${width ? width : '100%'};
+    height: auto;
     max-width: ${maxWidth};
     min-width: ${minWidth};
     margin: ${margin};
@@ -41,6 +43,7 @@ export default function InputField(props) {
 
   const lineFieldStyled = css`
     width: 100%;
+    height: ${({ height }) => (height ? height : 'auto')};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,6 +51,7 @@ export default function InputField(props) {
 
     select {
       width: 100%;
+      height: 100%;
       -webkit-appearance: none; /* for chrome */
       -moz-appearance: none; /*for firefox*/
       appearance: none;
@@ -85,6 +89,7 @@ export default function InputField(props) {
 
   const boxFieldStyled = css`
     width: 100%;
+    height: ${({ height }) => (height ? height : 'auto')};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,11 +100,12 @@ export default function InputField(props) {
 
     select {
       width: 100%;
+      height: 100%;
       -webkit-appearance: none; /* for chrome */
       -moz-appearance: none; /*for firefox*/
       appearance: none;
       font-size: ${fontSize ? fontSize : '0.938rem'};
-      padding: 12px 0 12px 12px;
+      padding: 12px 0 12px 10px;
     }
 
     select option[value=''][disabled] {
@@ -107,6 +113,7 @@ export default function InputField(props) {
     }
 
     input {
+      height: auto;
       width: 100%;
       padding: 12px 0 12px 12px;
       font-size: ${fontSize ? fontSize : '0.938rem'};
@@ -140,7 +147,7 @@ export default function InputField(props) {
 
       {/* 기본형 라인 타입 인풋 */}
       {!shape && (
-        <div css={lineFieldStyled}>
+        <div css={lineFieldStyled} key={key}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
@@ -154,7 +161,7 @@ export default function InputField(props) {
 
       {/* 박스 타입 인풋 */}
       {shape === 'box' && (
-        <div css={boxFieldStyled}>
+        <div css={boxFieldStyled} key={key}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
