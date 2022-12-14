@@ -29,7 +29,7 @@ export default function Dialog(props) {
   const clickModalOutside = event => {
     if (isActive && !ref.current?.contains(event.target)) {
       setScrollTopTab(false)
-      onCancel()
+      onCancel
     }
   }
 
