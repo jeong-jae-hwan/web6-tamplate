@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap');
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 * {
   box-sizing: border-box;
@@ -8,7 +7,7 @@
   margin: 0;
   padding: 0;
   color: #333;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   user-select: auto;
   -webkit-touch-callout: none;
 }
@@ -107,6 +106,7 @@ button {
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
