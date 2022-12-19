@@ -115,10 +115,10 @@ const Box = styled.div`
       position: relative;
       transition: 0.3s ease-in-out;
       cursor: auto;
-    }
 
-    @media (max-width: 1080px) {
-      padding: 0 20px;
+      @media (max-width: 1080px) {
+        padding: 0 20px;
+      }
     }
   }
 `
