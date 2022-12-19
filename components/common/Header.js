@@ -67,6 +67,10 @@ const Box = styled.div`
   align-items: center;
   transition: 0.3s ease-in-out;
 
+  @media (max-width: 1080px) {
+    height: 58px;
+  }
+
   header {
     z-index: 999;
     //
