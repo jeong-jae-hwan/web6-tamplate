@@ -8,16 +8,14 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //styles
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
+import { DrawerBox, Memu } from './css/S_drawer'
 import { LayerBlur } from 'scss/layout-styled/LayerBlur'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
-import TabIcon from 'public/icons/x-tab-icon.svg'
 
 //custom_styled
-import IconTab from 'custom/tabs/IconTab'
+import CancelTab from 'custom/tab-icons/fill/cancel-tab'
 
 //
 export function Drawer() {
@@ -64,18 +62,11 @@ export function Drawer() {
     <>
       <LayerBlur isActive={isDrawer} />
       <DrawerBox isActive={isDrawer} ref={ref}>
-        {/* 닫기 탭 */}
-        <IconTab
-          sticky={true}
-          position="absolute"
-          right="14px"
-          m_size="23px"
-          onClick={() => setIsDrawer(false)}
-        >
-          <TabIcon fill="#ddd" />
-        </IconTab>
+        <div className="sticky">
+          <CancelTab onClick={() => setIsDrawer(false)} />
+        </div>
 
-        <ul css={menusStyled}>
+        <Memu>
           {menuList.map((item, i) => {
             return (
               <li
@@ -92,69 +83,8 @@ export function Drawer() {
               </li>
             )
           })}
-        </ul>
+        </Memu>
       </DrawerBox>
     </>
   )
 }
-
-//styled
-const DrawerBox = styled.div`
-  z-index: 1001;
-  //
-  position: fixed;
-  top: 0;
-  right: ${({ isActive }) => (isActive ? 0 : '-100%')};
-  //
-  width: 100%;
-  max-width: 400px;
-  height: 100vh;
-  //
-  background-color: #fff;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
-  //
-  overflow: auto;
-  transition: 0.2s ease-in-out;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media only screen and (max-width: 1080px) {
-    max-width: 320px;
-  }
-`
-
-const menusStyled = css`
-  transition: 0.3s ease-in-out;
-  padding: 80px 15px 30px;
-
-  @media (max-width: 768px) {
-    padding: 60px 5px 40px;
-  }
-
-  li {
-    margin-bottom: 10px;
-
-    @media (max-width: 1080px) {
-      margin-bottom: 10px;
-    }
-
-    a {
-      width: 100%;
-      padding: 10px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      span {
-        font-size: 1.125rem;
-        font-weight: 500;
-
-        @media (max-width: 1080px) {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-`

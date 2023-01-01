@@ -17,7 +17,7 @@ import Dialog from 'custom/modals/Dialog'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { dialogAtom, snackbarAtom } from 'atoms/modal-atoml'
+import { dialogAtom, snackbarAtom } from 'atoms/modal-atom'
 import { useRouter } from 'next/router'
 
 //

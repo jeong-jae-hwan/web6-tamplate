@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 // 공통 팝업 레이어
 export const LayerBlur = styled.div`
-  z-index: 999;
+  z-index: 9000;
   //
   position: fixed;
   top: 0;

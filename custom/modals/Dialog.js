@@ -8,18 +8,14 @@ import { css } from '@emotion/react'
 import { scrollTopTabAtom } from 'atoms/layout-atom'
 import { useRecoilState } from 'recoil'
 
+//custom
+import CancelTab from 'custom/tab-icons/fill/cancel-tab'
+import { LayerBlur } from 'scss/layout-styled/LayerBlur'
+
 //
 export default function Dialog(props) {
-  const {
-    children,
-    isActive,
-    disabled,
-    onCancel,
-    onClick,
-    title,
-    subTitle,
-    zIndex,
-  } = props
+  const { children, isActive, disabled, onCancel, onClick, title, subTitle } =
+    props
 
   // atoms = scrollToTab
   const [scrollTopTab, setScrollTopTab] = useRecoilState(scrollTopTabAtom)
@@ -29,7 +25,7 @@ export default function Dialog(props) {
   const clickModalOutside = event => {
     if (isActive && !ref.current?.contains(event.target)) {
       setScrollTopTab(false)
-      onCancel
+      onCancel()
     }
   }
 
@@ -49,25 +45,8 @@ export default function Dialog(props) {
   }, [isActive])
 
   // styled
-  const layerStyled = css`
-    z-index: ${zIndex ? zIndex : '8888'};
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: ${isActive ? 'flex' : 'none'};
-    flex-direction: column;
-    align-items: center;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.25);
-    transition: 0.25s ease-in-out;
-    opacity: ${isActive ? 1 : 0};
-  `
-
   const dialogStyled = css`
-    z-index: 9000;
+    z-index: 9997;
     //
     position: fixed;
     top: ${isActive ? '45%' : '100%'};
@@ -95,34 +74,9 @@ export default function Dialog(props) {
 
   return (
     <>
-      <div css={layerStyled} />
+      <LayerBlur isActive={isActive} />
       <div css={dialogStyled} ref={ref}>
-        {/* tab */}
-        <button css={cancelStyled} type="button" onClick={onCancel}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-            <g
-              id="그룹_96430"
-              data-name="그룹 96430"
-              transform="translate(-1139 -96)"
-            >
-              <circle
-                id="타원_1270"
-                data-name="타원 1270"
-                cx="12.5"
-                cy="12.5"
-                r="12.5"
-                transform="translate(1139 96)"
-                fill="#fff"
-              />
-              <path
-                id="xBtn"
-                d="M25.481,7.8a12.5,12.5,0,1,0,0,17.677,12.5,12.5,0,0,0,0-17.677m-6.32,12.824-2.519-2.519-2.52,2.52a1.038,1.038,0,0,1-1.467-1.467l2.52-2.52L12.66,14.126a1.038,1.038,0,0,1,1.467-1.467l2.515,2.516,2.515-2.515a1.035,1.035,0,0,1,1.464,1.464l-2.515,2.515,2.52,2.519-.221.221.221-.221a1.038,1.038,0,0,1-1.467,1.467"
-                transform="translate(1134.858 91.858)"
-                fill="current"
-              />
-            </g>
-          </svg>
-        </button>
+        <CancelTab style={cancelStyled} onClick={onCancel} />
 
         <div css={viewStyled}>
           {/* 타이틀 */}
