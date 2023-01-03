@@ -1,80 +1,156 @@
 import styled from '@emotion/styled'
 
-// 공통 레이아웃
-export const View = styled.div`
+export const View = styled.section`
   position: relative;
-  //
-  width: ${({ width }) => (width ? width : '100%')};
-  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '1200px')};
-  //
-  height: ${({ height }) => height};
-  min-height: ${({ minHeight }) => minHeight};
-  max-height: ${({ maxHeight }) => maxHeight};
-  //
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: ${({ flexStart }) => (flexStart ? 'flex-start' : 'center')};
-  row-gap: ${({ gap }) => gap};
-  //
-  padding: ${({ padding }) => padding};
-  padding-top: ${({ paddingTop }) => paddingTop};
-  padding-bottom: ${({ paddingBottom }) => paddingBottom};
-  padding-right: ${({ paddingLR }) => paddingLR};
-  padding-left: ${({ paddingLR }) => paddingLR};
-  //
-  margin: ${({ margin }) => margin};
-  margin-top: ${({ marginTop }) => marginTop};
-  margin-bottom: ${({ marginBottom }) => marginBottom};
-  margin-right: ${({ marginRight }) => marginRight};
-  margin-left: ${({ marginLeft }) => marginLeft};
-  //
+  align-items: center;
   transition: 0.3s ease-in-out;
 
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    height: ${({ m_height }) => m_height};
-    min-height: ${({ m_minHeight }) => m_minHeight};
-    max-height: ${({ m_maxHeight }) => m_maxHeight};
-    //
-    padding: ${({ m_padding }) => m_padding};
-    padding-top: ${({ m_paddingTop }) => m_paddingTop};
-    padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
-    padding-right: ${({ m_paddingLR }) => m_paddingLR};
-    padding-left: ${({ m_paddingLR }) => m_paddingLR};
-    //
-    margin: ${({ m_margin }) => m_margin};
-    margin-top: ${({ m_marginTop }) => m_marginTop};
-    margin-bottom: ${({ m_marginBottom }) => m_marginBottom};
-    margin-right: ${({ m_marginR }) => m_marginR};
-    margin-left: ${({ m_marginL }) => m_marginL};
-    //
-    row-gap: ${({ m_gap }) => m_gap};
+  max-width: ${({ maxWidth }) => maxWidth};
+`
+
+export const Box = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+`
+
+//
+// Ul & li 영역
+export const Ul = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  row-gap: 10px;
+`
+
+export const Li = styled.li`
+  display: flex;
+`
+
+//
+// 텍스트 영역
+export const Title = styled.h1`
+  font-size: ${({ size }) => (size ? size : '1.75rem')};
+`
+
+export const Title2 = styled.h2`
+  font-size: ${({ size }) => (size ? size : '1.5rem')};
+`
+
+export const Title3 = styled.h3`
+  font-size: ${({ size }) => (size ? size : '1.25rem')};
+`
+
+export const Text = styled.p`
+  font-size: ${({ size }) => (size ? size : '0.938rem')};
+
+  span {
+    font-size: 0.813rem;
+    color: #999;
+  }
+`
+
+export const SubText = styled.span`
+  font-size: ${({ size }) => (size ? size : '0.813rem')};
+  color: #888;
+`
+
+export const Span = styled.span`
+  font-size: ${({ size }) => (size ? size : '0.938rem')};
+`
+
+//
+// 이미지 영역
+export const Img = styled.img`
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 10px;
+`
+
+//
+// 탭영역
+export const Tab = styled.button`
+  font-size: 0.938rem;
+  padding: 0.4em;
+
+  &:disabled {
+    color: #c2c2c2;
   }
 `
 
 //
-//
-//
-// 가로 레이아웃
-export const RowView = styled(View)`
+// 헤더영역
+export const Header = styled.div`
+  width: 100%;
+  height: 70px;
   display: flex;
-  align-items: stretch;
-  flex-direction: row;
-  //
-  column-gap: ${({ gap }) => gap};
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease-in-out;
 
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    flex-direction: column;
+  header {
+    @media (max-width: 1080px) {
+      height: 58px;
+    }
+  }
+
+  h1 {
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .logo {
+    width: 34px;
+    height: 34px;
+    transition: 0.3s ease-in-out;
+    display: flex;
     align-items: center;
-    row-gap: ${({ m_gap }) => m_gap};
-    //
-    height: ${({ m_height }) => m_height};
-    min-height: ${({ m_minHeight }) => m_minHeight};
-    max-height: ${({ m_maxHeight }) => m_maxHeight};
-    //
-    padding: ${({ m_padding }) => m_padding};
-    padding-top: ${({ m_paddingTop }) => m_paddingTop};
-    padding-bottom: ${({ m_paddingBottom }) => m_paddingBottom};
-    padding-right: ${({ m_paddingLR }) => m_paddingLR};
-    padding-left: ${({ m_paddingLR }) => m_paddingLR};
+    justify-content: center;
+
+    img {
+      width: 100%;
+      width: 100%;
+    }
+
+    svg {
+      width: 100%;
+      width: 100%;
+    }
+
+    @media (max-width: 1080px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+`
+
+export const Nav = styled.nav`
+  width: 100%;
+  max-width: ${({ maxWidth }) => maxWidth};
+  height: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  cursor: auto;
+
+  @media (max-width: 1080px) {
+    padding: 0 20px;
   }
 `

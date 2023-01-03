@@ -92,7 +92,7 @@ const tabStyled = css`
   color: #666;
   font-weight: 500;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 8000;
   user-select: none;
   transition: 0.3s ease-in-out;
 

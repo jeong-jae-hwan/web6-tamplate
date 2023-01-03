@@ -88,7 +88,8 @@ export default function ModalSheet(props) {
       display: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1080px) {
+      max-width: 100%;
       top: ${isActive ? '20px' : '100%'};
       //
       height: calc(100vh - 20px);

@@ -1,10 +1,27 @@
+import { css } from '@emotion/react'
 import React from 'react'
 
 export default function DrawerTab(props) {
   const { onClick, size, fill, style } = props
 
   return (
-    <button type="button" onClick={onClick} className={style} css={style}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={style}
+      css={css`
+        display: none;
+        justify-content: center;
+        width: 28px;
+        max-width: 28px;
+
+        @media (max-width: 1080px) {
+          display: flex;
+          width: 25px;
+          max-width: 25px;
+        }
+      `}
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
         <g id="drawer-icon" transform="translate(-82 -14)">
           <rect

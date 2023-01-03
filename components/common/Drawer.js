@@ -8,14 +8,17 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //styles
-import { DrawerBox, Memu } from './css/S_drawer'
-import { LayerBlur } from 'scss/layout-styled/LayerBlur'
+import { DrawerBlur, DrawerBox } from './css/S_drawer'
+import { Li, Span, Ul } from 'scss/layout-styled/View'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
 
 //custom_styled
 import CancelTab from 'custom/tab-icons/fill/cancel-tab'
+
+//menu
+import menus from './json/memu.json'
 
 //
 export function Drawer() {
@@ -49,27 +52,19 @@ export function Drawer() {
   }, [isDrawer])
 
   // 메뉴 종류
-  const menuList = [
-    { name: '가입하기', a: '/join' },
-    { name: '서비스 소개', a: '/' },
-    { name: '템플릿 구매', a: '/' },
-    { name: '자주 묻는 질문', a: '/' },
-    { name: '문의하기', a: '/' },
-    { name: '의뢰하기', a: '/' },
-  ]
 
   return (
     <>
-      <LayerBlur isActive={isDrawer} />
+      <DrawerBlur isActive={isDrawer} />
       <DrawerBox isActive={isDrawer} ref={ref}>
         <div className="sticky">
           <CancelTab onClick={() => setIsDrawer(false)} />
         </div>
 
-        <Memu>
-          {menuList.map((item, i) => {
+        <Ul>
+          {menus.map((item, i) => {
             return (
-              <li
+              <Li
                 key={i}
                 onClick={() => {
                   window.scrollTo(0, 0)
@@ -77,13 +72,13 @@ export function Drawer() {
                 }}
               >
                 <Link href={item.a}>
-                  <span>{item.name}</span>
+                  <Span>{item.name}</Span>
                   <HrefIcon />
                 </Link>
-              </li>
+              </Li>
             )
           })}
-        </Memu>
+        </Ul>
       </DrawerBox>
     </>
   )

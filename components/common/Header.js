@@ -5,9 +5,6 @@ import { useRouter } from 'next/router'
 //components
 import { Drawer } from './Drawer'
 
-//custom-style
-import DrawerTab from 'custom/tabs/DrawerTab'
-
 //png,svg
 import Logo from 'public/images/logo.svg'
 
@@ -16,10 +13,17 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom } from 'atoms/layout-atom'
 
 //styles
-import { HeaderStyled, Nav } from './css/S_header'
+import { css } from '@emotion/react'
+import { Header, Li, Nav, Ul } from 'scss/layout-styled/View'
+
+//customs
+import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
+
+//menu
+import menus from './json/memu.json'
 
 //
-export default function Header() {
+export default function HeaderView() {
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
 
   // 헤더 고정
@@ -37,7 +41,7 @@ export default function Header() {
 
   return (
     <>
-      <HeaderStyled>
+      <Header>
         <header>
           <h1 aria-hidden="true">딥팩토리</h1>
 
@@ -46,13 +50,43 @@ export default function Header() {
               <Logo alt="로고" />
             </Link>
 
+            <Ul css={styles}>
+              {menus.map((item, i) => {
+                return (
+                  <Li key={i}>
+                    <Link href={item.a}>{item.name}</Link>
+                  </Li>
+                )
+              })}
+            </Ul>
+
             <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
           </Nav>
         </header>
-      </HeaderStyled>
+      </Header>
 
       {/* 드로어 메뉴 */}
       <Drawer />
     </>
   )
 }
+
+//styled
+const styles = css`
+  width: auto;
+  flex-direction: row;
+  display: flex;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+
+  a {
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+`

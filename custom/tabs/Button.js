@@ -25,7 +25,7 @@ export default function Button(props) {
     borderRadius,
   } = props
 
-  const Tab = styled.button`
+  const Fill = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,7 @@ export default function Button(props) {
     }
   `
 
-  const Stroke = styled(Tab)`
+  const Stroke = styled(Fill)`
     background-color: transparent;
     color: ${color ? color : '#333'};
     border: 1px solid ${border ? border : '#333'};
@@ -83,13 +83,13 @@ export default function Button(props) {
   return (
     <>
       {!stroke && (
-        <Tab
+        <Fill
           disabled={disabled}
           type={type ? type : 'button'}
           onClick={onClick}
         >
           {children}
-        </Tab>
+        </Fill>
       )}
       {stroke && (
         <Stroke
