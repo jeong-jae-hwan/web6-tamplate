@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Box } from 'scss/layout-styled/View'
+import { Box } from './layout-styled'
 
 export const DrawerBlur = styled.div`
   z-index: 9000;

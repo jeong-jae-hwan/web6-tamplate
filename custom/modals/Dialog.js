@@ -10,7 +10,7 @@ import { useRecoilState } from 'recoil'
 
 //custom
 import CancelTab from 'custom/tab-icons/fill/cancel-tab'
-import { LayerBlur } from 'scss/layout-styled/LayerBlur'
+import { LayerBlur } from 'styles/layer-styled'
 
 //
 export default function Dialog(props) {

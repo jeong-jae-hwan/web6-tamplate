@@ -7,9 +7,9 @@ export const View = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.3s ease-in-out;
-
+  flex: 1;
   max-width: ${({ maxWidth }) => maxWidth};
+  transition: 0.3s ease-in-out;
 `
 
 export const Box = styled.div`
@@ -21,70 +21,11 @@ export const Box = styled.div`
   column-gap: 10px;
 `
 
-//
-// Ul & li 영역
-export const Ul = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  column-gap: 10px;
-  row-gap: 10px;
-`
-
-export const Li = styled.li`
-  display: flex;
-`
-
-//
-// 텍스트 영역
-export const Title = styled.h1`
-  font-size: ${({ size }) => (size ? size : '1.75rem')};
-`
-
-export const Title2 = styled.h2`
-  font-size: ${({ size }) => (size ? size : '1.5rem')};
-`
-
-export const Title3 = styled.h3`
-  font-size: ${({ size }) => (size ? size : '1.25rem')};
-`
-
-export const Text = styled.p`
-  font-size: ${({ size }) => (size ? size : '0.938rem')};
-
-  span {
-    font-size: 0.813rem;
-    color: #999;
-  }
-`
-
-export const SubText = styled.span`
-  font-size: ${({ size }) => (size ? size : '0.813rem')};
-  color: #888;
-`
-
-export const Span = styled.span`
-  font-size: ${({ size }) => (size ? size : '0.938rem')};
-`
-
-//
-// 이미지 영역
-export const Img = styled.img`
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  border-radius: 10px;
-`
-
-//
-// 탭영역
-export const Tab = styled.button`
-  font-size: 0.938rem;
-  padding: 0.4em;
-
-  &:disabled {
-    color: #c2c2c2;
-  }
+export const Row = styled(Box)`
+  flex-direction: row;
+  align-items: ${({ center }) => (center ? 'center' : 'stretch')};
+  align-items: ${({ start }) => (start ? 'start' : 'stretch')};
+  align-items: ${({ end }) => (end ? 'end' : 'stretch')};
 `
 
 //

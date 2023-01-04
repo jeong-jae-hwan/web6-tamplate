@@ -115,6 +115,13 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
+strong,
+svg,
+img,
+picture {
+  transition: all 0.3s ease-in-out;
+}
+
 /* ////////////////////////////// */
 /* ////////////////////////////// */
 /* ////////////////////////////// */

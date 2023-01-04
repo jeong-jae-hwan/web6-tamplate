@@ -14,7 +14,8 @@ import { drawerAtom } from 'atoms/layout-atom'
 
 //styles
 import { css } from '@emotion/react'
-import { Header, Li, Nav, Ul } from 'scss/layout-styled/View'
+import { Header, Nav } from 'styles/layout-styled'
+import { List, ListBox } from 'styles/view-styled'
 
 //customs
 import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
@@ -50,15 +51,15 @@ export default function HeaderView() {
               <Logo alt="로고" />
             </Link>
 
-            <Ul css={styles}>
+            <ListBox css={styles}>
               {menus.map((item, i) => {
                 return (
-                  <Li key={i}>
+                  <List key={i}>
                     <Link href={item.a}>{item.name}</Link>
-                  </Li>
+                  </List>
                 )
               })}
-            </Ul>
+            </ListBox>
 
             <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
           </Nav>

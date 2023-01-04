@@ -8,8 +8,6 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //styles
-import { DrawerBlur, DrawerBox } from './css/S_drawer'
-import { Li, Span, Ul } from 'scss/layout-styled/View'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
@@ -19,6 +17,9 @@ import CancelTab from 'custom/tab-icons/fill/cancel-tab'
 
 //menu
 import menus from './json/memu.json'
+import { Span } from 'styles/text-styled'
+import { List, ListBox } from 'styles/view-styled'
+import { DrawerBlur, DrawerBox } from 'styles/drawer-styled'
 
 //
 export function Drawer() {
@@ -61,10 +62,10 @@ export function Drawer() {
           <CancelTab onClick={() => setIsDrawer(false)} />
         </div>
 
-        <Ul>
+        <ListBox>
           {menus.map((item, i) => {
             return (
-              <Li
+              <List
                 key={i}
                 onClick={() => {
                   window.scrollTo(0, 0)
@@ -75,10 +76,10 @@ export function Drawer() {
                   <Span>{item.name}</Span>
                   <HrefIcon />
                 </Link>
-              </Li>
+              </List>
             )
           })}
-        </Ul>
+        </ListBox>
       </DrawerBox>
     </>
   )
