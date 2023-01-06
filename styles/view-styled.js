@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 //
 // Ul & li 영역
-export const ListBox = styled.ul`
+export const ItemBox = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ export const ListBox = styled.ul`
   row-gap: 10px;
 `
 
-export const List = styled.li`
+export const Item = styled.li`
   display: flex;
 `
 

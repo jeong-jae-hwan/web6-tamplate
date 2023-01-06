@@ -18,7 +18,7 @@ import CancelTab from 'custom/tab-icons/fill/cancel-tab'
 //menu
 import menus from './json/memu.json'
 import { Span } from 'styles/text-styled'
-import { List, ListBox } from 'styles/view-styled'
+import { Item, ItemBox } from 'styles/view-styled'
 import { DrawerBlur, DrawerBox } from 'styles/drawer-styled'
 
 //
@@ -62,10 +62,10 @@ export function Drawer() {
           <CancelTab onClick={() => setIsDrawer(false)} />
         </div>
 
-        <ListBox>
+        <ItemBox>
           {menus.map((item, i) => {
             return (
-              <List
+              <Item
                 key={i}
                 onClick={() => {
                   window.scrollTo(0, 0)
@@ -76,10 +76,10 @@ export function Drawer() {
                   <Span>{item.name}</Span>
                   <HrefIcon />
                 </Link>
-              </List>
+              </Item>
             )
           })}
-        </ListBox>
+        </ItemBox>
       </DrawerBox>
     </>
   )
