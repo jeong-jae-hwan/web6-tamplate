@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function UploadTab(props) {
+export default function BackTab(props) {
   const { onClick, size, fill, style } = props
 
   return (
     <button type="button" onClick={onClick} className={style} css={style}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
+        width={size ? size : '18px'}
+        height={size ? size : '18px'}
         viewBox="0 0 22 22"
       >
         <g id="back-icon" transform="translate(-216 -86)">

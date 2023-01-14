@@ -32,14 +32,14 @@ export default function ModalSheet(props) {
   useEffect(() => {
     ref.current?.scrollTo(0, 0)
 
-    if (isActive || router.query.detail) {
+    if (isActive) {
       document.body.style.overflowY = 'hidden'
       setScrollTopTab(true)
     } else {
       document.body.style.overflowY = 'auto'
       setScrollTopTab(false)
     }
-  }, [isActive, router.query.detail])
+  }, [isActive])
 
   //
   //
@@ -64,7 +64,7 @@ export default function ModalSheet(props) {
     z-index: 9997;
     //
     position: fixed;
-    top: ${router.query.detail || isActive ? '60px' : '100%'};
+    top: ${isActive ? '60px' : '100%'};
     left: 50%;
     transform: translateX(-50%);
     //
@@ -81,7 +81,7 @@ export default function ModalSheet(props) {
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
     //
     transition: 0.25s ease-in-out;
-    opacity: ${router.query.detail || isActive ? 1 : 0};
+    opacity: ${isActive ? 1 : 0};
     overflow-y: auto;
 
     &::-webkit-scrollbar {
@@ -98,7 +98,7 @@ export default function ModalSheet(props) {
 
   return (
     <>
-      <LayerBlur isActive={router.query.detail || isActive} />
+      <LayerBlur isActive={isActive} />
       <div css={sheetStyled} ref={ref}>
         <div css={stickyStyles}>
           <CancelTab onClick={handleOnCancel} />

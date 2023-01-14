@@ -12,6 +12,8 @@ export const View = styled.section`
   transition: 0.3s ease-in-out;
 `
 
+///////
+/////////
 export const Box = styled.div`
   width: 100%;
   display: flex;
@@ -21,6 +23,8 @@ export const Box = styled.div`
   column-gap: 10px;
 `
 
+///////
+/////////
 export const Row = styled(Box)`
   flex-direction: row;
   align-items: ${({ center }) => (center ? 'center' : 'stretch')};
@@ -79,6 +83,8 @@ export const Header = styled.div`
   }
 `
 
+///////
+/////////
 export const Nav = styled.nav`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
@@ -94,4 +100,12 @@ export const Nav = styled.nav`
   @media (max-width: 1080px) {
     padding: 0 20px;
   }
+`
+
+///////
+/////////
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `

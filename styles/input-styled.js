@@ -205,3 +205,28 @@ export const InputBox = styled.div`
     min-width: ${({ m_minWidth }) => m_minWidth};
   }
 `
+
+///
+///////
+//////// label
+export const Label = styled.label`
+  width: 100%;
+  font-size: 0.813rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  span {
+    font-size: 0.75rem;
+    color: #e36060;
+  }
+`
+///
+///////
+//////// input
+export const Input = styled.input`
+  width: 100%;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '0.938rem')};
+  padding: 0.533em 0;
+`

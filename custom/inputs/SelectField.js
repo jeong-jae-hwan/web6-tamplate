@@ -21,6 +21,7 @@ export default function SelectField(props) {
     margin,
     fontSize,
     key,
+    css,
   } = props
 
   //styled
@@ -147,7 +148,7 @@ export default function SelectField(props) {
 
       {/* 기본형 라인 타입 인풋 */}
       {!shape && (
-        <LineStyled key={key}>
+        <LineStyled key={key} css={css}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
@@ -161,7 +162,7 @@ export default function SelectField(props) {
 
       {/* 박스 타입 인풋 */}
       {shape === 'box' && (
-        <BoxStyled key={key}>
+        <BoxStyled key={key} css={css}>
           {type === 'date' && <CalenderIcon shape={shape} />}
           {children}
           {type === 'select' && <SelectIcon />}
@@ -249,17 +250,15 @@ const SelectIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 5"
-      css={css`
-        width: 14px;
-      `}
+      width="12"
+      height="7"
+      viewBox="0 0 12 7"
     >
       <path
-        id="패스_32796"
-        data-name="패스 32796"
-        d="M9.8,3.906,5.523.179A.657.657,0,0,0,4.634.168L.2,3.805a.65.65,0,0,0-.2.461.637.637,0,0,0,.194.455.649.649,0,0,0,.45.185H.652a.644.644,0,0,0,.433-.162L5.058,1.51,8.9,4.828a.665.665,0,0,0,.9-.006.623.623,0,0,0,0-.916"
-        transform="translate(10 5) rotate(180)"
-        fill="#aaa"
+        id="select-icon"
+        d="M6,0l6,7H0Z"
+        transform="translate(12 7) rotate(180)"
+        fill="#ccc"
       />
     </svg>
   )

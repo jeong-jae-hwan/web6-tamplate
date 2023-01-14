@@ -29,7 +29,7 @@ export default function Checkbox(props) {
   const checkStyled = css`
     display: flex;
     align-items: center;
-    column-gap: ${gap ? gap : '7px'};
+    column-gap: ${gap ? gap : '5px'};
     margin: ${margin};
     cursor: pointer;
 
