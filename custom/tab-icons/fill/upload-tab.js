@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import React from 'react'
 
 export default function UploadTab(props) {
@@ -8,7 +9,15 @@ export default function UploadTab(props) {
       type={type ? type : 'button'}
       onClick={onClick}
       className={style}
-      css={style}
+      css={
+        style
+          ? style
+          : css`
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            `
+      }
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

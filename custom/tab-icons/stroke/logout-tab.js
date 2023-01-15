@@ -1,10 +1,24 @@
+import { css } from '@emotion/react'
 import React from 'react'
 
 export default function LogoutTab(props) {
   const { onClick, size, fill, style } = props
 
   return (
-    <button type="button" onClick={onClick} className={style} css={style}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={style}
+      css={
+        style
+          ? style
+          : css`
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            `
+      }
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}

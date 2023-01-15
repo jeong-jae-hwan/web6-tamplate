@@ -4,8 +4,10 @@ import { useRouter } from 'next/router'
 //style
 import { css } from '@emotion/react'
 import { LayerBlur } from 'styles/layer-styled'
-import { Sheet } from 'styles/modal-styled'
+import { Box, Row } from 'styles/layout-styled'
 import { Title } from 'styles/text-styled'
+import { Tab } from 'styles/view-styled'
+import { Sheet } from 'styles/modal-styled'
 
 //atom
 import { scrollPosition, scrollTopTabAtom } from 'atoms/layout-atom'
@@ -15,8 +17,9 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import CancelTab from 'custom/tab-icons/fill/cancel-tab'
 
 //
-export default function ModalSheet(props) {
-  const { children, isActive, onCancel, title, maxWidth } = props
+export default function ModalNavigation(props) {
+  const { children, isActive, onCancel, onSubmit, title, maxWidth, tabName } =
+    props
   const router = useRouter()
   const ref = useRef()
 
@@ -61,15 +64,30 @@ export default function ModalSheet(props) {
     }
   }
 
+  //제출
+  const handleOnSubmit = () => {
+    onSubmit()
+    handleOnCancel()
+  }
+
   return (
     <>
       <LayerBlur isActive={isActive} />
       <Sheet ref={ref} isActive={isActive} maxWidth={maxWidth}>
-        <div css={stickyStyles}>
-          <CancelTab onClick={handleOnCancel} />
-        </div>
-        {/* 화면 */}
-        {title && <Title css={titleStyled}>{title}</Title>}
+        <Row css={styles.title}>
+          <Box css={styles.cancel}>
+            <CancelTab onClick={handleOnCancel} />
+          </Box>
+
+          <Title>{title}</Title>
+
+          {tabName && (
+            <Tab type="button" css={styles.tab} onClick={handleOnSubmit}>
+              {tabName}
+            </Tab>
+          )}
+        </Row>
+
         {children}
       </Sheet>
     </>
@@ -77,48 +95,42 @@ export default function ModalSheet(props) {
 }
 
 //styled
-const titleStyled = css`
-  z-index: 2;
-  width: 100%;
-  white-space: pre-line;
-  font-size: 1.25rem;
-  padding: 2em 1em 0.5em;
-  min-height: 80px;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-`
+const styles = {
+  box: css`
+    padding: 6px 0 0;
+  `,
 
-const stickyStyles = css`
-  z-index: 999;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-
-  button {
-    position: absolute;
-    right: 10px;
-    width: 26px;
-    height: 26px;
-    display: flex;
+  title: css`
+    min-height: 62px;
+    height: 62px;
+    z-index: 99;
+    position: sticky;
+    top: 0;
     justify-content: center;
     align-items: center;
-    user-select: none;
-    transition: 0.3s ease-in-out;
+    border-bottom: 1px solid #e2e2e2;
+    background-color: #fff;
 
-    svg {
-      width: 100%;
-      height: 100%;
-      fill: #ccc;
+    strong {
+      font-size: 1.125rem;
+      font-weight: 500;
     }
+  `,
 
-    @media (max-width: 600px) {
-      width: 24px;
-      height: 24px;
+  cancel: css`
+    width: auto;
+    position: absolute;
+    left: 20px;
+  `,
+
+  tab: css`
+    position: absolute;
+    right: 20px;
+    font-size: 15px;
+    color: #1f7bda;
+
+    &:disabled {
+      color: #ccc;
     }
-  }
-`
+  `,
+}

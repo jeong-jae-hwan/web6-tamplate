@@ -1,10 +1,24 @@
+import { css } from '@emotion/react'
 import React from 'react'
 
 export default function DeleteTab(props) {
   const { onClick, size, fill, style } = props
 
   return (
-    <button type="button" onClick={onClick} className={style} css={style}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={style}
+      css={
+        style
+          ? style
+          : css`
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            `
+      }
+    >
       <svg
         id="그룹_95320"
         data-name="그룹 95320"
