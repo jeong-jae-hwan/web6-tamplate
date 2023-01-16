@@ -21,9 +21,11 @@ export default function EditTab(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
         viewBox="0 0 16 16"
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
       >
         <g id="premium-icon-edit-3394365" transform="translate(-2 -2)">
           <path

@@ -19,7 +19,14 @@ export default function AddTab(props) {
             `
       }
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 44 44"
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
+      >
         <g
           id="그룹_96293"
           data-name="그룹 96293"

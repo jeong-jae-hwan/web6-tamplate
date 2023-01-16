@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import React from 'react'
 
 export default function UploadTab(props) {
-  const { type, onClick, size, fill, style } = props
+  const { type, onClick, style } = props
 
   return (
     <button
@@ -21,8 +21,10 @@ export default function UploadTab(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
         viewBox="0 0 20.001 20"
       >
         <path

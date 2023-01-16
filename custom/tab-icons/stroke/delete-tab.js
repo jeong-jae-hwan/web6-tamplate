@@ -23,8 +23,10 @@ export default function DeleteTab(props) {
         id="그룹_95320"
         data-name="그룹 95320"
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
         viewBox="0 0 16 16"
       >
         <rect
