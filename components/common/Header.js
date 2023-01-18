@@ -14,7 +14,7 @@ import { drawerAtom } from 'atoms/layout-atom'
 
 //styles
 import { css } from '@emotion/react'
-import { Header, Nav } from 'styles/layout-styled'
+import { HeaderStyle, Nav } from 'styles/layout-styled'
 import { Item, ItemBox } from 'styles/view-styled'
 
 //customs
@@ -24,7 +24,7 @@ import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
 import menus from './json/memu.json'
 
 //
-export default function HeaderView() {
+export default function Header() {
   const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
 
   // 헤더 고정
@@ -42,7 +42,7 @@ export default function HeaderView() {
 
   return (
     <>
-      <Header>
+      <HeaderStyle>
         <header>
           <h1 aria-hidden="true">딥팩토리</h1>
 
@@ -64,7 +64,7 @@ export default function HeaderView() {
             <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
           </Nav>
         </header>
-      </Header>
+      </HeaderStyle>
 
       {/* 드로어 메뉴 */}
       <Drawer />

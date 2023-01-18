@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import { Title } from 'styles/text-styled'
+import { Box, Row } from 'styles/layout-styled'
 
 //
 export default function AccordionTab(props) {
@@ -18,51 +19,48 @@ export default function AccordionTab(props) {
     border,
   } = props
 
-  const Accordion = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: ${padding ? padding : '14px 12px'};
-    border-bottom: ${border};
-    border-radius: 8px;
+  const styles = {
+    wrap: css`
+      width: 100%;
+      border-bottom: ${border};
+      margin-top: ${marginTop};
+      margin-bottom: ${marginBottom};
+      cursor: pointer;
+    `,
 
-    margin-top: ${marginTop};
-    margin-bottom: ${marginBottom};
+    row: css`
+      justify-content: space-between;
+      column-gap: 16px;
+      padding: ${padding ? padding : '14px 12px'};
+      border-radius: 8px;
+      &:hover {
+        background-color: ${hover ? hover : '#f8f8f8'};
+      }
+    `,
 
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+    title: css`
+      font-size: ${fontSize ? fontSize : '1rem'};
+      font-weight: ${fontWeight ? fontWeight : '500'};
+    `,
 
-    &:hover {
-      background-color: ${hover ? hover : '#f8f8f8'};
-    }
-  `
-
-  const titleStyled = css`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 26px;
-  `
-
-  const Title = styled.div`
-    display: flex;
-    align-items: center;
-    column-gap: 12px;
-    font-size: ${fontSize ? fontSize : '1rem'};
-    font-weight: ${fontWeight ? fontWeight : '500'};
-  `
+    children: css`
+      height: ${isActive && 'auto'};
+      max-height: ${isActive ? '999px' : 0};
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+    `,
+  }
 
   return (
-    <Accordion type="button" onClick={onClick}>
-      <div css={titleStyled}>
-        <Title>{title}</Title>
+    <Box type="button" onClick={onClick} css={styles.wrap}>
+      <Row center={true} css={styles.row}>
+        <Title css={styles.title}>{title}</Title>
 
         <AccordionIcon isActive={isActive} size={size} />
-      </div>
+      </Row>
 
-      {children}
-    </Accordion>
+      <Box css={styles.children}>{children}</Box>
+    </Box>
   )
 }
 
@@ -72,7 +70,7 @@ const AccordionIcon = ({ isActive, size }) => {
     <button
       type="button"
       css={css`
-        transform: ${isActive ? 'rotate(270deg)' : 'rotate(0eg)'};
+        transform: ${isActive ? 'rotate(-90deg)' : 'rotate(0eg)'};
         transition: 0.3s ease-in-out;
         display: flex;
         justify-content: center;
@@ -111,3 +109,6 @@ const AccordionIcon = ({ isActive, size }) => {
     </button>
   )
 }
+
+//
+//styled

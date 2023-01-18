@@ -19,14 +19,13 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 10px;
-  column-gap: 10px;
 `
 
 ///////
 /////////
 export const Row = styled(Box)`
   flex-direction: row;
+  column-gap: 10px;
   align-items: ${({ center }) => (center ? 'center' : 'stretch')};
   align-items: ${({ start }) => (start ? 'start' : 'stretch')};
   align-items: ${({ end }) => (end ? 'end' : 'stretch')};
@@ -34,17 +33,22 @@ export const Row = styled(Box)`
 
 //
 // 헤더영역
-export const Header = styled.div`
+export const HeaderStyle = styled.div`
   width: 100%;
   height: 70px;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.3s ease-in-out;
 
-  header {
-    @media (max-width: 1080px) {
+  @media (max-width: 1080px) {
+    height: 58px;
+    min-height: 58px;
+
+    header {
       height: 58px;
+      min-height: 58px;
     }
   }
 
@@ -89,6 +93,7 @@ export const Nav = styled.nav`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth};
   height: 100%;
+  min-height: 70px;
   padding: 0 60px;
   display: flex;
   justify-content: space-between;
@@ -99,6 +104,7 @@ export const Nav = styled.nav`
 
   @media (max-width: 1080px) {
     padding: 0 20px;
+    min-height: 58px;
   }
 `
 
