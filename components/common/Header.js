@@ -158,13 +158,13 @@ const Menu = styled.li`
   justify-content: center;
 
   a {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 1rem;
+    padding: 0.75em;
     transition: 0.3s ease-in-out;
 
     &:hover {
       background-color: #f8f8f8;
-      border-radius: 6px;
+      border-radius: 0.375em;
     }
   }
 `
