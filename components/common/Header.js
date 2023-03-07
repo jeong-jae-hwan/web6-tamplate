@@ -28,7 +28,7 @@ export default function Header() {
   // 헤더 고정
   const [isFixed, setIsFixed] = useState(false)
   const scrollActive = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 100) {
       setIsFixed(true)
     } else {
       setIsFixed(false)
@@ -41,7 +41,7 @@ export default function Header() {
   return (
     <>
       <HeaderBar>
-        <NavBar>
+        <NavBar isActive={isFixed}>
           <h1 aria-hidden="true">서비스명</h1>
 
           <NavView>
@@ -73,8 +73,8 @@ export default function Header() {
 const HeaderBar = styled.header`
   position: relative;
   width: 100%;
-  height: 70px;
-  min-height: 70px;
+  height: 66px;
+  min-height: 66px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,13 +103,13 @@ const NavBar = styled.nav`
   left: 0;
   right: 0;
   width: 100%;
-  height: 70px;
-  min-height: 70px;
+  height: 66px;
+  min-height: 66px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: ${({ isActive }) => (isActive ? '1px solid #e2e2e2' : 'none')};
   transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
@@ -145,7 +145,7 @@ const NavView = styled.div`
 const Menus = styled.ul`
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 30px;
 
   @media (max-width: 1080px) {
     display: none;
