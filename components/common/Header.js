@@ -13,9 +13,7 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom } from 'atoms/layout-atom'
 
 //styles
-import { css } from '@emotion/react'
-import { HeaderStyle, Nav } from 'styles/layout-styled'
-import { Item, ItemBox } from 'styles/view-styled'
+import styled from '@emotion/styled'
 
 //customs
 import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
@@ -42,29 +40,29 @@ export default function Header() {
 
   return (
     <>
-      <HeaderStyle>
-        <header>
-          <h1 aria-hidden="true">딥팩토리</h1>
+      <HeaderBar>
+        <NavBar>
+          <h1 aria-hidden="true">서비스명</h1>
 
-          <Nav>
+          <NavView>
             <Link href="/" className="logo">
-              <Logo alt="로고" />
+              <Logo alt="서비스명" />
             </Link>
 
-            <ItemBox css={styles}>
+            <Menus>
               {menus.map((item, i) => {
                 return (
-                  <Item key={i}>
+                  <Menu key={i}>
                     <Link href={item.a}>{item.name}</Link>
-                  </Item>
+                  </Menu>
                 )
               })}
-            </ItemBox>
+            </Menus>
 
             <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
-          </Nav>
-        </header>
-      </HeaderStyle>
+          </NavView>
+        </NavBar>
+      </HeaderBar>
 
       {/* 드로어 메뉴 */}
       <Drawer />
@@ -72,22 +70,100 @@ export default function Header() {
   )
 }
 
-//styled
-const styles = css`
-  width: auto;
-  flex-direction: row;
+const HeaderBar = styled.header`
+  position: relative;
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    height: 58px;
+    min-height: 58px;
+  }
+
+  h1 {
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+`
+
+const NavBar = styled.nav`
+  z-index: 9000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e2e2;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    height: 58px;
+    min-height: 58px;
+  }
+`
+
+const NavView = styled.div`
+  width: 100%;
+  max-width: 1260px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: auto;
+
+  .logo {
+    width: 90px;
+    transition: 0.3s ease-in-out;
+    display: flex;
+
+    @media (max-width: 1080px) {
+      width: 76px;
+    }
+
+    svg {
+      width: 100%;
+    }
+  }
+`
+
+const Menus = styled.ul`
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 
   @media (max-width: 1080px) {
     display: none;
   }
+`
+
+const Menu = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   a {
-    padding: 8px 12px;
-    border-radius: 8px;
+    font-size: 15px;
+    padding: 10px;
 
     &:hover {
       background-color: #f8f8f8;
+      border-radius: 6px;
     }
   }
 `
