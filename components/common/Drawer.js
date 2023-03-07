@@ -8,6 +8,9 @@ import { useRecoilState } from 'recoil'
 import { drawerAtom, scrollTopTabAtom } from 'atoms/layout-atom'
 
 //styles
+import { Span } from 'styles/text-styled'
+import { Item, ItemBox } from 'styles/view-styled'
+import { DrawerBlur, DrawerBox } from 'styles/drawer-styled'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
@@ -16,10 +19,7 @@ import HrefIcon from 'public/icons/href-icon.svg'
 import CancelTab from 'custom/tab-icons/fill/cancel-tab'
 
 //menu
-import menus from './json/memu.json'
-import { Span } from 'styles/text-styled'
-import { Item, ItemBox } from 'styles/view-styled'
-import { DrawerBlur, DrawerBox } from 'styles/drawer-styled'
+import menus from './memu.json'
 
 //
 export function Drawer() {

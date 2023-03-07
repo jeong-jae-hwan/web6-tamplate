@@ -19,7 +19,7 @@ import styled from '@emotion/styled'
 import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
 
 //menu
-import menus from './json/memu.json'
+import menus from './memu.json'
 
 //
 export default function Header() {
@@ -158,8 +158,9 @@ const Menu = styled.li`
   justify-content: center;
 
   a {
-    font-size: 15px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 12px;
+    transition: 0.3s ease-in-out;
 
     &:hover {
       background-color: #f8f8f8;
