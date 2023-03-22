@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 //custom
-import ScrollTopTab from 'custom/tabs/ScrollTopTab'
+import ScrollTopTab from 'widgets/ScrollTopTab'
 
 //components
 import Footer from '@/components/common/Footer'

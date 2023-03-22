@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { Title } from 'styles/text-styled'
-import { Box, Row } from 'styles/layout-styled'
+import styled from '@emotion/styled'
 
 //
 export default function AccordionTab(props) {
@@ -112,3 +112,18 @@ const AccordionIcon = ({ isActive, size }) => {
 
 //
 //styled
+const Box = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+/////////
+const Row = styled(Box)`
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: ${({ center }) => (center ? 'center' : 'stretch')};
+  align-items: ${({ start }) => (start ? 'start' : 'stretch')};
+  align-items: ${({ end }) => (end ? 'end' : 'stretch')};
+`

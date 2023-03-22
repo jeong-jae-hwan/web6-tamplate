@@ -4,14 +4,13 @@ import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/react'
 
 //atom
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { scrollPosition, scrollTopTabAtom } from 'atoms/layout-atom'
+import { useRecoilState } from 'recoil'
+import { scrollPosition } from 'atoms/widgets-atom'
 
 //
 export default function ScrollTopTab() {
   const [ScrollY, setScrollY] = useState(0)
   const [btnStatus, setBtnStatus] = useState(false) // 버튼 상태
-  const tabView = useRecoilValue(scrollTopTabAtom)
 
   // 스크롤 수치 감지
   const handleFollow = () => {
@@ -65,7 +64,7 @@ export default function ScrollTopTab() {
 
   return (
     <>
-      {ScrollY > 100 && !tabView && (
+      {ScrollY > 100 && (
         <button onClick={handleTop} css={tabStyled}>
           <TopTabIcon />
         </button>
@@ -92,7 +91,7 @@ const tabStyled = css`
   color: #666;
   font-weight: 500;
   cursor: pointer;
-  z-index: 8000;
+  z-index: 7777;
   user-select: none;
   transition: 0.3s ease-in-out;
 

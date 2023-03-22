@@ -10,7 +10,7 @@ import Logo from 'public/images/logo.svg'
 
 //atoms
 import { useRecoilState } from 'recoil'
-import { drawerAtom } from 'atoms/layout-atom'
+import { drawerAtom } from 'atoms/widgets-atom'
 
 //styles
 import styled from '@emotion/styled'
@@ -70,6 +70,7 @@ export default function Header() {
   )
 }
 
+// styled
 const HeaderBar = styled.header`
   position: relative;
   width: 100%;
@@ -120,7 +121,7 @@ const NavBar = styled.nav`
 
 const NavView = styled.div`
   width: 100%;
-  max-width: 1260px;
+  max-width: 1200px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -128,7 +129,7 @@ const NavView = styled.div`
   cursor: auto;
 
   .logo {
-    width: 90px;
+    width: 80px;
     transition: 0.3s ease-in-out;
     display: flex;
 
@@ -158,7 +159,7 @@ const Menu = styled.li`
   justify-content: center;
 
   a {
-    font-size: 1rem;
+    font-size: 0.938rem;
     padding: 0.75em;
     transition: 0.3s ease-in-out;
 
