@@ -51,11 +51,17 @@ section {
   transition: 0.3s ease-in-out;
 }
 
+footer {
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
 /* ////////////////////////////// */
 /* ////////////////////////////// */
 /* ////////////////////////////// */
 /* ////////////////////////////// */
 
+strong,
 h1,
 h2,
 h3,
@@ -65,19 +71,19 @@ h6,
 p {
   margin: 0;
   padding: 0;
-  text-decoration: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 nav {
   cursor: pointer;
-  text-decoration: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 a {
   text-decoration: none;
   color: #333;
   cursor: pointer;
-  text-decoration: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 ul,
@@ -86,7 +92,7 @@ li {
   padding: 0;
   margin: 0;
   transition: 0.3s ease-in-out;
-  text-decoration: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 button {
@@ -99,7 +105,6 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-strong,
 svg,
 img,
 picture {

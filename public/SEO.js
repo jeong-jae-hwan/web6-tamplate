@@ -17,7 +17,7 @@ function SEO({ title }) {
         description: '사이트 디스크립션',
         images: [
           {
-            url: 'https://imagedelivery.net/vJSpkH6oHM7zquolzolo7A/dc9d43b4-dfcd-41e2-ef16-c698bd337b00/public',
+            url: '',
             alt: '이미지 명',
           },
         ],

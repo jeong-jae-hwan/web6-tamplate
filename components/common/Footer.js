@@ -32,7 +32,7 @@ const FooterBar = styled.footer`
 
 const Foot = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   display: flex;
   flex-direction: column;
   row-gap: 16px;

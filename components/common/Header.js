@@ -1,30 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-
-//components
-import { Drawer } from './Drawer'
 
 //png,svg
 import Logo from 'public/images/logo.svg'
-
-//atoms
-import { useRecoilState } from 'recoil'
-import { drawerAtom } from 'atoms/widgets-atom'
+import InstaIcon from 'public/icons/insta-icon.svg'
+import TwitterIcon from 'public/icons/twitter-icon.svg'
+import YoutubeIcon from 'public/icons/youtube-icon.svg'
 
 //styles
 import styled from '@emotion/styled'
 
-//customs
-import DrawerTab from 'custom/tab-icons/stroke/drawer-tab'
-
-//menu
-import menus from './memu.json'
-
 //
 export default function Header() {
-  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
-
   // 헤더 고정
   const [isFixed, setIsFixed] = useState(false)
   const scrollActive = () => {
@@ -46,26 +33,31 @@ export default function Header() {
 
           <NavView>
             <Link href="/" className="logo">
-              <Logo alt="서비스명" />
+              <Logo alt="서비스명" fill={isFixed ? '#333' : '#fff'} />
             </Link>
 
             <Menus>
-              {menus.map((item, i) => {
-                return (
-                  <Menu key={i}>
-                    <Link href={item.a}>{item.name}</Link>
-                  </Menu>
-                )
-              })}
-            </Menus>
+              <Menu>
+                <Link href="s">
+                  <InstaIcon fill={isFixed ? '#797979' : '#fff'} />
+                </Link>
+              </Menu>
 
-            <DrawerTab onClick={() => setIsDrawer(!isDrawer)} />
+              <Menu>
+                <Link href="s">
+                  <TwitterIcon fill={isFixed ? '#797979' : '#fff'} />
+                </Link>
+              </Menu>
+
+              <Menu>
+                <Link href="s">
+                  <YoutubeIcon fill={isFixed ? '#797979' : '#fff'} />
+                </Link>
+              </Menu>
+            </Menus>
           </NavView>
         </NavBar>
       </HeaderBar>
-
-      {/* 드로어 메뉴 */}
-      <Drawer />
     </>
   )
 }
@@ -74,17 +66,10 @@ export default function Header() {
 const HeaderBar = styled.header`
   position: relative;
   width: 100%;
-  height: 66px;
-  min-height: 66px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.3s ease-in-out;
-
-  @media (max-width: 1080px) {
-    height: 58px;
-    min-height: 58px;
-  }
 
   h1 {
     width: 1px;
@@ -109,9 +94,8 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: ${({ isActive }) => (isActive ? '#fff' : 'transparent')};
   border-bottom: ${({ isActive }) => (isActive ? '1px solid #e2e2e2' : 'none')};
-  transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
     height: 58px;
@@ -121,7 +105,7 @@ const NavBar = styled.nav`
 
 const NavView = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -130,7 +114,6 @@ const NavView = styled.div`
 
   .logo {
     width: 80px;
-    transition: 0.3s ease-in-out;
     display: flex;
 
     @media (max-width: 1080px) {
@@ -146,11 +129,7 @@ const NavView = styled.div`
 const Menus = styled.ul`
   display: flex;
   align-items: center;
-  column-gap: 30px;
-
-  @media (max-width: 1080px) {
-    display: none;
-  }
+  column-gap: 6px;
 `
 
 const Menu = styled.li`
@@ -159,13 +138,14 @@ const Menu = styled.li`
   justify-content: center;
 
   a {
-    font-size: 0.938rem;
-    padding: 0.75em;
-    transition: 0.3s ease-in-out;
+    padding: 10px;
 
-    &:hover {
-      background-color: #f8f8f8;
-      border-radius: 0.375em;
+    svg {
+      width: 22px;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 `
