@@ -4,7 +4,7 @@ import Head from 'next/head'
 function SEO({ title }) {
   return (
     <NextSeo
-      title={`${title}\t${title && '-'}\t 템플릿`}
+      title={`${title}`}
       description="사이트 디스크립션"
       keywords={['키워드1', '키워드2']}
       canonical="https://deepfactory.kr/"
