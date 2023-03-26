@@ -24,17 +24,14 @@ export default function Sec6() {
   }
 
   // 숫자 하이픈 핸들러
-  useEffect(
-    e => {
-      if (isValues.tel.length === 11) {
-        setIsValues({
-          ...isValues,
-          tel: isValues.tel.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
-        })
-      }
-    },
-    [tel]
-  )
+  useEffect(() => {
+    if (tel.length === 11) {
+      setIsValues({
+        ...isValues,
+        tel: tel.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
+      })
+    }
+  }, [tel])
 
   // 제출
   const onSubmit = e => {
