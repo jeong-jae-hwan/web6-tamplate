@@ -75,7 +75,7 @@ const Wrap = styled.div`
   flex-direction: column;
   row-gap: 20px;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
     max-width: 100%;
   }
 
@@ -97,7 +97,7 @@ const Box = styled.div`
   border-radius: 6px;
   background-color: #f9f9f9;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
     max-width: 100%;
   }
 
