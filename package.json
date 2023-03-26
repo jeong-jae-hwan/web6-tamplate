@@ -17,7 +17,8 @@
     "next-seo": "^5.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@svgr/webpack": "^7.0.0",
