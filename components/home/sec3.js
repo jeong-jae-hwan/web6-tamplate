@@ -64,7 +64,7 @@ const View = styled.div`
   column-gap: 20px;
 
   @media (max-width: 600px) {
-    padding: 0 20px 140px;
+    padding: 0 20px 0;
   }
 `
 
