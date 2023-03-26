@@ -16,7 +16,7 @@ import Sec6 from '@/components/home/sec6'
 export default function Index() {
   return (
     <>
-      <SEO title="템플릿 웹 페이지" />
+      <SEO title="템플릿 웹 사이트 페이지" />
       <Section>
         <Sec1 />
         <Sec2 />
