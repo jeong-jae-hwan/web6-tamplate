@@ -39,19 +39,19 @@ export default function Header() {
             <Menus>
               <Menu>
                 <Link href="s">
-                  <InstaIcon fill={isFixed ? '#797979' : '#fff'} />
+                  <InstaIcon fill={isFixed ? '#999' : '#fff'} />
                 </Link>
               </Menu>
 
               <Menu>
                 <Link href="s">
-                  <TwitterIcon fill={isFixed ? '#797979' : '#fff'} />
+                  <TwitterIcon fill={isFixed ? '#999' : '#fff'} />
                 </Link>
               </Menu>
 
               <Menu>
                 <Link href="s">
-                  <YoutubeIcon fill={isFixed ? '#797979' : '#fff'} />
+                  <YoutubeIcon fill={isFixed ? '#999' : '#fff'} />
                 </Link>
               </Menu>
             </Menus>
@@ -142,6 +142,10 @@ const Menu = styled.li`
 
     svg {
       width: 22px;
+
+      @media (max-width: 600px) {
+        width: 20px;
+      }
 
       &:hover {
         opacity: 0.7;
