@@ -3,13 +3,15 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 //
-export default function Sec4() {
+export default function Sec4({ handleFocus }) {
   return (
     <View>
       <strong>{'지금 당장 DEEP에게\n문의하세요.'}</strong>
       <p>{'DEEP UI는 다양한 플렛폼의 \n템플릿을 취급하고 있습니다.'}</p>
 
-      <button type="button">문의하기</button>
+      <button type="button" onClick={handleFocus}>
+        문의하기
+      </button>
     </View>
   )
 }

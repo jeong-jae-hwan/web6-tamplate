@@ -8,7 +8,7 @@ import bannerImg from 'public/images/banner-img.png'
 import Image from 'next/image'
 
 //
-export default function Sec1() {
+export default function Sec1({ handleFocus }) {
   return (
     <View>
       <Image src={bannerImg} alt="배너" />
@@ -16,7 +16,9 @@ export default function Sec1() {
       <Typo>
         <h1>{`나에게 맞는 UI DESIGN\nDEEP UI TAMPLATE`}</h1>
 
-        <button type="button">문의하기</button>
+        <button type="button" onClick={handleFocus}>
+          문의하기
+        </button>
       </Typo>
     </View>
   )

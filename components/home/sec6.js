@@ -6,7 +6,7 @@ import { AlartSnackbar } from 'deep-ui-design'
 import { css } from '@emotion/react'
 
 //
-export default function Sec6() {
+export default function Sec6({ contectRef }) {
   const [isValues, setIsValues] = useState({
     name: '',
     email: '',
@@ -42,7 +42,7 @@ export default function Sec6() {
 
   return (
     <>
-      <View>
+      <View ref={el => (contectRef.current = el)}>
         <Form onSubmit={onSubmit}>
           <Info>
             <strong>문의하기</strong>
@@ -122,7 +122,7 @@ const View = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 120px;
+  padding: 20px 0 120px;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 600px) {

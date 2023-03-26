@@ -34,7 +34,7 @@ const View = styled.div`
   transition: 0.3s ease-in-out;
 
   @media (max-width: 600px) {
-    padding: 0 0 100px;
+    padding: 0 0 80px;
     row-gap: 16px;
   }
 
