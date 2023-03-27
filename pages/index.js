@@ -1,7 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 //modlues
 import { Section } from 'deep-ui-design'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 //components
 import SEO from 'public/SEO'
@@ -22,6 +24,10 @@ export default function Index() {
       block: 'start',
     })
   }
+
+  useEffect(() => {
+    Aos.init({ duration: 900, easing: 'ease-in-out' })
+  }, [])
 
   return (
     <>

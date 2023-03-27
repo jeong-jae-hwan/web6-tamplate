@@ -42,7 +42,7 @@ export default function Sec6({ contectRef }) {
 
   return (
     <>
-      <View ref={el => (contectRef.current = el)}>
+      <View ref={el => (contectRef.current = el)} data-aos="fade">
         <Form onSubmit={onSubmit}>
           <Info>
             <strong>문의하기</strong>

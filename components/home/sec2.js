@@ -37,9 +37,9 @@ export default function Sec2() {
   return (
     <View>
       <Info>
-        <h2>DEEP UI</h2>
+        <h2 data-aos="fade">DEEP UI</h2>
 
-        <p>
+        <p data-aos="fade" data-aos-delay="150">
           {
             'DEEP UI는 다양한 사용자들의 컨텐츠를 파악하여,\n다양한 템플릿을 제공 및 서비스 제작을 돕고 있습니다.'
           }
@@ -49,7 +49,7 @@ export default function Sec2() {
       <Items>
         {items.map((item, i) => {
           return (
-            <Item key={i}>
+            <Item key={i} data-aos="fade" data-aos-delay="350">
               <item.icon />
               <span>{item.title}</span>
               <p>{item.subTitle}</p>

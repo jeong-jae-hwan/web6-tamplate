@@ -11,9 +11,11 @@ import bannerImg from 'public/images/sec5-img.png'
 export default function Sec5() {
   return (
     <View>
-      <Image src={bannerImg} alt="banner" />
-      <strong>{'우리는 나아갑니다\n그리고 만들어갑니다.'}</strong>
-      <p>
+      <Image src={bannerImg} alt="banner" data-aos="zoom-in" />
+      <strong data-aos="fade" data-aos-delay="100">
+        {'우리는 나아갑니다\n그리고 만들어갑니다.'}
+      </strong>
+      <p data-aos="fade" data-aos-delay="200">
         Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab
         illo inventore veritatis et quasi architecto beatae vitae dicta sunt,

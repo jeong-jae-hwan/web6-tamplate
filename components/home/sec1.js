@@ -14,9 +14,14 @@ export default function Sec1({ handleFocus }) {
       <Image src={bannerImg} alt="배너" />
 
       <Typo>
-        <h1>{`나에게 맞는 UI DESIGN\nDEEP UI TAMPLATE`}</h1>
+        <h1 data-aos="zoom-in">{`나에게 맞는 UI DESIGN\nDEEP UI TAMPLATE`}</h1>
 
-        <button type="button" onClick={handleFocus}>
+        <button
+          type="button"
+          onClick={handleFocus}
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
           문의하기
         </button>
       </Typo>

@@ -12,7 +12,7 @@ import { css } from '@emotion/react'
 //
 export default function Sec3() {
   return (
-    <View>
+    <View data-aos="fade" data-aos-delay="50">
       <Wrap>
         <Image src={bannerImg} alt="sec3" />
         <Box>
