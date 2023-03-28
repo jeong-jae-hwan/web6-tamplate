@@ -18,6 +18,7 @@
     "next-seo": "^5.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-indiana-drag-scroll": "^3.0.3-alpha",
     "recoil": "^0.7.7",
     "yarn": "^1.22.19"
   },

@@ -83,7 +83,7 @@ const tabStyled = css`
   width: 44px;
   height: 44px;
   border-radius: 100px;
-  background-color: #fff;
+  background-color: #353535;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
@@ -132,7 +132,7 @@ const TopTabIcon = () => (
             data-name="패스 86881"
             d="M10.448,13.759a1.055,1.055,0,0,1-1.432-.084A.983.983,0,0,1,9,12.326l3.763-4.32H.994A1,1,0,0,1,0,7a.989.989,0,0,1,.3-.7,1.007,1.007,0,0,1,.7-.284H12.7L9.14,1.692A.986.986,0,0,1,9.162.306,1.063,1.063,0,0,1,9.913,0h.005A1.115,1.115,0,0,1,10.7.36l5.03,6.054a.989.989,0,0,1,.008,1.358Z"
             transform="translate(0 0.001)"
-            fill="#333"
+            fill="#ccc"
           />
         </g>
       </g>

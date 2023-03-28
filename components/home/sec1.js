@@ -4,7 +4,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 //png
-import bannerImg from 'public/images/banner-img.png'
+import bannerImg from 'public/images/banner.png'
 import Image from 'next/image'
 
 //
@@ -14,7 +14,14 @@ export default function Sec1({ handleFocus }) {
       <Image src={bannerImg} alt="배너" />
 
       <Typo>
-        <h1 data-aos="zoom-in">{`나에게 맞는 UI DESIGN\nDEEP UI TAMPLATE`}</h1>
+        <h1 data-aos="zoom-in">{`블록체인 WEB 3.0\n다크모드 템플릿`}</h1>
+
+        <p data-aos="zoom-in">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmo d tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo conse
+        </p>
 
         <button
           type="button"
@@ -33,15 +40,11 @@ export default function Sec1({ handleFocus }) {
 const View = styled.div`
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s ease-in-out;
-
-  @media (max-width: 600px) {
-    height: 100vh;
-  }
 
   img {
     position: absolute;
@@ -54,18 +57,22 @@ const View = styled.div`
 `
 
 const Typo = styled.div`
+  width: 100%;
+  max-width: 600px;
+  padding: 0 30px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
+  transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
     row-gap: 30px;
   }
 
   h1 {
-    font-size: 46px;
+    font-size: 50px;
     color: #fff;
     white-space: pre-line;
     text-align: center;
@@ -75,20 +82,33 @@ const Typo = styled.div`
     }
 
     @media (max-width: 600px) {
-      font-size: 30px;
+      font-size: 32px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    color: #ddd;
+    text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 14px;
     }
   }
 
   button {
     font-size: 16px;
-    padding: 16px 50px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid #fff;
+    width: 200px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(64, 21, 93, 0.8);
     border-radius: 100px;
-    color: #666;
-
+    color: #e0e0e0;
+    transition: 0.3s ease-in-out;
     &:hover {
-      background-color: #fff;
+      background-color: rgba(64, 21, 93, 1);
     }
 
     @media (max-width: 1080px) {

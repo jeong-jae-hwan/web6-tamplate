@@ -1,157 +1,156 @@
 import React from 'react'
 
-//style
+//styled
 import styled from '@emotion/styled'
 
-//png
-import bannerImg from 'public/images/sec3-img1.png'
-import productImg from 'public/images/sec3-img2.png'
-import Image from 'next/image'
-import { css } from '@emotion/react'
+//svg
+import Img1 from 'public/icons/sec3/img1.svg'
+import Img2 from 'public/icons/sec3/img2.svg'
+import Img3 from 'public/icons/sec3/img3.svg'
 
 //
-export default function Sec3() {
+export default function Sec3({ contectRef }) {
   return (
-    <View>
-      <Wrap>
-        <Image src={bannerImg} alt="sec3" />
-        <Box>
-          <strong>{'테플릿을 무료로\n 이용하세요!'}</strong>
-          <p>
-            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt,
+    <View ref={contectRef}>
+      <Content>
+        <Info>
+          <strong data-aos="fade">
+            {'다양한 브랜드의\n콘텐츠를 확인해보세요'}
+          </strong>
+          <p data-aos="fade" data-aos-delay="200">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </p>
-        </Box>
-      </Wrap>
+        </Info>
 
-      <Box
-        css={css`
-          padding: 40px 40px 0 40px;
+        <Img1 data-aos="fade-up" data-aos-delay="500" />
+      </Content>
 
-          @media (max-width: 600px) {
-            padding: 40px 30px 0 30px;
-          }
-        `}
-      >
-        <strong>{'우리는 다양한 사용자들을\n이해하고 있습니다.'}</strong>
-        <p>
-          Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt,
-        </p>
+      <Content>
+        <Img2 data-aos="fade-up" data-aos-delay="500" />
+        <Info>
+          <strong data-aos="fade">
+            {'보안성이 뛰어난\n빠른 속도의 블록생성'}
+          </strong>
+          <p data-aos="fade" data-aos-delay="200">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </Info>
+      </Content>
 
-        <div>
-          <Image src={productImg} alt="sec3" />
-        </div>
-      </Box>
+      <Content>
+        <Info>
+          <strong data-aos="fade">{'안전한 시세 변동\n꼼꼼한 블록처리'}</strong>
+          <p data-aos="fade" data-aos-delay="200">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </Info>
+
+        <Img3 data-aos="fade-up" data-aos-delay="500" />
+      </Content>
     </View>
   )
 }
 
-//styled
 const View = styled.div`
   width: 100%;
-  max-width: 1180px;
+  padding: 200px 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 200px;
+  align-items: center;
+  background-color: #222223;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    padding: 100px 25px;
+  }
+
+  @media (max-width: 600px) {
+    row-gap: 80px;
+    padding: 80px 25px;
+  }
+`
+
+const Content = styled.div`
+  width: 100%;
+  max-width: 1250px;
   display: flex;
   align-items: stretch;
-  flex-wrap: wrap;
-  padding: 0 20px 140px;
+  justify-content: space-between;
   transition: 0.3s ease-in-out;
-  row-gap: 20px;
-  column-gap: 20px;
+  row-gap: 40px;
+  column-gap: 50px;
 
-  @media (max-width: 600px) {
-    padding: 0 20px 0;
-  }
-`
-
-const Wrap = styled.div`
-  width: 100%;
-  max-width: 560px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-
-  @media (max-width: 1180px) {
-    max-width: 100%;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    align-items: center;
   }
 
-  img {
+  svg {
     width: 100%;
-    height: 290px;
-    border-radius: 6px;
-    object-fit: cover;
+    max-width: 540px;
+
+    @media (max-width: 1080px) {
+      max-width: 440px;
+    }
   }
 `
 
-const Box = styled.div`
-  position: relative;
+const Info = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 560px;
-  padding: 40px;
-  border-radius: 6px;
-  background-color: #f9f9f9;
+  row-gap: 30px;
+  margin-top: 40px;
+  transition: 0.3s ease-in-out;
 
-  @media (max-width: 1180px) {
-    max-width: 100%;
+  @media (max-width: 1080px) {
+    margin: 0;
+    order: 2;
   }
 
   @media (max-width: 600px) {
-    padding: 40px 30px;
+    row-gap: 20px;
   }
 
   strong {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 44px;
+    font-weight: 500;
+    color: #e0e0e0;
     white-space: pre-line;
-    line-height: 1.4;
 
     @media (max-width: 1080px) {
-      font-size: 26px;
+      text-align: center;
+      font-size: 36px;
     }
 
     @media (max-width: 600px) {
-      font-size: 22px;
+      text-align: start;
+      font-size: 26px;
     }
   }
 
   p {
+    max-width: 500px;
     font-size: 15px;
-    color: #888;
-    line-height: 1.4;
-    margin-top: 20px;
+    line-height: 1.5;
+    color: #aaa;
+
+    @media (max-width: 1080px) {
+      text-align: center;
+    }
 
     @media (max-width: 600px) {
+      text-align: start;
       font-size: 14px;
-    }
-  }
-
-  div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-top: 50px;
-
-    img {
-      width: 338px;
-      height: 260px;
-
-      @media (max-width: 600px) {
-        width: 300px;
-        height: auto;
-      }
-
-      @media (max-width: 400px) {
-        width: 240px;
-        height: auto;
-      }
     }
   }
 `

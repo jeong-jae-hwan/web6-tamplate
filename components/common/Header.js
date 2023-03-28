@@ -10,8 +10,17 @@ import YoutubeIcon from 'public/icons/youtube-icon.svg'
 //styles
 import styled from '@emotion/styled'
 
+//atoms
+import { useRecoilState } from 'recoil'
+import { drawerAtom } from 'atoms/widgets-atom'
+
+//widgets
+import DrawerTab from 'widgets/drawer-tab'
+
 //
-export default function Header() {
+export default function Header({ menuActive, handleFocus }) {
+  const [isDrawer, setIsDrawer] = useRecoilState(drawerAtom)
+
   // 헤더 고정
   const [isFixed, setIsFixed] = useState(false)
   const scrollActive = () => {
@@ -33,28 +42,48 @@ export default function Header() {
 
           <NavView>
             <Link href="/" className="logo">
-              <Logo alt="서비스명" fill={isFixed ? '#333' : '#fff'} />
+              <Logo alt="서비스명" fill="#eee" />
             </Link>
 
             <Menus>
-              <Menu>
-                <Link href="s">
-                  <InstaIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
+              <Menu onClick={() => handleFocus(0)} isActive={menuActive === 0}>
+                카테고리
               </Menu>
 
-              <Menu>
-                <Link href="s">
-                  <TwitterIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
+              <Menu onClick={() => handleFocus(1)} isActive={menuActive === 1}>
+                콘텐츠
               </Menu>
 
-              <Menu>
-                <Link href="s">
-                  <YoutubeIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
+              <Menu onClick={() => handleFocus(2)} isActive={menuActive === 2}>
+                브랜드
+              </Menu>
+
+              <Menu onClick={() => handleFocus(3)} isActive={menuActive === 3}>
+                문의하기
               </Menu>
             </Menus>
+
+            <SNSMenus>
+              <Menu>
+                <Link href="s">
+                  <InstaIcon fill={isFixed ? '#999' : '#ccc'} />
+                </Link>
+              </Menu>
+
+              <Menu>
+                <Link href="s">
+                  <TwitterIcon fill={isFixed ? '#999' : '#ccc'} />
+                </Link>
+              </Menu>
+
+              <Menu>
+                <Link href="s">
+                  <YoutubeIcon fill={isFixed ? '#999' : '#ccc'} />
+                </Link>
+              </Menu>
+            </SNSMenus>
+
+            <DrawerTab fiil="#e2e2e2" onClick={() => setIsDrawer(!isDrawer)} />
           </NavView>
         </NavBar>
       </HeaderBar>
@@ -63,7 +92,7 @@ export default function Header() {
 }
 
 // styled
-const HeaderBar = styled.header`
+const HeaderBar = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -82,7 +111,7 @@ const HeaderBar = styled.header`
   }
 `
 
-const NavBar = styled.nav`
+const NavBar = styled.header`
   z-index: 9000;
   position: fixed;
   top: 0;
@@ -94,8 +123,8 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ isActive }) => (isActive ? '#fff' : 'transparent')};
-  border-bottom: ${({ isActive }) => (isActive ? '1px solid #e2e2e2' : 'none')};
+  background-color: ${({ isActive }) => (isActive ? '#222' : 'transparent')};
+  border-bottom: ${({ isActive }) => (isActive ? '1px solid #252525' : 'none')};
 
   @media (max-width: 1080px) {
     height: 58px;
@@ -103,7 +132,8 @@ const NavBar = styled.nav`
   }
 `
 
-const NavView = styled.div`
+const NavView = styled.nav`
+  position: relative;
   width: 100%;
   max-width: 1240px;
   padding: 0 20px;
@@ -126,30 +156,51 @@ const NavView = styled.div`
   }
 `
 
-const Menus = styled.ul`
+const SNSMenus = styled.ul`
   display: flex;
   align-items: center;
   column-gap: 6px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+const Menus = styled.ul`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Menu = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  font-size: 15px;
+  color: ${({ isActive }) => (isActive ? '#D18DFF' : '#e0e0e0')};
+  cursor: pointer;
 
-  a {
-    padding: 10px;
+  &:hover {
+    color: ${({ isActive }) => (isActive ? '#C16AFD' : '#fff')};
+  }
 
-    svg {
-      width: 22px;
+  svg {
+    width: 22px;
 
-      @media (max-width: 600px) {
-        width: 20px;
-      }
+    @media (max-width: 600px) {
+      width: 20px;
+    }
 
-      &:hover {
-        opacity: 0.7;
-      }
+    &:hover {
+      opacity: 0.7;
     }
   }
 `

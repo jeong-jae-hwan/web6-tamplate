@@ -44,7 +44,7 @@ export default function Footer() {
 //styled
 const FooterBar = styled.footer`
   width: 100%;
-  background-color: #36373e;
+  background-color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,12 +66,12 @@ const Foot = styled.div`
 
 const FootName = styled.span`
   font-size: 0.875rem;
-  color: #c4c8cf;
+  color: #aaa;
 `
 
 const Info = styled.p`
   font-size: 0.75rem;
-  color: #959ca9;
+  color: #797979;
   white-space: pre-line;
   line-height: 1.5;
   text-align: center;

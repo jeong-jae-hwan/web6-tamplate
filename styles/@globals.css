@@ -6,7 +6,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #e0e0e0;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   user-select: auto;
   -webkit-touch-callout: none;
@@ -18,8 +18,8 @@ body {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  color: #333;
-  background-color: #fff;
+  color: #e0e0e0;
+  background-color: #1c1c1c;
 }
 
 .layout {
@@ -37,7 +37,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color: #1c1c1c;
   flex: 1;
 }
 
