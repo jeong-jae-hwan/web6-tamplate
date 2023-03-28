@@ -100,8 +100,8 @@ const tabStyled = css`
   }
 
   @media (max-width: 600px) {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
     svg {
       width: 18px;
