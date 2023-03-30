@@ -143,8 +143,8 @@ const Form = styled.form`
 
   @media (max-width: 640px) {
     border: none;
-    background-color: #202021;
     padding: 50px 20px 0;
+    box-shadow: none;
   }
 `
 
