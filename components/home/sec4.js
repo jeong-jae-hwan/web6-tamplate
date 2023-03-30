@@ -48,7 +48,7 @@ export default function Sec4({ contectRef }) {
     <View ref={contectRef}>
       <Title data-aos="fade">지금 알아보기</Title>
 
-      <Contents data-aos="fade" data-aos-delay="200">
+      <Contents data-aos="fade" data-aos-delay="100">
         {contents.map((item, i) => {
           return (
             <Content

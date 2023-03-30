@@ -161,7 +161,7 @@ const View = styled.div`
 
   @media (max-width: 600px) {
     padding: 60px 25px 80px;
-    row-gap: 70px;
+    row-gap: 60px;
   }
 `
 
