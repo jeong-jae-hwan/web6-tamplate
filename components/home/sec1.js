@@ -1,12 +1,13 @@
 import React from 'react'
-import Image from 'next/image'
 
 //style
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 //png
-import img1 from 'public/images/sec1/banner1.png'
-import img2 from 'public/images/sec1/banner2.png'
+import banner1 from 'public/images/sec1/banner1.png'
+import banner2 from 'public/images/sec1/banner2.png'
+import banner3 from 'public/images/sec1/banner3.png'
 
 //module
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -14,27 +15,27 @@ import SwiperCore, { Pagination, Autoplay } from 'swiper'
 SwiperCore.use([Pagination, Autoplay])
 
 //
-export default function Sec1({ contectRef }) {
-  const banners = [img1, img2]
+export default function Sec1() {
+  const banners = [
+    {
+      img: banner1,
+      edge: 'BRAND HISTORY',
+      title: '자유와 모험을 즐기는\n나의 LIFE 스토리\nDEEP 카드',
+    },
+    {
+      img: banner2,
+      edge: 'BRAND HISTORY',
+      title: 'Illustration\nCRYSTALEP.1\nPRE-LAUNCHEVENT',
+    },
+    {
+      img: banner3,
+      edge: 'BRAND HISTORY',
+      title: 'Illustration\nCRYSTALEP.1\nPRE-LAUNCHEVENT',
+    },
+  ]
 
   return (
-    <View ref={contectRef}>
-      <Reserve>
-        <Typo>
-          <h1 data-aos="fade">{`BRAND 관람\n예약 바로가기`}</h1>
-
-          <p data-aos="fade" data-aos-delay="200">
-            화요일~일요일 10:00~18:00
-            <br />
-            서울시 노고산동 마포구 00호실 000관
-          </p>
-        </Typo>
-
-        <button type="butoon" data-aos="fade" data-aos-delay="300">
-          예약하기
-        </button>
-      </Reserve>
-
+    <View>
       <Swiper
         modules={[Pagination]}
         autoplay={{ delay: 2500 }}
@@ -44,9 +45,14 @@ export default function Sec1({ contectRef }) {
         {banners.map((item, i) => {
           return (
             <SwiperSlide key={i} className="swiper_item">
-              <Box data-aos="fade">
-                <Image src={item} alt="sec1" />
-              </Box>
+              <Image src={item.img} alt="배너" />
+
+              <Typo>
+                <span data-aos="fade" data-aos-delay="200">
+                  {item.edge}
+                </span>
+                <h1 data-aos="fade">{item.title}</h1>
+              </Typo>
             </SwiperSlide>
           )
         })}
@@ -59,165 +65,79 @@ export default function Sec1({ contectRef }) {
 const View = styled.div`
   position: relative;
   width: 100%;
+  height: 540px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   transition: 0.3s ease-in-out;
 
+  @media (max-width: 600px) {
+    height: 500px;
+  }
+
   .swiper {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
 
     .swiper_item {
       width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+
+      @media (max-width: 600px) {
+        align-items: flex-end;
+        padding-bottom: 70px;
+      }
     }
   }
-`
 
-const Reserve = styled.div`
-  width: 100%;
-  max-width: 1350px;
-  padding: 80px 25px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  transition: 0.3s ease-in-out;
-
-  @media (max-width: 1080px) {
-    padding: 60px 25px 40px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 30px 25px 30px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 16px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    border-radius: 100px;
-    color: #fff;
-    transition: 0.3s ease-in-out;
-    white-space: nowrap;
-
-    &:hover {
-      background-color: #444;
-    }
-
-    @media (max-width: 1080px) {
-      font-size: 15px;
-      padding: 14px 24px;
-    }
-
-    @media (max-width: 600px) {
-      margin-top: 8px;
-      font-size: 14px;
-      padding: 12px 16px;
-    }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `
 
 const Typo = styled.div`
+  width: 100%;
+  max-width: 1250px;
+  padding: 0 25px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 20px;
-  transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
-    row-gap: 20px;
+    row-gap: 16px;
   }
 
-  @media (max-width: 600px) {
-    row-gap: 14px;
+  span {
+    color: #eee;
+    border-radius: 100px;
+    font-size: 20px;
+
+    @media (max-width: 1080px) {
+      font-size: 16px;
+    }
   }
 
   h1 {
-    font-size: 40px;
-    color: #333;
+    font-size: 46px;
+    color: #fff;
+    white-space: pre-line;
 
     @media (max-width: 1080px) {
+      font-size: 36px;
+    }
+
+    @media (max-width: 600px) {
       font-size: 30px;
-    }
-
-    @media (max-width: 600px) {
-      font-size: 28px;
-      white-space: pre-line;
-    }
-  }
-
-  p {
-    font-size: 15px;
-    color: #797979;
-    line-height: 1.5;
-
-    @media (max-width: 600px) {
-      font-size: 14px;
-    }
-  }
-`
-
-const Box = styled.div`
-  width: 100%;
-  max-width: 1350px;
-  padding: 0 25px;
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s ease-in-out;
-
-  @media (max-width: 1080px) {
-    padding: 0;
-  }
-
-  img {
-    width: 100%;
-    max-height: 540px;
-    aspect-ratio: 16 / 10;
-    border-radius: 10px;
-    object-fit: cover;
-
-    @media (max-width: 1080px) {
-      border-radius: 0;
-      max-height: 400px;
-    }
-
-    @media (max-width: 600px) {
-      max-height: 320px;
-    }
-  }
-
-  h6 {
-    font-size: 22px;
-    margin: 30px 0 12px;
-
-    @media (max-width: 1080px) {
-      padding: 0 25px;
-    }
-
-    @media (max-width: 600px) {
-      font-size: 18px;
-      margin: 20px 0 10px;
-    }
-  }
-
-  p {
-    font-size: 14px;
-    color: #999;
-
-    @media (max-width: 1080px) {
-      padding: 0 25px;
-    }
-
-    @media (max-width: 600px) {
-      font-size: 13px;
     }
   }
 `

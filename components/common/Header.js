@@ -3,9 +3,6 @@ import Link from 'next/link'
 
 //png,svg
 import Logo from 'public/images/logo.svg'
-import InstaIcon from 'public/icons/insta-icon.svg'
-import TwitterIcon from 'public/icons/twitter-icon.svg'
-import YoutubeIcon from 'public/icons/youtube-icon.svg'
 
 //styles
 import styled from '@emotion/styled'
@@ -47,41 +44,21 @@ export default function Header({ menuActive, handleFocus }) {
 
             <Menus>
               <Menu onClick={() => handleFocus(0)} isActive={menuActive === 0}>
-                예약하기
+                소개
               </Menu>
 
               <Menu onClick={() => handleFocus(1)} isActive={menuActive === 1}>
-                전시
+                서비스
               </Menu>
 
               <Menu onClick={() => handleFocus(2)} isActive={menuActive === 2}>
-                뉴스레터
+                알아보기
               </Menu>
 
               <Menu onClick={() => handleFocus(3)} isActive={menuActive === 3}>
-                공지사항
+                신청하기
               </Menu>
             </Menus>
-
-            <SNSMenus>
-              <Menu>
-                <Link href="s">
-                  <InstaIcon fill="#999" />
-                </Link>
-              </Menu>
-
-              <Menu>
-                <Link href="s">
-                  <TwitterIcon fill="#999" />
-                </Link>
-              </Menu>
-
-              <Menu>
-                <Link href="s">
-                  <YoutubeIcon fill="#999" />
-                </Link>
-              </Menu>
-            </SNSMenus>
 
             <DrawerTab fiil="#333" onClick={() => setIsDrawer(!isDrawer)} />
           </NavView>
@@ -101,6 +78,11 @@ const HeaderBar = styled.div`
   flex-direction: column;
   align-items: center;
   transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    height: 58px;
+    min-height: 58px;
+  }
 
   h1 {
     width: 1px;
@@ -137,7 +119,7 @@ const NavBar = styled.header`
 const NavView = styled.nav`
   position: relative;
   width: 100%;
-  max-width: 1350px;
+  max-width: 1250px;
   padding: 0 25px;
   display: flex;
   justify-content: space-between;
@@ -158,23 +140,10 @@ const NavView = styled.nav`
   }
 `
 
-const SNSMenus = styled.ul`
-  display: flex;
-  align-items: center;
-  column-gap: 6px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
-
 const Menus = styled.ul`
-  position: absolute;
   display: flex;
   align-items: center;
   column-gap: 20px;
-  left: 50%;
-  transform: translateX(-50%);
 
   @media (max-width: 768px) {
     display: none;

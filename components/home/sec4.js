@@ -46,14 +46,12 @@ export default function Sec4({ contectRef }) {
 
   return (
     <View ref={contectRef}>
-      <Title data-aos="fade">알려드립니다</Title>
+      <Title data-aos="fade">지금 알아보기</Title>
 
-      <Contents>
+      <Contents data-aos="fade" data-aos-delay="200">
         {contents.map((item, i) => {
           return (
             <Content
-              data-aos="fade"
-              data-aos-delay="200"
               key={i}
               isActive={isDrop === i}
               onClick={() => {
@@ -83,15 +81,15 @@ const View = styled.div`
   max-width: 1350px;
   display: flex;
   flex-direction: column;
-  padding: 180px 25px 140px;
+  padding: 180px 25px 40px;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
-    padding: 60px 0 80px;
+    padding: 60px 0 20px;
   }
 
   @media (max-width: 600px) {
-    padding: 60px 0 80px;
+    padding: 60px 0 20px;
   }
 `
 
@@ -123,7 +121,7 @@ const Content = styled.li`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: ${({ isActive }) => (isActive ? '20px' : '0')};
+  row-gap: ${({ isActive }) => (isActive ? '16px' : '0')};
   padding: 18px 0;
   border-bottom: 1px solid #e2e2e2;
 
@@ -151,10 +149,16 @@ const TitleBox = styled.div`
 
   @media (max-width: 600px) {
     align-items: flex-start;
+  }
 
-    svg {
+  svg {
+    width: 10px;
+    max-width: 10px;
+    min-width: 10px;
+    rotate: ${({ isActive }) => (isActive ? '180deg' : '0deg')};
+
+    @media (max-width: 600px) {
       margin-top: 6px;
-      rotate: ${({ isActive }) => (isActive ? '180deg' : '0')};
     }
   }
 `
@@ -173,15 +177,17 @@ const Info = styled.div`
   p {
     font-size: 16px;
     display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
     width: 100%;
     font-size: 16px;
     font-weight: ${({ isActive }) => (isActive ? '500' : '400')};
 
     @media (max-width: 600px) {
       font-size: 15px;
+    }
+
+    @media (max-width: 460px) {
+      max-width: 300px;
     }
   }
 

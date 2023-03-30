@@ -12,9 +12,6 @@ import styled from '@emotion/styled'
 
 //svg
 import HrefIcon from 'public/icons/href-icon.svg'
-import InstaIcon from 'public/icons/insta-icon.svg'
-import TwitterIcon from 'public/icons/twitter-icon.svg'
-import YoutubeIcon from 'public/icons/youtube-icon.svg'
 
 //custom_styled
 import CancelTab from 'widgets/cancel-tab'
@@ -45,7 +42,7 @@ export function Drawer({ handleFocus }) {
   }, [isDrawer])
 
   // 메뉴 종류
-  const menus = ['예약하기', '전시', '뉴스레터', '공지사항']
+  const menus = ['소개', '서비스', '알아보기', '신청하기']
 
   return (
     <>
@@ -72,26 +69,6 @@ export function Drawer({ handleFocus }) {
             )
           })}
         </Menus>
-
-        <SNSMenus>
-          <SNSMenu>
-            <Link href="s">
-              <InstaIcon />
-            </Link>
-          </SNSMenu>
-
-          <SNSMenu>
-            <Link href="s">
-              <TwitterIcon />
-            </Link>
-          </SNSMenu>
-
-          <SNSMenu>
-            <Link href="s">
-              <YoutubeIcon />
-            </Link>
-          </SNSMenu>
-        </SNSMenus>
       </DrawerBox>
     </>
   )
@@ -196,25 +173,4 @@ const Menu = styled.li`
 const MenuName = styled.span`
   font-size: 0.938rem;
   font-weight: 500;
-`
-
-const SNSMenus = styled.ul`
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 30px;
-`
-
-const SNSMenu = styled.li`
-  display: flex;
-  justify-content: center;
-
-  svg {
-    width: 20px;
-    fill: #999;
-  }
 `

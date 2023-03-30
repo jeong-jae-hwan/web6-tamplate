@@ -1,167 +1,145 @@
-import React, { useState } from 'react'
-import Image from 'next/image'
+import React from 'react'
 
 //styled
 import styled from '@emotion/styled'
 
-//module
-import ScrollContainer from 'react-indiana-drag-scroll'
-
-//png
+//img
 import img1 from 'public/images/sec2/img1.png'
 import img2 from 'public/images/sec2/img2.png'
 import img3 from 'public/images/sec2/img3.png'
-import img4 from 'public/images/sec2/img4.png'
-import img5 from 'public/images/sec3/img1.png'
-import img6 from 'public/images/sec3/img2.png'
-import img7 from 'public/images/sec3/img3.png'
-import img8 from 'public/images/sec3/img4.png'
+import Image from 'next/image'
 
 //
-export default function Sec2({ contectRef }) {
-  const [isActive, setIsActive] = useState(0)
-
-  const menus = ['순수미술', '일러스트', '아트', '그래픽']
-  const contents = {
-    item1: [
-      {
-        img: img1,
-        title: '순수미술 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#모집중',
-      },
-      {
-        img: img2,
-        title: '순수미술 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-      {
-        img: img3,
-        title: '순수미술 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-      {
-        img: img4,
-        title: '순수미술 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-    ],
-    item2: [
-      {
-        img: img5,
-        title: '일러스트 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#모집중',
-      },
-      {
-        img: img6,
-        title: '일러스트 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-      {
-        img: img7,
-        title: '일러스트 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-      {
-        img: img8,
-        title: '일러스트 임시이름',
-        text: '국립현대미술관 큐레이터의 설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
-        tag: '#전시예정 : 2023.03.03',
-      },
-    ],
-  }
-
+export default function Sec2({ contectRef, handleFocus }) {
   return (
     <View ref={contectRef}>
-      <Title data-aos="fade">전시</Title>
-      <Menus>
-        {menus.map((item, i) => {
-          return (
-            <Menu
-              data-aos="fade"
-              data-aos-delay="150"
-              type="button"
-              key={i}
-              isActive={isActive === i}
-              onClick={() => setIsActive(i)}
-            >
-              {item}
-            </Menu>
-          )
-        })}
-      </Menus>
+      <Box>
+        <Info>
+          <strong data-aos="fade">
+            {'일상이 디자인이 되는\n프리미엄 신용카드 서비스'}
+          </strong>
+          <p data-aos="fade">
+            지혜는 너의 천자만홍이 이것이다. 싶이 얼마나 스며들어 것이다. 싸인
+            속잎나고, 낙원을 타오르고 이것을 피고, 힘차게 투명하되 쓸쓸하랴?
+            뛰노는 두기 트고, 피어나기 이것이다. 그들에게 피가 같지 가는 길지
+            뜨거운지라, 아니다. 꽃 있는 인간의 크고 그들의 위하여, 방지하는
+            무엇을 얼마나 것이다. 청춘에서만 우리의 가진 역사를 청춘을 미인을
+            칼이다. 몸이 바로 현저하게 주며, 바이며, 같이, 심장의 지혜는 없으면,
+            부패뿐이다. 인도하겠다는 커다란 어디 청춘 예가 군영과 싹이 보내는
+            것이다. 그들은 인간은 보이는 목숨 이 바이며, 불어 약동하다.
+          </p>
 
-      <ScrollContainer
-        className="contents"
-        data-aos="fade"
-        data-aos-delay="300"
-      >
-        {isActive === 0 && (
-          <>
-            {contents.item1.map((item, i) => {
-              return (
-                <Item key={i}>
-                  <Image src={item.img} alt={item.title} />
-                  <h6>{item.title}</h6>
-                  <p>{item.text}</p>
-                  <span>{item.tag}</span>
-                </Item>
-              )
-            })}
-          </>
-        )}
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Info>
 
-        {isActive === 1 && (
-          <>
-            {contents.item2.map((item, i) => {
-              return (
-                <Item key={i}>
-                  <Image src={item.img} alt={item.title} />
-                  <h6>{item.title}</h6>
-                  <p>{item.text}</p>
-                  <span>{item.tag}</span>
-                </Item>
-              )
-            })}
-          </>
-        )}
+        <Content>
+          <Image
+            src={img1}
+            alt="sec2"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          />
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Content>
+      </Box>
 
-        {isActive === 2 && (
-          <>
-            {contents.item1.map((item, i) => {
-              return (
-                <Item key={i}>
-                  <Image src={item.img} alt={item.title} />
-                  <h6>{item.title}</h6>
-                  <p>{item.text}</p>
-                  <span>{item.tag}</span>
-                </Item>
-              )
-            })}
-          </>
-        )}
+      <Box>
+        <Content>
+          <Image
+            src={img2}
+            alt="sec2"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          />
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Content>
 
-        {isActive === 3 && (
-          <>
-            {contents.item2.map((item, i) => {
-              return (
-                <Item key={i}>
-                  <Image src={item.img} alt={item.title} />
-                  <h6>{item.title}</h6>
-                  <p>{item.text}</p>
-                  <span>{item.tag}</span>
-                </Item>
-              )
-            })}
-          </>
-        )}
-      </ScrollContainer>
+        <Info>
+          <strong data-aos="fade">{'자유롭게 충전하다\nTESLA 충전카드'}</strong>
+          <p data-aos="fade">
+            지혜는 너의 천자만홍이 이것이다. 싶이 얼마나 스며들어 것이다. 싸인
+            속잎나고, 낙원을 타오르고 이것을 피고, 힘차게 투명하되 쓸쓸하랴?
+            뛰노는 두기 트고, 피어나기 이것이다. 그들에게 피가 같지 가는 길지
+            뜨거운지라, 아니다. 꽃 있는 인간의 크고 그들의 위하여, 방지하는
+            무엇을 얼마나 것이다. 청춘에서만 우리의 가진 역사를 청춘을 미인을
+            칼이다. 몸이 바로 현저하게 주며, 바이며, 같이, 심장의 지혜는 없으면,
+            부패뿐이다. 인도하겠다는 커다란 어디 청춘 예가 군영과 싹이 보내는
+            것이다. 그들은 인간은 보이는 목숨 이 바이며, 불어 약동하다.
+          </p>
+
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Info>
+      </Box>
+
+      <Box>
+        <Info>
+          <strong data-aos="fade">{'고급진 일상의 하루\n프리미엄 블랙'}</strong>
+          <p data-aos="fade">
+            지혜는 너의 천자만홍이 이것이다. 싶이 얼마나 스며들어 것이다. 싸인
+            속잎나고, 낙원을 타오르고 이것을 피고, 힘차게 투명하되 쓸쓸하랴?
+            뛰노는 두기 트고, 피어나기 이것이다. 그들에게 피가 같지 가는 길지
+            뜨거운지라, 아니다. 꽃 있는 인간의 크고 그들의 위하여, 방지하는
+            무엇을 얼마나 것이다. 청춘에서만 우리의 가진 역사를 청춘을 미인을
+            칼이다. 몸이 바로 현저하게 주며, 바이며, 같이, 심장의 지혜는 없으면,
+            부패뿐이다. 인도하겠다는 커다란 어디 청춘 예가 군영과 싹이 보내는
+            것이다. 그들은 인간은 보이는 목숨 이 바이며, 불어 약동하다.
+          </p>
+
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Info>
+
+        <Content>
+          <Image
+            src={img3}
+            alt="sec2"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          />
+          <button
+            type="button"
+            onClick={handleFocus}
+            data-aos="fade"
+            data-aos-delay="100"
+          >
+            지금 신청하기
+          </button>
+        </Content>
+      </Box>
     </View>
   )
 }
@@ -169,124 +147,147 @@ export default function Sec2({ contectRef }) {
 //styled
 const View = styled.div`
   width: 100%;
-  max-width: 1350px;
+  max-width: 1250px;
+  padding: 140px 25px 160px;
   display: flex;
   flex-direction: column;
-  padding: 140px 25px 150px;
+  row-gap: 160px;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
-    padding: 80px 0;
+    padding: 100px 25px 120px;
+    row-gap: 100px;
   }
 
   @media (max-width: 600px) {
-    padding: 60px 0 80px;
+    padding: 60px 25px 80px;
+    row-gap: 70px;
+  }
+`
+
+const Box = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  row-gap: 30px;
+  column-gap: 50px;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
+`
+
+const Info = styled.div`
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 30px;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    max-width: 100%;
+    order: 1;
   }
 
-  .contents {
-    width: 100%;
-    display: flex;
-    column-gap: 40px;
-    margin-top: 40px;
-    overflow: auto;
-    cursor: grab;
+  @media (max-width: 600px) {
+    row-gap: 20px;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  strong {
+    font-size: 36px;
+    white-space: pre-line;
+    line-height: 1.4;
 
     @media (max-width: 1080px) {
-      padding: 0 25px;
-      column-gap: 30px;
-      margin-top: 30px;
+      font-size: 30px;
     }
 
     @media (max-width: 600px) {
-      column-gap: 20px;
+      font-size: 26px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #797979;
+    line-height: 1.4;
+
+    @media (max-width: 1080px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 16px 32px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+
+    @media (max-width: 1080px) {
+      display: none;
     }
   }
 `
 
-const Title = styled.h2`
-  font-size: 28px;
-
-  @media (max-width: 1080px) {
-    padding: 0 25px;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 24px;
-  }
-`
-
-const Menus = styled.div`
+const Content = styled.div`
   width: 100%;
-  padding: 24px 0 0;
-  display: flex;
-  align-items: stretch;
-  column-gap: 50px;
-  border-bottom: 1px solid #e2e2e2;
-
-  @media (max-width: 1080px) {
-    padding: 24px 25px 0;
-    column-gap: 40px;
-  }
-
-  @media (max-width: 600px) {
-    column-gap: 30px;
-  }
-`
-
-const Menu = styled.button`
-  font-size: 16px;
-  padding-bottom: 14px;
-  color: ${({ isActive }) => (isActive ? '#333' : '#999')};
-  font-weight: ${({ isActive }) => (isActive ? '500' : '400')};
-  border-bottom: ${({ isActive }) =>
-    isActive ? '3px solid #333' : '3px solid #fff'};
+  max-width: 460px;
   transition: 0.3s ease-in-out;
 
-  @media (max-width: 600px) {
-    font-size: 15px;
-  }
-`
-
-const Item = styled.li`
-  display: flex;
-  flex-direction: column;
-  width: 305px;
-  min-width: 300px;
-
-  @media (max-width: 600px) {
-    width: 280px;
-    min-width: 280px;
+  @media (max-width: 1080px) {
+    max-width: 100%;
+    order: 2;
+    margin-top: 10px;
   }
 
   img {
     width: 100%;
-    height: 220px;
+    height: 540px;
+    border-radius: 12px;
     object-fit: cover;
 
+    @media (max-width: 1080px) {
+      height: 440px;
+    }
+
     @media (max-width: 600px) {
-      height: 200px;
+      height: 300px;
     }
   }
 
-  h6 {
-    font-size: 16px;
-    margin: 20px 0 12px;
-    font-weight: 500;
-  }
+  button {
+    display: none;
 
-  p {
-    font-size: 14px;
-    color: #797979;
-    margin-bottom: 8px;
-    white-space: pre-line;
-  }
+    @media (max-width: 1080px) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      padding: 15px 32px;
+      border: 1px solid #aaa;
+      border-radius: 12px;
 
-  span {
-    font-size: 13px;
-    color: #3788f4;
+      &:hover {
+        background-color: #f8f8f8;
+      }
+    }
+
+    @media (max-width: 600px) {
+      font-size: 15px;
+    }
   }
 `

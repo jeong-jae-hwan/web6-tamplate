@@ -4,29 +4,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 //svg
-import InstaIcon from 'public/icons/insta-icon.svg'
-import TwitterIcon from 'public/icons/twitter-icon.svg'
-import YoutubeIcon from 'public/icons/youtube-icon.svg'
-import Link from 'next/link'
 
 //
 export default function Footer() {
   return (
     <FooterBar>
       <Foot>
-        <SNS>
-          <Link href="">
-            <InstaIcon />
-          </Link>
-
-          <Link href="">
-            <TwitterIcon />
-          </Link>
-
-          <Link href="">
-            <YoutubeIcon />
-          </Link>
-        </SNS>
         <FootName>Brand company</FootName>
         <Info>
           {`대표 : 정재환 | 사업자등록번호 : 111-12-34567 \n  연락처 : 02-123-4567 | 이메일 : text@testComp.com \n  주소 : 서울시 강남구 테헤란로 00호스빌딩 11 xx빌딩 605호`}
@@ -73,26 +56,6 @@ const Info = styled.p`
   color: #797979;
   white-space: pre-line;
   line-height: 1.5;
-`
-
-const SNS = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 24px;
-  margin-bottom: 10px;
-
-  a {
-    svg {
-      width: 18px;
-      fill: #979797;
-    }
-
-    &:hover {
-      svg {
-        fill: #797979;
-      }
-    }
-  }
 `
 
 const Copyright = styled.span`
