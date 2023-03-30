@@ -1,37 +1,56 @@
 import React from 'react'
+import Image from 'next/image'
 
 //style
 import styled from '@emotion/styled'
 
 //png
-import bannerImg from 'public/images/banner.png'
-import Image from 'next/image'
+import img1 from 'public/images/sec1/banner1.png'
+import img2 from 'public/images/sec1/banner2.png'
+
+//module
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Pagination, Autoplay } from 'swiper'
+SwiperCore.use([Pagination, Autoplay])
 
 //
-export default function Sec1({ handleFocus }) {
+export default function Sec1({ contectRef }) {
+  const banners = [img1, img2]
+
   return (
-    <View>
-      <Image src={bannerImg} alt="배너" />
+    <View ref={contectRef}>
+      <Reserve>
+        <Typo>
+          <h1 data-aos="fade">{`BRAND 관람\n예약 바로가기`}</h1>
 
-      <Typo>
-        <h1 data-aos="zoom-in">{`블록체인 WEB 3.0\n다크모드 템플릿`}</h1>
+          <p data-aos="fade" data-aos-delay="200">
+            화요일~일요일 10:00~18:00
+            <br />
+            서울시 노고산동 마포구 00호실 000관
+          </p>
+        </Typo>
 
-        <p data-aos="zoom-in">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmo d tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo conse
-        </p>
-
-        <button
-          type="button"
-          onClick={handleFocus}
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          문의하기
+        <button type="butoon" data-aos="fade" data-aos-delay="300">
+          예약하기
         </button>
-      </Typo>
+      </Reserve>
+
+      <Swiper
+        modules={[Pagination]}
+        autoplay={{ delay: 2500 }}
+        pagination={true}
+        className="swiper"
+      >
+        {banners.map((item, i) => {
+          return (
+            <SwiperSlide key={i} className="swiper_item">
+              <Box data-aos="fade">
+                <Image src={item} alt="sec1" />
+              </Box>
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
     </View>
   )
 }
@@ -40,79 +59,165 @@ export default function Sec1({ handleFocus }) {
 const View = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   transition: 0.3s ease-in-out;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .swiper {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .swiper_item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+`
+
+const Reserve = styled.div`
+  width: 100%;
+  max-width: 1350px;
+  padding: 80px 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    padding: 60px 25px 40px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 30px 25px 30px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 100px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #444;
+    }
+
+    @media (max-width: 1080px) {
+      font-size: 15px;
+      padding: 14px 24px;
+    }
+
+    @media (max-width: 600px) {
+      margin-top: 8px;
+      font-size: 14px;
+      padding: 12px 16px;
+    }
   }
 `
 
 const Typo = styled.div`
-  width: 100%;
-  max-width: 600px;
-  padding: 0 30px;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 40px;
+  align-items: flex-start;
+  row-gap: 20px;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
-    row-gap: 30px;
+    row-gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    row-gap: 14px;
   }
 
   h1 {
-    font-size: 50px;
-    color: #fff;
-    white-space: pre-line;
-    text-align: center;
+    font-size: 40px;
+    color: #333;
 
     @media (max-width: 1080px) {
-      font-size: 36px;
+      font-size: 30px;
     }
 
     @media (max-width: 600px) {
-      font-size: 32px;
+      font-size: 28px;
+      white-space: pre-line;
     }
   }
 
   p {
     font-size: 15px;
-    color: #ddd;
-    text-align: center;
+    color: #797979;
+    line-height: 1.5;
 
     @media (max-width: 600px) {
       font-size: 14px;
     }
   }
+`
 
-  button {
-    font-size: 16px;
-    width: 200px;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(64, 21, 93, 0.8);
-    border-radius: 100px;
-    color: #e0e0e0;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      background-color: rgba(64, 21, 93, 1);
-    }
+const Box = styled.div`
+  width: 100%;
+  max-width: 1350px;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 1080px) {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    max-height: 540px;
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    object-fit: cover;
 
     @media (max-width: 1080px) {
-      font-size: 15px;
+      border-radius: 0;
+      max-height: 400px;
+    }
+
+    @media (max-width: 600px) {
+      max-height: 320px;
+    }
+  }
+
+  h6 {
+    font-size: 22px;
+    margin: 30px 0 12px;
+
+    @media (max-width: 1080px) {
+      padding: 0 25px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 18px;
+      margin: 20px 0 10px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: #999;
+
+    @media (max-width: 1080px) {
+      padding: 0 25px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 13px;
     }
   }
 `

@@ -1,156 +1,146 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image'
 
 //styled
 import styled from '@emotion/styled'
 
-//svg
-import Img1 from 'public/icons/sec3/img1.svg'
-import Img2 from 'public/icons/sec3/img2.svg'
-import Img3 from 'public/icons/sec3/img3.svg'
+//module
+import ScrollContainer from 'react-indiana-drag-scroll'
+
+//png
+import img1 from 'public/images/sec3/img1.png'
+import img2 from 'public/images/sec3/img2.png'
+import img3 from 'public/images/sec3/img3.png'
+import img4 from 'public/images/sec3/img4.png'
 
 //
 export default function Sec3({ contectRef }) {
+  const contents = [
+    {
+      img: img1,
+      title: '포커스',
+      text: '그 많던 전시는 다 어디로 갔을까 <전시의 전시>',
+    },
+    {
+      img: img2,
+      title: '포터리',
+      text: '설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
+    },
+    {
+      img: img3,
+      title: '포커스',
+      text: '그 많던 전시는 다 어디로 갔을까 <전시의 전시>',
+    },
+    {
+      img: img4,
+      title: '포터리',
+      text: '설명으로 보는 <모던 데자인: 생활, 산업, 외교하는 미술로>',
+    },
+  ]
+
   return (
     <View ref={contectRef}>
-      <Content>
-        <Info>
-          <strong data-aos="fade">
-            {'다양한 브랜드의\n콘텐츠를 확인해보세요'}
-          </strong>
-          <p data-aos="fade" data-aos-delay="200">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </Info>
+      <Title data-aos="fade">뉴스레터</Title>
 
-        <Img1 data-aos="fade-up" data-aos-delay="500" />
-      </Content>
-
-      <Content>
-        <Img2 data-aos="fade-up" data-aos-delay="500" />
-        <Info>
-          <strong data-aos="fade">
-            {'보안성이 뛰어난\n빠른 속도의 블록생성'}
-          </strong>
-          <p data-aos="fade" data-aos-delay="200">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </Info>
-      </Content>
-
-      <Content>
-        <Info>
-          <strong data-aos="fade">{'안전한 시세 변동\n꼼꼼한 블록처리'}</strong>
-          <p data-aos="fade" data-aos-delay="200">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </Info>
-
-        <Img3 data-aos="fade-up" data-aos-delay="500" />
-      </Content>
+      <ScrollContainer className="contents">
+        {contents.map((item, i) => {
+          return (
+            <Item key={i} data-aos="fade" data-aos-delay="200">
+              <Image src={item.img} alt={item.title} />
+              <h6>{item.title}</h6>
+              <p>{item.text}</p>
+            </Item>
+          )
+        })}
+      </ScrollContainer>
     </View>
   )
 }
 
+//styled
 const View = styled.div`
   width: 100%;
-  padding: 200px 25px;
+  max-width: 1350px;
   display: flex;
   flex-direction: column;
-  row-gap: 200px;
-  align-items: center;
-  background-color: #222223;
+  padding: 40px 25px 20px;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 1080px) {
-    padding: 100px 25px;
+    padding: 40px 0;
   }
 
   @media (max-width: 600px) {
-    row-gap: 80px;
-    padding: 80px 25px;
-  }
-`
-
-const Content = styled.div`
-  width: 100%;
-  max-width: 1250px;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  transition: 0.3s ease-in-out;
-  row-gap: 40px;
-  column-gap: 50px;
-
-  @media (max-width: 1080px) {
-    flex-direction: column;
-    align-items: center;
+    padding: 20px 0 20px;
   }
 
-  svg {
+  .contents {
     width: 100%;
-    max-width: 540px;
+    display: flex;
+    column-gap: 40px;
+    margin-top: 30px;
+    overflow: auto;
+    cursor: grab;
 
-    @media (max-width: 1080px) {
-      max-width: 440px;
+    &::-webkit-scrollbar {
+      display: none;
     }
-  }
-`
-
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-  margin-top: 40px;
-  transition: 0.3s ease-in-out;
-
-  @media (max-width: 1080px) {
-    margin: 0;
-    order: 2;
-  }
-
-  @media (max-width: 600px) {
-    row-gap: 20px;
-  }
-
-  strong {
-    font-size: 44px;
-    font-weight: 500;
-    color: #e0e0e0;
-    white-space: pre-line;
 
     @media (max-width: 1080px) {
-      text-align: center;
-      font-size: 36px;
+      padding: 0 25px;
+      column-gap: 30px;
+      margin-top: 30px;
     }
 
     @media (max-width: 600px) {
-      text-align: start;
-      font-size: 26px;
+      column-gap: 20px;
     }
+  }
+`
+
+const Title = styled.h2`
+  font-size: 28px;
+
+  @media (max-width: 1080px) {
+    padding: 0 25px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 24px;
+  }
+`
+
+const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+  width: 305px;
+  min-width: 300px;
+
+  @media (max-width: 600px) {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+
+    @media (max-width: 600px) {
+      height: 200px;
+    }
+  }
+
+  h6 {
+    font-size: 16px;
+    margin: 20px 0 12px;
+    font-weight: 500;
   }
 
   p {
-    max-width: 500px;
-    font-size: 15px;
-    line-height: 1.5;
-    color: #aaa;
-
-    @media (max-width: 1080px) {
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      text-align: start;
-      font-size: 14px;
-    }
+    font-size: 14px;
+    color: #797979;
+    margin-bottom: 8px;
+    white-space: pre-line;
   }
 `

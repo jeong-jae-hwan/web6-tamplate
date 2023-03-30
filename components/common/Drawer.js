@@ -45,7 +45,7 @@ export function Drawer({ handleFocus }) {
   }, [isDrawer])
 
   // 메뉴 종류
-  const menus = ['카테고리', '콘텐츠', '브랜드', '문의하기']
+  const menus = ['예약하기', '전시', '뉴스레터', '공지사항']
 
   return (
     <>
@@ -133,7 +133,7 @@ const DrawerBox = styled.div`
   width: 100%;
   max-width: 400px;
   height: 100vh;
-  background-color: #1d1d1d;
+  background-color: #fff;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
   overflow: auto;
   transition: 0.2s ease-in-out;
@@ -195,6 +195,7 @@ const Menu = styled.li`
 
 const MenuName = styled.span`
   font-size: 0.938rem;
+  font-weight: 500;
 `
 
 const SNSMenus = styled.ul`

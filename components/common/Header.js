@@ -42,48 +42,48 @@ export default function Header({ menuActive, handleFocus }) {
 
           <NavView>
             <Link href="/" className="logo">
-              <Logo alt="서비스명" fill="#eee" />
+              <Logo alt="서비스명" fill="#333" />
             </Link>
 
             <Menus>
               <Menu onClick={() => handleFocus(0)} isActive={menuActive === 0}>
-                카테고리
+                예약하기
               </Menu>
 
               <Menu onClick={() => handleFocus(1)} isActive={menuActive === 1}>
-                콘텐츠
+                전시
               </Menu>
 
               <Menu onClick={() => handleFocus(2)} isActive={menuActive === 2}>
-                브랜드
+                뉴스레터
               </Menu>
 
               <Menu onClick={() => handleFocus(3)} isActive={menuActive === 3}>
-                문의하기
+                공지사항
               </Menu>
             </Menus>
 
             <SNSMenus>
               <Menu>
                 <Link href="s">
-                  <InstaIcon fill={isFixed ? '#999' : '#ccc'} />
+                  <InstaIcon fill="#999" />
                 </Link>
               </Menu>
 
               <Menu>
                 <Link href="s">
-                  <TwitterIcon fill={isFixed ? '#999' : '#ccc'} />
+                  <TwitterIcon fill="#999" />
                 </Link>
               </Menu>
 
               <Menu>
                 <Link href="s">
-                  <YoutubeIcon fill={isFixed ? '#999' : '#ccc'} />
+                  <YoutubeIcon fill="#999" />
                 </Link>
               </Menu>
             </SNSMenus>
 
-            <DrawerTab fiil="#e2e2e2" onClick={() => setIsDrawer(!isDrawer)} />
+            <DrawerTab fiil="#333" onClick={() => setIsDrawer(!isDrawer)} />
           </NavView>
         </NavBar>
       </HeaderBar>
@@ -95,6 +95,8 @@ export default function Header({ menuActive, handleFocus }) {
 const HeaderBar = styled.div`
   position: relative;
   width: 100%;
+  height: 66px;
+  min-height: 66px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,8 +125,8 @@ const NavBar = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ isActive }) => (isActive ? '#222' : 'transparent')};
-  border-bottom: ${({ isActive }) => (isActive ? '1px solid #252525' : 'none')};
+  background-color: ${({ isActive }) => (isActive ? '#fff' : 'transparent')};
+  border-bottom: 1px solid #e2e2e2;
 
   @media (max-width: 1080px) {
     height: 58px;
@@ -135,8 +137,8 @@ const NavBar = styled.header`
 const NavView = styled.nav`
   position: relative;
   width: 100%;
-  max-width: 1240px;
-  padding: 0 20px;
+  max-width: 1350px;
+  padding: 0 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -185,11 +187,13 @@ const Menu = styled.li`
   justify-content: center;
   padding: 10px;
   font-size: 15px;
-  color: ${({ isActive }) => (isActive ? '#D18DFF' : '#e0e0e0')};
+  color: ${({ isActive }) => (isActive ? '#333' : '#666')};
+  font-weight: ${({ isActive }) => (isActive ? '500' : '400')};
   cursor: pointer;
 
   &:hover {
-    color: ${({ isActive }) => (isActive ? '#C16AFD' : '#fff')};
+    color: #222;
+    font-weight: 500;
   }
 
   svg {

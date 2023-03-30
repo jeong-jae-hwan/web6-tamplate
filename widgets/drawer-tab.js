@@ -49,7 +49,7 @@ export default function DrawerTab(props) {
               height="2.3"
               rx="1.15"
               transform="translate(1747 29)"
-              fill="#e0e0e0"
+              fill="#333"
             />
             <rect
               id="사각형_8380"
@@ -58,7 +58,7 @@ export default function DrawerTab(props) {
               height="2.3"
               rx="1.15"
               transform="translate(1747 36.35)"
-              fill="#e0e0e0"
+              fill="#333"
             />
             <rect
               id="사각형_8381"
@@ -67,7 +67,7 @@ export default function DrawerTab(props) {
               height="2.3"
               rx="1.15"
               transform="translate(1747 43.7)"
-              fill="#e0e0e0"
+              fill="#333"
             />
           </g>
         </g>

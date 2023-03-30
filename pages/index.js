@@ -9,12 +9,11 @@ import 'aos/dist/aos.css'
 //components
 import SEO from 'public/SEO'
 import Header from '@/components/common/Header'
+import { Drawer } from '@/components/common/Drawer'
 import Sec1 from '@/components/home/sec1'
 import Sec2 from '@/components/home/sec2'
 import Sec3 from '@/components/home/sec3'
 import Sec4 from '@/components/home/sec4'
-import Sec5 from '@/components/home/sec5'
-import { Drawer } from '@/components/common/Drawer'
 
 //
 export default function Index() {
@@ -65,11 +64,10 @@ export default function Index() {
         <Header menuActive={menuActive} handleFocus={i => handleFocus(i)} />
       )}
       <Section>
-        <Sec1 handleFocus={() => handleFocus(3)} />
-        <Sec2 contectRef={el => (contentRefs.current[0] = el)} />
-        <Sec3 contectRef={el => (contentRefs.current[1] = el)} />
-        <Sec4 contectRef={el => (contentRefs.current[2] = el)} />
-        <Sec5 contectRef={el => (contentRefs.current[3] = el)} />
+        <Sec1 contectRef={el => (contentRefs.current[0] = el)} />
+        <Sec2 contectRef={el => (contentRefs.current[1] = el)} />
+        <Sec3 contectRef={el => (contentRefs.current[2] = el)} />
+        <Sec4 contectRef={el => (contentRefs.current[3] = el)} />
 
         <Drawer handleFocus={i => handleFocus(i)} />
       </Section>
