@@ -78,7 +78,7 @@ export default function Sec4({ contectRef }) {
 //styled
 const View = styled.div`
   width: 100%;
-  max-width: 1350px;
+  max-width: 1250px;
   display: flex;
   flex-direction: column;
   padding: 180px 25px 40px;
